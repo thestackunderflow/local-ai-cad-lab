@@ -79,6 +79,41 @@ def verdict(reqs, claude_start):
             'max_cache_mib': max([r['cache_mib'] for r in reqs if r['cache_mib']] or [0])}
 
 
+_LIMIT = re.compile(r'limits: ([\d.]+) MiB')
+_CKPT = re.compile(r'checkpoint \d+ of (\d+)')
+_CLI_CACHE = re.compile(r'--cache-ram[ =](-?\d+)')
+
+
+def fix_check(lines):
+    """Did llama-server take LLAMA_ARG_CACHE_RAM=0 / LLAMA_ARG_CTX_CHECKPOINTS=4 (HANDOVER-la-lab2 1a)?
+    forwarded = cache limit 0 (or no cache lines) with 4 checkpoints, or limit 0; not_forwarded = the 8192 MiB / 32
+    defaults or an explicit --cache-ram on the runner command (an explicit flag beats the env var)."""
+    lim, ck, cli = None, None, None
+    for ln in lines:
+        if (m := _LIMIT.search(ln)):
+            lim = float(m.group(1))
+        if (m := _CKPT.search(ln)):
+            ck = int(m.group(1))
+        if (m := _CLI_CACHE.search(ln)):
+            cli = int(m.group(1))
+    if (cli is not None and cli != 0) or (lim is not None and lim > 0) or (ck is not None and ck != 4):
+        st = 'not_forwarded'
+    elif lim == 0 or ck == 4 or cli == 0:
+        st = 'forwarded'
+    else:
+        st = 'unknown'
+    return {'cache_limit_mib': lim, 'checkpoints_max': ck, 'status': st}
+
+
+def void_line(res):
+    """Suffix for the LA line when a run is void by the host-fault rule; '' otherwise."""
+    for v in res.values():
+        if v.get('void'):
+            return (f"VOID host fault (first < {DEGRADED_TOK_S:g} tok/s at {v['first_degraded_min']} min, "
+                    f"{v['degraded_requests']} of {v['requests']} requests)")
+    return ''
+
+
 def main(runs):
     res = {}
     for o in runs:
@@ -90,4 +125,9 @@ def main(runs):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    if sys.argv[1:2] == ['--fix-check']:      # la_restart.sh: live la-ollama log after the warm-up
+        print(json.dumps(fix_check(open(sys.argv[2], encoding='utf-8', errors='replace'))))
+    elif sys.argv[1:2] == ['--void-line']:    # run/one.sh: throughput.json -> LA line suffix
+        print(void_line(json.load(open(sys.argv[2], encoding='utf-8'))))
+    else:
+        main(sys.argv[1:])

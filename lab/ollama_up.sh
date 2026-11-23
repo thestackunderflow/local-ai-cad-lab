@@ -8,11 +8,15 @@ IMG=ollama/ollama:0.40.17@sha256:ccc42bcd3d5fcf7ab0d532b300382154e1a4da56fc666bd
 docker network inspect la-net > /dev/null 2>&1 || docker network create --subnet 10.231.77.0/24 la-net > /dev/null
 docker network inspect la-int > /dev/null 2>&1 || docker network create --internal --subnet 10.231.78.0/24 la-int > /dev/null
 docker rm -f la-ollama > /dev/null 2>&1 || true
+# HANDOVER-la-lab2 1a (23 Nov): llama-server's host-RAM prompt cache (--cache-ram 8192 MiB default) + 32 SWA checkpoints
+# grew past ~5.4 GB inside the 6 GB container and the 12B fell to 0.2-0.5 tok/s. Off / 4 by env (llama.cpp reads
+# LLAMA_ARG_*; check per run with la_throughput.py --fix-check). LA_CACHE_RAM / LA_CHECKPOINTS override.
+XENV=(-e "LLAMA_ARG_CACHE_RAM=${LA_CACHE_RAM:-0}" -e "LLAMA_ARG_CTX_CHECKPOINTS=${LA_CHECKPOINTS:-4}")
 CTXE=(); [ "$CTX" = default ] || CTXE=(-e "OLLAMA_CONTEXT_LENGTH=$CTX")   # "default" = Ollama's own page (G2b)
 MSYS_NO_PATHCONV=1 docker run -d --name la-ollama --gpus=all --memory "$MEM" --network la-net -p 127.0.0.1:11434:11434 \
   -v gemma-lab-models:/root/.ollama \
   "${CTXE[@]}" -e OLLAMA_KV_CACHE_TYPE="$KV" -e OLLAMA_FLASH_ATTENTION=1 -e OLLAMA_NUM_PARALLEL=1 \
-  -e OLLAMA_MAX_LOADED_MODELS=1 -e OLLAMA_KEEP_ALIVE=30m -e OLLAMA_DEBUG=1 -e OLLAMA_NOPRUNE=1 "$IMG" > /dev/null
+  -e OLLAMA_MAX_LOADED_MODELS=1 -e OLLAMA_KEEP_ALIVE=30m -e OLLAMA_DEBUG=1 -e OLLAMA_NOPRUNE=1 "${XENV[@]}" "$IMG" > /dev/null
 docker network connect la-int la-ollama
 for i in $(seq 1 30); do curl -s http://127.0.0.1:11434/ | grep -q "Ollama is running" && break; sleep 1; done
 curl -s http://127.0.0.1:11434/api/version; echo " ctx=$CTX kv=$KV mem=$MEM"

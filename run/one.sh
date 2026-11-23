@@ -12,6 +12,8 @@ RUN=${1:?RUN}; APP=${2:?app}; TASK=${3:?S|T}; MODEL=${4:?model}; NET=${5:-la-net
 O=out/runs/$RUN
 [ -e "$O/stream.jsonl" ] && { echo "refusing: $O has a run"; exit 3; }
 mkdir -p "$O"
+# HANDOVER-la-lab2 1b: OLLAMA_RESTART=1 -> fresh la-ollama (prompt cache off) + warm-up load before the run
+bash lab/la_restart.sh "$MODEL" "$O" > "$O/restart.txt" 2>&1 || { cat "$O/restart.txt"; echo "STOP: la-ollama restart failed"; exit 5; }
 free_gb() { awk '/MemFree/ {printf "%.2f", $2/1048576}' /proc/meminfo; }
 # the WSL VM's page cache (model blobs read at load) is dropped so Windows gets it back (gemma4-12b-8gb-lab pattern)
 MSYS_NO_PATHCONV=1 docker run --rm --privileged --entrypoint sh ollama/ollama:0.40.17 -c 'sync; echo 1 > /proc/sys/vm/drop_caches'
@@ -38,7 +40,8 @@ T0=$(date -u +%FT%TZ); S0=$(date +%s)
 name=la-run-$RUN
 ( while docker inspect "$name" > /dev/null 2>&1 || [ $(( $(date +%s) - S0 )) -lt 60 ]; do
     f=$(free_gb); g=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits 2>/dev/null | tr -d '\r ')
-    echo "$(date +%s) $f $g" >> "$O/host-samples.txt"
+    m=$(docker stats --no-stream --format '{{.MemUsage}}' la-ollama 2>/dev/null | tr -d ' \r')
+    echo "$(date +%s) $f $g ${m:--}" >> "$O/host-samples.txt"
     awk -v f="$f" 'BEGIN {exit !(f < 1)}' && { echo "guard stop: free $f GB" >> "$O/host-guard.txt"; docker kill "$name" > /dev/null 2>&1; }
     sleep 5
   done ) &
@@ -56,6 +59,11 @@ fi
 awk 'NR==1 {m=$2; g=$3} {if ($2 < m) m=$2; if ($3 > g) g=$3} END {printf "{\"free_gb_min\": %s, \"gpu_mib_peak\": %s, \"samples\": %d}\n", m, g, NR}' \
   "$O/host-samples.txt" > "$O/host.json" 2>/dev/null
 echo "{\"run\": \"$RUN\", \"app\": \"$APP\", \"task\": \"$TASK\", \"model\": \"$MODEL\", \"net\": \"$NET\", \"start\": \"$T0\", \"host_wall_s\": $(( $(date +%s) - S0 ))}" > "$O/run.json"
-MSYS_NO_PATHCONV=1 docker run --rm -v "$LA:/la" -e PYTHONDONTWRITEBYTECODE=1 --entrypoint python3 gemma4-lab-runner:1 \
-  /la/lab/la_score.py "/la/$O" "$APP" "$TASK"
+PYR=(docker run --rm -v "$LA:/la" -e PYTHONDONTWRITEBYTECODE=1 --entrypoint python3 gemma4-lab-runner:1)
+SC=$(MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_score.py "/la/$O" "$APP" "$TASK")
+echo "$SC" | grep -v '^LA '
+# host-fault void rule (PLAN la 0): any request < 3 tok/s before the cap -> the LA line says VOID host fault
+MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py "/la/$O" > "$O/throughput.json"
+V=$(MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py --void-line "/la/$O/throughput.json")
+echo "$(echo "$SC" | grep '^LA ' | tail -1)${V:+ | $V}"
 cat "$O/host.json"

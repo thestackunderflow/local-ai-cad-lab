@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+out/scratch/
+out/**/ollama-full.log
+out/**/*.FCStd
+out/**/*.sc

@@ -1,0 +1,1 @@
+g4-fc-S freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=

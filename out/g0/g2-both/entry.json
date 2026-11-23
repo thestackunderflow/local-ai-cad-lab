@@ -1,0 +1,16 @@
+{
+ "mcpServers": {
+  "solidcraft": {
+   "command": "/opt/solidcraft/bin/solidcraft-cli",
+   "args": [
+    "mcp"
+   ]
+  },
+  "freecad": {
+   "command": "uvx",
+   "args": [
+    "freecad-mcp@0.1.28"
+   ]
+  }
+ }
+}

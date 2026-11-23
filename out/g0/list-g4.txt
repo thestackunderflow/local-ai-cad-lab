@@ -1,0 +1,3 @@
+# G0 S runs (not scored): G4 tools arrive per app; G1c offline (SolidCraft on the internal network); G5 FreeCAD without the flag
+g4-sc-S solidcraft S gemma4:12b-it-qat la-int CTX=65536
+g4-fc-S freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=

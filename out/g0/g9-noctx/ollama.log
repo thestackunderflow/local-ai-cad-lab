@@ -1,0 +1,46 @@
+time=2026-11-23T00:14:28.810Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:14:28.863Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=67566
+slot get_availabl: id  0 | task -1 |  - checking sim = 0.000 (6/16161) > 0.100
+slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 31747, t_last = 216243535857
+srv  get_availabl: updating prompt cache
+srv   prompt_save:  - saving prompt with length 31747, total state size = 433.901 MiB (draft: 0.000 MiB)
+srv          load:  - looking for better prompt, base f_keep = 0.000, f_sim = 0.000
+srv          load:    - prompt with length   31747, lcp =       6, f_keep = 0.000, f_sim = 0.000
+srv        update:  - cache state: 1 prompts, 773.926 MiB (limits: 8192.000 MiB, 65536 tokens, 336041 est)
+srv        update:    - prompt 0x1eda1740:   31747 tokens, checkpoints:  2,   773.926 MiB
+srv  get_availabl: prompt cache update took 362.53 ms
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+slot   operator(): id  0 | task 263 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 16161
+slot   operator(): id  0 | task 263 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   3584, progress = 0.22, t =   3.54 s / 1011.72 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   4096, progress = 0.25, t =   4.09 s / 1002.61 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   4608, progress = 0.29, t =   4.64 s / 993.65 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   5120, progress = 0.32, t =   5.17 s / 989.43 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   5632, progress = 0.35, t =   5.72 s / 983.89 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   6144, progress = 0.38, t =   6.29 s / 977.33 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   6656, progress = 0.41, t =   6.85 s / 971.78 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   7168, progress = 0.44, t =   7.41 s / 967.77 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   7680, progress = 0.48, t =   7.96 s / 964.58 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   8192, progress = 0.51, t =   8.53 s / 960.30 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   8704, progress = 0.54, t =   9.12 s / 954.71 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   9216, progress = 0.57, t =   9.70 s / 949.96 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =   9728, progress = 0.60, t =  10.28 s / 946.12 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  10240, progress = 0.63, t =  10.86 s / 942.64 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  10752, progress = 0.67, t =  11.46 s / 937.90 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  11264, progress = 0.70, t =  12.07 s / 933.51 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  11776, progress = 0.73, t =  12.67 s / 929.59 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  12288, progress = 0.76, t =  13.27 s / 926.25 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  12800, progress = 0.79, t =  13.87 s / 922.89 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  13312, progress = 0.82, t =  14.48 s / 919.12 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  13824, progress = 0.86, t =  15.10 s / 915.34 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  14336, progress = 0.89, t =  15.72 s / 912.02 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  14848, progress = 0.92, t =  16.35 s / 908.05 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  15360, progress = 0.95, t =  16.98 s / 904.65 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  15649, progress = 0.97, t =  17.54 s / 892.10 tokens per second
+slot print_timing: id  0 | task 263 | prompt processing, n_tokens =  16157, progress = 1.00, t =  18.17 s / 889.12 tokens per second
+slot print_timing: id  0 | task 263 | prompt eval time =   18648.35 ms / 16161 tokens (    1.15 ms per token,   866.62 tokens per second)
+slot      release: id  0 | task 263 | stop processing: n_tokens = 16174, truncated = 0
+[GIN] 2026/11/23 - 00:14:48 | 200 |   20.17s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:14:48.975Z level=DEBUG source=sched.go:538 msg="context for request finished" runner.name=registry.ollama.ai/library/gemma4:12b-it-qat runner.inference="[{ID:0 Library:CUDA}]" runner.pid=178 runner.num_ctx=65536 runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c45
+time=2026-11-23T00:14:48.975Z level=DEBUG source=sched.go:443 msg="runner with non-zero duration has gone idle, adding timer" runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 duration=30m0s
+time=2026-11-23T00:14:48.975Z level=DEBUG source=sched.go:461 msg="after processing request finished event" runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 refCount=0

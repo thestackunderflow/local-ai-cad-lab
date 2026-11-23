@@ -1,0 +1,61 @@
+time=2026-11-23T00:06:30.697Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:06:30.790Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=112030
+slot get_availabl: id  0 | task -1 |  - checking sim = 0.735 (19942/27116) > 0.100
+slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.735 (> 0.100 thold), f_keep = 0.898
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+slot   operator(): id  0 | task 192 | new prompt, n_ctx_slot = 32768, n_keep = 4, task.n_tokens = 27116
+slot   operator(): id  0 | task 192 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   3072, progress = 0.11, t =   3.27 s / 940.79 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   3584, progress = 0.13, t =   3.79 s / 944.97 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   4096, progress = 0.15, t =   4.35 s / 942.18 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   4608, progress = 0.17, t =   4.89 s / 942.97 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   5120, progress = 0.19, t =   5.44 s / 941.00 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   5632, progress = 0.21, t =   5.99 s / 940.81 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   6144, progress = 0.23, t =   6.54 s / 939.85 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   6656, progress = 0.25, t =   7.08 s / 940.29 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   7168, progress = 0.26, t =   7.63 s / 939.43 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   7680, progress = 0.28, t =   8.20 s / 936.69 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   8192, progress = 0.30, t =   8.77 s / 934.23 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   8704, progress = 0.32, t =   9.34 s / 931.99 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   9216, progress = 0.34, t =   9.91 s / 930.25 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =   9728, progress = 0.36, t =  10.49 s / 927.59 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  10240, progress = 0.38, t =  11.07 s / 925.14 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  10752, progress = 0.40, t =  11.66 s / 922.27 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  11264, progress = 0.42, t =  12.24 s / 919.89 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  11776, progress = 0.43, t =  12.84 s / 917.39 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  12288, progress = 0.45, t =  13.44 s / 914.25 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  12800, progress = 0.47, t =  14.05 s / 910.77 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  13312, progress = 0.49, t =  14.72 s / 904.56 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  13824, progress = 0.51, t =  15.37 s / 899.62 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  14336, progress = 0.53, t =  16.02 s / 895.07 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  14848, progress = 0.55, t =  16.64 s / 892.47 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  15360, progress = 0.57, t =  17.27 s / 889.62 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  15872, progress = 0.59, t =  17.90 s / 886.95 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  16384, progress = 0.60, t =  18.53 s / 884.01 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  16896, progress = 0.62, t =  19.20 s / 880.20 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  17408, progress = 0.64, t =  19.85 s / 877.03 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  17920, progress = 0.66, t =  20.50 s / 873.96 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  18432, progress = 0.68, t =  21.16 s / 871.17 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  18944, progress = 0.70, t =  21.81 s / 868.63 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  19456, progress = 0.72, t =  22.48 s / 865.55 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  19968, progress = 0.74, t =  23.13 s / 863.28 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  20480, progress = 0.76, t =  23.80 s / 860.56 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  20992, progress = 0.77, t =  24.47 s / 857.74 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  21504, progress = 0.79, t =  25.29 s / 850.46 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  22016, progress = 0.81, t =  25.99 s / 847.02 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  22528, progress = 0.83, t =  26.69 s / 844.18 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  23040, progress = 0.85, t =  27.38 s / 841.43 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  23552, progress = 0.87, t =  28.07 s / 839.15 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  24064, progress = 0.89, t =  28.76 s / 836.86 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  24576, progress = 0.91, t =  29.47 s / 834.00 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  25088, progress = 0.93, t =  30.17 s / 831.44 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  25600, progress = 0.94, t =  30.88 s / 829.10 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  26112, progress = 0.96, t =  31.58 s / 826.86 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  26604, progress = 0.98, t =  32.28 s / 824.20 tokens per second
+slot print_timing: id  0 | task 192 | prompt processing, n_tokens =  27112, progress = 1.00, t =  33.11 s / 818.78 tokens per second
+slot print_timing: id  0 | task 192 | prompt eval time =   33781.29 ms / 27116 tokens (    1.25 ms per token,   802.69 tokens per second)
+slot      release: id  0 | task 192 | stop processing: n_tokens = 27142, truncated = 0
+[GIN] 2026/11/23 - 00:07:06 | 200 |   36.17s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:07:06.859Z level=DEBUG source=sched.go:538 msg="context for request finished" runner.name=registry.ollama.ai/library/gemma4:12b-it-qat runner.inference="[{ID:0 Library:CUDA}]" runner.pid=180 runner.num_ctx=32768 runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c45
+time=2026-11-23T00:07:06.859Z level=DEBUG source=sched.go:443 msg="runner with non-zero duration has gone idle, adding timer" runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 duration=30m0s
+time=2026-11-23T00:07:06.859Z level=DEBUG source=sched.go:461 msg="after processing request finished event" runner.size="5.6 GiB" runner.vram="5.4 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 refCount=0

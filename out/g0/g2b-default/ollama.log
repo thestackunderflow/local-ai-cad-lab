@@ -1,0 +1,45 @@
+[GIN] 2026/11/23 - 00:24:21 | 200 | 36.865µs |     10.231.77.1 | GET      "/"
+[GIN] 2026/11/23 - 00:24:21 | 200 | 35.361µs |     10.231.77.1 | GET      "/api/version"
+time=2026-11-23T00:24:27.667Z level=DEBUG source=sched.go:348 msg="loading first model" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:24:27.718Z level=INFO source=server.go:108 msg="using llama-server for model" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:24:27.720Z level=INFO source=llama_server.go:1147 msg="loading model via llama-server" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+common_params_fit_impl: getting device memory data for initial parameters:
+common_params_fit_impl: cannot meet free memory target of 1206 MiB, need to reduce device memory by 1181 MiB
+common_params_fit_impl: id=0, target=5889 MiB
+print_info: n_ctx_train           = 262144
+print_info: n_ctx_orig_yarn       = 262144
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 38 repeating layers to GPU
+load_tensors: offloaded 39/49 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_context: n_ctx_seq             = 4096
+llama_context: n_ctx_seq (4096) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+srv    load_model: increase n_ubatch (-ub) to increase vision token budget
+get_dummy_batch: warmup with image size = 768 x 768
+get_dummy_batch: warmup with audio size = 3000
+srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+srv    load_model: use `--cache-ram 0` to disable the prompt cache
+srv          init: idle slots will be saved to prompt cache upon starting a new task
+time=2026-11-23T00:24:56.087Z level=INFO source=images.go:431 msg="template selection" model=registry.ollama.ai/library/gemma4:12b-it-qat selected=renderer_parser renderer=gemma4 parser=gemma4 go_template=null chat_template="[tools completion vision audio thinking]" harmony=null renderer_parser="[completion vision audio tools thinking]"
+time=2026-11-23T00:24:56.088Z level=DEBUG source=sched.go:791 msg="finished setting up" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:24:56.337Z level=DEBUG source=prompt.go:77 msg="truncating input messages which exceed context length" truncated=1
+time=2026-11-23T00:24:56.338Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=111429
+[GIN] 2026/11/23 - 00:24:56 | 400 |   29.26s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:24:56.425Z level=DEBUG source=sched.go:443 msg="runner with non-zero duration has gone idle, adding timer" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 duration=30m0s
+time=2026-11-23T00:24:56.425Z level=DEBUG source=sched.go:461 msg="after processing request finished event" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 refCount=0
+time=2026-11-23T00:24:56.462Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:24:56.708Z level=DEBUG source=prompt.go:77 msg="truncating input messages which exceed context length" truncated=1
+time=2026-11-23T00:24:56.708Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=111429
+[GIN] 2026/11/23 - 00:24:56 | 400 | 351.62ms |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:24:56.801Z level=DEBUG source=sched.go:538 msg="context for request finished" runner.name=registry.ollama.ai/library/gemma4:12b-it-qat runner.inference="[{ID:0 Library:CUDA}]" runner.pid=179 runner.num_ctx=4096 runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c456
+time=2026-11-23T00:24:56.801Z level=DEBUG source=sched.go:443 msg="runner with non-zero duration has gone idle, adding timer" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 duration=30m0s
+time=2026-11-23T00:24:56.801Z level=DEBUG source=sched.go:461 msg="after processing request finished event" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 refCount=0
+time=2026-11-23T00:24:56.819Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:24:57.061Z level=DEBUG source=prompt.go:77 msg="truncating input messages which exceed context length" truncated=1
+time=2026-11-23T00:24:57.061Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=111429
+[GIN] 2026/11/23 - 00:24:57 | 400 | 321.46ms |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:24:57.129Z level=DEBUG source=sched.go:538 msg="context for request finished" runner.name=registry.ollama.ai/library/gemma4:12b-it-qat runner.inference="[{ID:0 Library:CUDA}]" runner.pid=179 runner.num_ctx=4096 runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c456
+time=2026-11-23T00:24:57.129Z level=DEBUG source=sched.go:443 msg="runner with non-zero duration has gone idle, adding timer" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 duration=30m0s
+time=2026-11-23T00:24:57.129Z level=DEBUG source=sched.go:461 msg="after processing request finished event" runner.size="5.8 GiB" runner.vram="5.7 GiB" runner.parallel=1 runner.model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1 refCount=0

@@ -46,7 +46,7 @@ r = c.call_tool('list_documents', {})
 print(json.dumps(r)[:600])
 c.close()
 PY
-grep -q -i '"isError": true\|error\|refused' "$O/g6.txt" && { echo "G6: socket off before the run"; echo void > "$O/VOID"; exit 4; }
+grep -q -E '"isError": true|Failed|refused|Errno|Traceback' "$O/g6.txt" && { echo "G6: socket off before the run"; echo void > "$O/VOID"; exit 4; }
 la_claude freecad /home/maker/run-la
 SL_SHOT_WAKE=0 sl_shot "$O/after.png"
 Q "import FreeCAD; print('\n'.join(d.Name for d in FreeCAD.listDocuments().values()))" > "$O/docs.txt" 2>&1

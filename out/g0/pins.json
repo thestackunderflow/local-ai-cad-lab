@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-22 (UTC 2026-11-23)",
+ "ollama_image": "ollama/ollama:0.40.17@sha256:ccc42bcd3d5fcf7ab0d532b300382154e1a4da56fc666bdb313b78ebdd912754",
+ "ollama_note": "latest stable on Docker Hub on the lab day (0.40.17 released 21 Nov); previous lab pins 0.40.6 / 0.40.16",
+ "model_volume": "gemma-lab-models (reused; manifests match registry.ollama.ai on the lab day)",
+ "models": {
+  "gemma4:12b-it-qat": "manifest sha256:38044be4f923e5a55264ed7df4eaac2676651a905f735197c504045140c02bd3 (= registry)",
+  "gemma4:26b": "manifest sha256:001e5dafc3c77684c2307ebc6ab8e336e10c9b18eca52acf547d72fc83c3ca8c (= registry)"
+ },
+ "apps": {"solidcraft": "sc5-l5:0.28.0 (image 2992c9ecbca2)", "freecad": "fcc-app:1.1.4-0.1.28 (image 8e44e83ab6ce), freecad-mcp 0.1.28"},
+ "claude_code": {"sc5-l5": "2.1.311", "fcc-app": "2.1.308", "host (not used for runs)": "2.1.330"},
+ "start_files_sha256": {
+  "solidcraft-course-lab/out/sc14/P/peg-trap.sc": "a3cc92507ca59612f1e195817dd47c623d2ccb36fb4116f1b8b973c6d780535f",
+  "freecad-course-lab/out/fc14/P/peg-trap.FCStd": "c18d8de79bfe01afaf0a4b9f74d8edee0ab9fd1248da48efafd10a942cbb52e1"
+ },
+ "networks": {"la-net": "10.231.77.0/24 (bridge; the default pools are exhausted on this PC)", "la-int": "10.231.78.0/24 (internal, G1c)"}
+}

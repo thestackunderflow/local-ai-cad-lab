@@ -1,0 +1,57 @@
+time=2026-11-23T00:22:18.556Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:22:18.614Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=84739
+slot   operator(): id  0 | task 1326 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20142
+slot   operator(): id  0 | task 1326 | need to evaluate at least 1 token for each active slot (n_past = 20142, task.n_tokens() = 20142)
+slot   operator(): id  0 | task 1326 | cached n_tokens = 20141, memory_seq_rm [20141, end)
+slot init_sampler: id  0 | task 1326 | init sampler, took 1.45 ms, tokens: text = 20142, total = 20142
+slot create_check: id  0 | task 1326 | created context checkpoint 3 of 32 (pos_min = 18942, pos_max = 20140, n_tokens = 20141, size = 170.013 MiB)
+slot print_timing: id  0 | task 1326 | prompt eval time =     309.69 ms /     1 tokens (  309.69 ms per token,     3.23 tokens per second)
+slot print_timing: id  0 | task 1326 |        eval time =   42847.21 ms /   539 tokens (   79.64 ms per token,    12.56 tokens per second)
+slot print_timing: id  0 | task 1326 |       total time =   43156.90 ms /   540 tokens
+slot      release: id  0 | task 1326 | stop processing: n_tokens = 20680, truncated = 0
+[GIN] 2026/11/23 - 00:23:01 | 200 |   43.31s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:23:02.153Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:23:02.228Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=86606
+slot   operator(): id  0 | task 1866 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20710
+slot   operator(): id  0 | task 1866 | cached n_tokens = 20658, memory_seq_rm [20658, end)
+slot create_check: id  0 | task 1866 | created context checkpoint 4 of 32 (pos_min = 19144, pos_max = 20657, n_tokens = 20658, size = 170.013 MiB)
+slot   operator(): id  0 | task 1866 | cached n_tokens = 20706, memory_seq_rm [20706, end)
+slot init_sampler: id  0 | task 1866 | init sampler, took 1.89 ms, tokens: text = 20710, total = 20710
+slot create_check: id  0 | task 1866 | created context checkpoint 5 of 32 (pos_min = 19170, pos_max = 20705, n_tokens = 20706, size = 170.013 MiB)
+slot print_timing: id  0 | task 1866 | prompt eval time =     657.96 ms /    52 tokens (   12.65 ms per token,    79.03 tokens per second)
+slot print_timing: id  0 | task 1866 |        eval time =   13197.72 ms /   118 tokens (  112.80 ms per token,     8.87 tokens per second)
+slot print_timing: id  0 | task 1866 |       total time =   13855.68 ms /   170 tokens
+slot      release: id  0 | task 1866 | stop processing: n_tokens = 20827, truncated = 0
+[GIN] 2026/11/23 - 00:23:16 | 200 |   14.11s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:23:17.603Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:23:17.729Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=1 prompt_len=87285
+slot   operator(): id  0 | task 1986 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21223
+slot   operator(): id  0 | task 1986 | cached n_tokens = 20767, memory_seq_rm [20767, end)
+slot create_check: id  0 | task 1986 | created context checkpoint 6 of 32 (pos_min = 19291, pos_max = 20766, n_tokens = 20767, size = 170.013 MiB)
+slot   operator(): id  0 | task 1986 | cached n_tokens = 20845, memory_seq_rm [20845, end)
+decoding image batch 1/1, n_tokens_batch = 273
+slot   operator(): id  0 | task 1986 | cached n_tokens = 21219, memory_seq_rm [21219, end)
+slot init_sampler: id  0 | task 1986 | init sampler, took 2.24 ms, tokens: text = 20950, total = 21223
+slot create_check: id  0 | task 1986 | created context checkpoint 7 of 32 (pos_min = 19683, pos_max = 21218, n_tokens = 21219, size = 170.013 MiB)
+slot print_timing: id  0 | task 1986 | prompt eval time =    3365.16 ms /   456 tokens (    7.38 ms per token,   135.51 tokens per second)
+slot print_timing: id  0 | task 1986 |        eval time =    6863.01 ms /    80 tokens (   86.87 ms per token,    11.51 tokens per second)
+slot print_timing: id  0 | task 1986 |       total time =   10228.17 ms /   536 tokens
+slot      release: id  0 | task 1986 | stop processing: n_tokens = 21302, truncated = 0
+[GIN] 2026/11/23 - 00:23:28 | 200 |   10.75s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:23:28.823Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:23:30.675Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=2 prompt_len=89448
+slot   operator(): id  0 | task 2069 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 22399
+slot   operator(): id  0 | task 2069 | cached n_tokens = 21302, memory_seq_rm [21302, end)
+slot   operator(): id  0 | task 2069 | cached n_tokens = 21319, memory_seq_rm [21319, end)
+decoding image batch 1/1, n_tokens_batch = 273
+slot   operator(): id  0 | task 2069 | cached n_tokens = 21887, memory_seq_rm [21887, end)
+slot create_check: id  0 | task 2069 | created context checkpoint 8 of 32 (pos_min = 20351, pos_max = 21886, n_tokens = 21887, size = 170.013 MiB)
+slot print_timing: id  0 | task 2069 | prompt processing, n_tokens =   1093, progress = 1.00, t =   3.22 s / 339.63 tokens per second
+slot   operator(): id  0 | task 2069 | cached n_tokens = 22395, memory_seq_rm [22395, end)
+slot init_sampler: id  0 | task 2069 | init sampler, took 4.22 ms, tokens: text = 21853, total = 22399
+slot create_check: id  0 | task 2069 | created context checkpoint 9 of 32 (pos_min = 20859, pos_max = 22394, n_tokens = 22395, size = 170.013 MiB)
+slot print_timing: id  0 | task 2069 | prompt eval time =    4395.88 ms /  1097 tokens (    4.01 ms per token,   249.55 tokens per second)
+slot print_timing: id  0 | task 2069 |        eval time =    2953.88 ms /    32 tokens (   95.29 ms per token,    10.49 tokens per second)
+slot print_timing: id  0 | task 2069 |       total time =    7349.76 ms /  1129 tokens
+slot      release: id  0 | task 2069 | stop processing: n_tokens = 22430, truncated = 0
+[GIN] 2026/11/23 - 00:23:38 | 200 |    9.45s |     10.231.77.3 | POST     "/v1/messages?beta=true"

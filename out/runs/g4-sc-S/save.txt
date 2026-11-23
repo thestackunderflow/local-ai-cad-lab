@@ -1,0 +1,6 @@
+>> save {"path": "/root/run-g4-sc-S.sc"} err=False
+{
+  "bytes": 9421,
+  "name": "block_design",
+  "path": "/root/run-g4-sc-S.sc"
+}

@@ -1,0 +1,13 @@
+# 12 local 12B runs (PREREG order: sc S, fc S, sc T, fc T; 3 each). FC_FLAGS set after G5.
+12-sc-S-1 solidcraft S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-sc-S-2 solidcraft S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-sc-S-3 solidcraft S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-S-1 freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-S-2 freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-S-3 freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-sc-T-1 solidcraft T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-sc-T-2 solidcraft T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-sc-T-3 solidcraft T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-T-1 freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-T-2 freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback
+12-fc-T-3 freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback

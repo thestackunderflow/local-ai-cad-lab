@@ -1,0 +1,29 @@
+{
+ "doc": "after-BlockDocument.FCStd",
+ "solids": [
+  {
+   "name": "Block",
+   "type": "Part::Box",
+   "dims": [
+    60.0,
+    20.0,
+    5.0
+   ],
+   "volume": 6000.0,
+   "n_solids": 1,
+   "valid": true
+  }
+ ],
+ "objects": [
+  {
+   "name": "Block",
+   "type": "Part::Box",
+   "top": true,
+   "visible": true,
+   "state": [
+    "Up-to-date"
+   ],
+   "solids": 1
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+2026-11-23T00:15:39Z queue start out/g0/list-g4.txt
+2026-11-23T00:15:39Z start g4-sc-S
+2026-11-23T00:17:22Z end g4-sc-S rc 0: LA g4-sc-S solidcraft S: pass True class None calls 3 errors 0 turns 4 wall 75.5 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:17:22Z start g4-fc-S
+2026-11-23T00:18:14Z end g4-fc-S rc 0: LA g4-fc-S freecad S: pass False class (12) calls 0 errors 0 turns None wall None s trunc 0 said None measured None
+2026-11-23T00:18:15Z queue end
+2026-11-23T00:18:29Z queue start out/g0/list-g4b.txt
+2026-11-23T00:18:29Z start g4-fc-S
+2026-11-23T00:18:50Z end g4-fc-S rc 1: 
+2026-11-23T00:18:51Z queue end
+2026-11-23T00:18:56Z queue start out/g0/list-g4b.txt
+2026-11-23T00:18:56Z start g4-fc-S
+2026-11-23T00:20:26Z end g4-fc-S rc 0: LA g4-fc-S freecad S: pass False class (12) calls 0 errors 0 turns None wall None s trunc 0 said None measured None
+2026-11-23T00:20:26Z queue end
+2026-11-23T00:20:55Z queue start out/g0/list-g4b.txt
+2026-11-23T00:20:55Z start g4-fc-S
+2026-11-23T00:23:44Z end g4-fc-S rc 0: LA g4-fc-S freecad S: pass True class None calls 3 errors 0 turns 4 wall 81.2 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:23:44Z queue end

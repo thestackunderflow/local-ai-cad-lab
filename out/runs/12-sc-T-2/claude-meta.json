@@ -1,0 +1,8 @@
+{
+ "rc": 124,
+ "timeout": true,
+ "wall_s": 1500.8,
+ "model": "gemma4:12b-it-qat",
+ "server": "solidcraft",
+ "claude_version": "2.1.311 (Claude Code)"
+}

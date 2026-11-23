@@ -1,0 +1,1 @@
+{"run": "12-sc-T-3", "app": "solidcraft", "task": "T", "model": "gemma4:12b-it-qat", "net": "la-net", "start": "2026-11-23T01:28:59Z", "host_wall_s": 1529}

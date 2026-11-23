@@ -1,0 +1,50 @@
+{
+ "app": "freecad",
+ "task": "T",
+ "score": {
+  "pass": false,
+  "criteria": {
+   "wall2": {
+    "a": false,
+    "b": false,
+    "c": true,
+    "d": true,
+    "e": true
+   },
+   "wall3": {
+    "a": false,
+    "b": false,
+    "c": true,
+    "d": true,
+    "e": true
+   }
+  }
+ },
+ "pass": false,
+ "auto_class": "(14)",
+ "truncations": 0,
+ "meta": {
+  "rc": 124,
+  "timeout": true,
+  "wall_s": 1501.0,
+  "model": "gemma4:12b-it-qat",
+  "server": "freecad",
+  "claude_version": "2.1.308 (Claude Code)"
+ },
+ "stream": {
+  "tool_calls": {
+   "mcp__freecad__list_documents": 1,
+   "mcp__freecad__get_objects": 2,
+   "mcp__freecad__get_object": 2,
+   "mcp__freecad__execute_code": 1
+  },
+  "tool_errors": 1,
+  "subtype": null,
+  "num_turns": null,
+  "usage": null,
+  "init_tools": 40,
+  "model_seen": "gemma4:12b-it-qat"
+ },
+ "final_text": "",
+ "void": false
+}

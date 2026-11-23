@@ -1,0 +1,1 @@
+after volume 29371.999999999894 bodies 1 timeline ['Sketch1', 'Cup', 'Sketch2', 'Peg', 'Shell', 'Extrude1', 'Extrude2', 'Extrude3', 'Extrude4', 'Extrude5', 'Extrude6']

@@ -1,0 +1,1 @@
+{"run": "12-fc-T-1", "app": "freecad", "task": "T", "model": "gemma4:12b-it-qat", "net": "la-net", "start": "2026-11-23T01:54:36Z", "host_wall_s": 1531}

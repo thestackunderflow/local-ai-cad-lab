@@ -1,0 +1,1 @@
+LA 12-sc-S-3 solidcraft S: pass True class None calls 8 errors 0 turns 9 wall 80.3 s trunc 0 said 6000.0 measured 6000.0

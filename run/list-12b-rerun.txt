@@ -1,0 +1,8 @@
+# 5 host-fault voids of the 12B T cells, re-run once (PLAN la section 0, 23 Nov). Same flags as list-12b.txt.
+# Needs the HANDOVER-la-lab2 harness change first: Ollama restarted before each run with the prompt cache off
+# (OLLAMA_RESTART=1 below is read by run/one.sh once that change is in; without it the run is NOT valid).
+12-sc-T-1r solidcraft T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1
+12-sc-T-2r solidcraft T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1
+12-fc-T-1r freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1
+12-fc-T-2r freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1
+12-fc-T-3r freecad T gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1

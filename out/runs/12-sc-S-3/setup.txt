@@ -1,0 +1,1 @@
+claude-code: added solidcraft (/root/.claude.json)

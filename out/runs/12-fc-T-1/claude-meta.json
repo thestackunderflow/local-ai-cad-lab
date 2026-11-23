@@ -1,0 +1,8 @@
+{
+ "rc": 124,
+ "timeout": true,
+ "wall_s": 1501.0,
+ "model": "gemma4:12b-it-qat",
+ "server": "freecad",
+ "claude_version": "2.1.308 (Claude Code)"
+}

@@ -1,0 +1,61 @@
+time=2026-11-23T00:35:17.579Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:35:17.683Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=84739
+slot   operator(): id  0 | task 2735 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20142
+slot   operator(): id  0 | task 2735 | restored context checkpoint (pos_min = 18602, pos_max = 20137, n_tokens = 20138, n_past = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 18913, pos_max = 20426, n_tokens = 20427, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 18939, pos_max = 20474, n_tokens = 20475, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 19050, pos_max = 20558, n_tokens = 20559, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 19074, pos_max = 20609, n_tokens = 20610, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 19370, pos_max = 20905, n_tokens = 20906, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | erased invalidated context checkpoint (pos_min = 19878, pos_max = 21413, n_tokens = 21414, n_swa = 1024, pos_next = 20137, size = 170.013 MiB)
+slot   operator(): id  0 | task 2735 | cached n_tokens = 20137, memory_seq_rm [20137, end)
+slot create_check: id  0 | task 2735 | created context checkpoint 3 of 32 (pos_min = 19114, pos_max = 20136, n_tokens = 20137, size = 169.847 MiB)
+slot   operator(): id  0 | task 2735 | cached n_tokens = 20138, memory_seq_rm [20138, end)
+slot init_sampler: id  0 | task 2735 | init sampler, took 1.45 ms, tokens: text = 20142, total = 20142
+slot create_check: id  0 | task 2735 | superseding context checkpoint at n_tokens = 20138
+slot create_check: id  0 | task 2735 | created context checkpoint 3 of 32 (pos_min = 19114, pos_max = 20137, n_tokens = 20138, size = 170.013 MiB)
+slot print_timing: id  0 | task 2735 | prompt eval time =    1155.74 ms /     5 tokens (  231.15 ms per token,     4.33 tokens per second)
+slot print_timing: id  0 | task 2735 |        eval time =   15339.77 ms /   189 tokens (   81.59 ms per token,    12.26 tokens per second)
+slot print_timing: id  0 | task 2735 |       total time =   16495.51 ms /   194 tokens
+slot      release: id  0 | task 2735 | stop processing: n_tokens = 20330, truncated = 0
+[GIN] 2026/11/23 - 00:35:34 | 200 |   16.74s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:35:34.547Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:35:34.626Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=85549
+slot   operator(): id  0 | task 2926 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20360
+slot   operator(): id  0 | task 2926 | cached n_tokens = 20308, memory_seq_rm [20308, end)
+slot create_check: id  0 | task 2926 | created context checkpoint 4 of 32 (pos_min = 19115, pos_max = 20307, n_tokens = 20308, size = 170.013 MiB)
+slot   operator(): id  0 | task 2926 | cached n_tokens = 20356, memory_seq_rm [20356, end)
+slot init_sampler: id  0 | task 2926 | init sampler, took 2.21 ms, tokens: text = 20360, total = 20360
+slot create_check: id  0 | task 2926 | created context checkpoint 5 of 32 (pos_min = 19115, pos_max = 20355, n_tokens = 20356, size = 170.013 MiB)
+slot print_timing: id  0 | task 2926 | prompt eval time =     602.78 ms /    52 tokens (   11.59 ms per token,    86.27 tokens per second)
+slot print_timing: id  0 | task 2926 |        eval time =   29665.28 ms /   346 tokens (   85.99 ms per token,    11.63 tokens per second)
+slot print_timing: id  0 | task 2926 |       total time =   30268.06 ms /   398 tokens
+slot      release: id  0 | task 2926 | stop processing: n_tokens = 20705, truncated = 0
+[GIN] 2026/11/23 - 00:36:05 | 200 |   30.53s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T00:36:05.216Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:36:05.310Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=86810
+slot   operator(): id  0 | task 3274 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20733
+slot   operator(): id  0 | task 3274 | cached n_tokens = 20678, memory_seq_rm [20678, end)
+slot create_check: id  0 | task 3274 | created context checkpoint 6 of 32 (pos_min = 19169, pos_max = 20677, n_tokens = 20678, size = 170.013 MiB)
+slot   operator(): id  0 | task 3274 | cached n_tokens = 20729, memory_seq_rm [20729, end)
+slot init_sampler: id  0 | task 3274 | init sampler, took 1.70 ms, tokens: text = 20733, total = 20733
+slot create_check: id  0 | task 3274 | created context checkpoint 7 of 32 (pos_min = 19193, pos_max = 20728, n_tokens = 20729, size = 170.013 MiB)
+[GIN] 2026/11/23 - 00:36:11 | 200 |    5.94s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+slot print_timing: id  0 | task 3274 | prompt eval time =     592.11 ms /    55 tokens (   10.77 ms per token,    92.89 tokens per second)
+slot print_timing: id  0 | task 3274 |        eval time =    5093.55 ms /    64 tokens (   80.85 ms per token,    12.37 tokens per second)
+slot print_timing: id  0 | task 3274 |       total time =    5685.65 ms /   119 tokens
+slot      release: id  0 | task 3274 | stop processing: n_tokens = 20796, truncated = 0
+time=2026-11-23T00:36:11.172Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T00:36:11.243Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=88734
+slot   operator(): id  0 | task 3340 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21530
+slot   operator(): id  0 | task 3340 | cached n_tokens = 20764, memory_seq_rm [20764, end)
+slot   operator(): id  0 | task 3340 | cached n_tokens = 21018, memory_seq_rm [21018, end)
+slot create_check: id  0 | task 3340 | created context checkpoint 8 of 32 (pos_min = 19482, pos_max = 21017, n_tokens = 21018, size = 170.013 MiB)
+slot   operator(): id  0 | task 3340 | cached n_tokens = 21526, memory_seq_rm [21526, end)
+slot init_sampler: id  0 | task 3340 | init sampler, took 1.68 ms, tokens: text = 21530, total = 21530
+slot create_check: id  0 | task 3340 | created context checkpoint 9 of 32 (pos_min = 19990, pos_max = 21525, n_tokens = 21526, size = 170.013 MiB)
+slot print_timing: id  0 | task 3340 | prompt eval time =    1799.97 ms /   766 tokens (    2.35 ms per token,   425.56 tokens per second)
+slot print_timing: id  0 | task 3340 |        eval time =    6369.74 ms /    75 tokens (   86.08 ms per token,    11.62 tokens per second)
+slot print_timing: id  0 | task 3340 |       total time =    8169.71 ms /   841 tokens
+slot      release: id  0 | task 3340 | stop processing: n_tokens = 21604, truncated = 0
+[GIN] 2026/11/23 - 00:36:19 | 200 |    8.35s |     10.231.77.3 | POST     "/v1/messages?beta=true"

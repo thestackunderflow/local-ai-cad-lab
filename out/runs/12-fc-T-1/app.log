@@ -1,0 +1,23 @@
+MCP RPC: GUI task raised AttributeError: module 'FreeCAD' has no attribute 'WorkPlanes'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 5, in <module>
+AttributeError: module 'FreeCAD' has no attribute 'WorkPlanes'
+Error executing Python code: AttributeError: module 'FreeCAD' has no attribute 'WorkPlanes'
+--- code ---
+import PartDesign
+import FreeCAD as obj
+
+# Create a new PartDesign Body
+body = obj.WorkPlanes.getObject("PegBody") # This might not work as intended for creating a new object
+# Use the proper way to create a body
+body = obj.ActiveDocument.addObject("PartDesign::Body", "PegBody")
+body.ViewObject.Visibility = True
+obj.ActiveDocument.recompute()
+print(f"Created body: {body.Name}")
+
+--- end ---

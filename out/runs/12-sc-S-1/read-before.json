@@ -1,0 +1,33 @@
+{
+ "measure": {
+  "bodies": [],
+  "body_count": 0,
+  "total": {
+   "area_mm2": -0.0,
+   "edges": 0,
+   "faces": 0,
+   "mass_g": -0.0,
+   "open_bodies_skipped": 0,
+   "vertices": 0,
+   "volume_mm3": -0.0
+  }
+ },
+ "design": {
+  "active_sketch": null,
+  "bodies": [],
+  "dirty": false,
+  "hidden_origin": [],
+  "marker": 0,
+  "metadata": {},
+  "name": "Untitled",
+  "params": [],
+  "path": null,
+  "redo": 0,
+  "revision": 1,
+  "selection": [],
+  "sketches": [],
+  "timeline": [],
+  "undo": 0,
+  "units": "mm"
+ }
+}

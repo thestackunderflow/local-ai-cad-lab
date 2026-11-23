@@ -16,3 +16,29 @@
 2026-11-23T00:20:55Z start g4-fc-S
 2026-11-23T00:23:44Z end g4-fc-S rc 0: LA g4-fc-S freecad S: pass True class None calls 3 errors 0 turns 4 wall 81.2 s trunc 0 said 6000.0 measured 6000.0
 2026-11-23T00:23:44Z queue end
+2026-11-23T00:25:33Z queue start run/list-12b.txt
+2026-11-23T00:25:33Z start 12-sc-S-1
+2026-11-23T00:28:54Z end 12-sc-S-1 rc 0: LA 12-sc-S-1 solidcraft S: pass True class None calls 6 errors 0 turns 7 wall 160.8 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:28:54Z start 12-sc-S-2
+2026-11-23T00:30:24Z end 12-sc-S-2 rc 0: LA 12-sc-S-2 solidcraft S: pass True class None calls 3 errors 0 turns 4 wall 57.7 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:30:24Z start 12-sc-S-3
+2026-11-23T00:32:15Z end 12-sc-S-3 rc 0: LA 12-sc-S-3 solidcraft S: pass True class None calls 8 errors 0 turns 9 wall 80.3 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:32:15Z start 12-fc-S-1
+2026-11-23T00:34:48Z end 12-fc-S-1 rc 0: LA 12-fc-S-1 freecad S: pass True class None calls 3 errors 0 turns 4 wall 110.9 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:34:48Z start 12-fc-S-2
+2026-11-23T00:36:25Z end 12-fc-S-2 rc 0: LA 12-fc-S-2 freecad S: pass True class None calls 3 errors 0 turns 4 wall 63.6 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:36:25Z start 12-fc-S-3
+2026-11-23T00:37:40Z end 12-fc-S-3 rc 0: LA 12-fc-S-3 freecad S: pass True class None calls 3 errors 0 turns 4 wall 39.9 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T00:37:40Z start 12-sc-T-1
+2026-11-23T01:03:15Z end 12-sc-T-1 rc 0: LA 12-sc-T-1 solidcraft T: pass False class (14) calls 4 errors 1 turns None wall 1500.3 s trunc 0
+2026-11-23T01:03:15Z start 12-sc-T-2
+2026-11-23T01:28:52Z end 12-sc-T-2 rc 0: LA 12-sc-T-2 solidcraft T: pass False class (14) calls 7 errors 2 turns None wall 1500.8 s trunc 0
+2026-11-23T01:28:52Z start 12-sc-T-3
+2026-11-23T01:54:29Z end 12-sc-T-3 rc 0: LA 12-sc-T-3 solidcraft T: pass False class (14) calls 12 errors 4 turns None wall 1500.4 s trunc 0
+2026-11-23T01:54:29Z start 12-fc-T-1
+2026-11-23T02:20:08Z end 12-fc-T-1 rc 0: LA 12-fc-T-1 freecad T: pass False class (14) calls 6 errors 1 turns None wall 1501.0 s trunc 0
+2026-11-23T02:20:08Z start 12-fc-T-2
+2026-11-23T02:46:43Z end 12-fc-T-2 rc 0: LA 12-fc-T-2 freecad T: pass False class (14) calls 2 errors 0 turns None wall 1555.5 s trunc 0
+2026-11-23T02:46:43Z start 12-fc-T-3
+2026-11-23T03:12:23Z end 12-fc-T-3 rc 0: LA 12-fc-T-3 freecad T: pass False class (14) calls 2 errors 0 turns None wall 1500.9 s trunc 0
+2026-11-23T03:12:23Z queue end

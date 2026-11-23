@@ -1,0 +1,49 @@
+{
+ "app": "solidcraft",
+ "task": "T",
+ "score": {
+  "pass": false,
+  "wall2": {
+   "a": false,
+   "b": false,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": false
+  },
+  "wall3": {
+   "a": false,
+   "b": false,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": false
+  }
+ },
+ "pass": false,
+ "auto_class": "(14)",
+ "truncations": 0,
+ "meta": {
+  "rc": 124,
+  "timeout": true,
+  "wall_s": 1500.3,
+  "model": "gemma4:12b-it-qat",
+  "server": "solidcraft",
+  "claude_version": "2.1.311 (Claude Code)"
+ },
+ "stream": {
+  "tool_calls": {
+   "Bash": 1,
+   "mcp__solidcraft__open": 2,
+   "mcp__solidcraft__inspect_design": 1
+  },
+  "tool_errors": 1,
+  "subtype": null,
+  "num_turns": null,
+  "usage": null,
+  "init_tools": 43,
+  "model_seen": "gemma4:12b-it-qat"
+ },
+ "final_text": "",
+ "void": false
+}

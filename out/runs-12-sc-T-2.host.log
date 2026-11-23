@@ -1,0 +1,3 @@
+pre: free RAM 3.37 GB, C: 45 GB
+LA 12-sc-T-2 solidcraft T: pass False class (14) calls 7 errors 2 turns None wall 1500.8 s trunc 0
+{"free_gb_min": 2.94, "gpu_mib_peak": 7846, "samples": 289}

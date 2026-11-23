@@ -1,0 +1,1 @@
+     17 "model":"gemma4:12b-it-qat"

@@ -1,0 +1,1 @@
+Use the freecad tools. Make a block 60 mm long, 20 mm wide and 5 mm thick, then tell me its volume.

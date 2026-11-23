@@ -1,0 +1,8 @@
+# The 4 Claude runs (PREREG la: Anthropic API, API key only; claude-sonnet-5-5; same prompts, 30 turns, 25 min, tool
+# search off, FreeCAD --only-text-feedback; no base URL lines). --max-budget-usd 0.15 S / 0.20 T, stage cap $0.50
+# (ledger sc13-BUDGET.tsv below "# --- GO 23 Nov 2026 la"). Owner GO 23 Nov: "use the API key in .env for the Claude runs".
+# Start from a shell with LA_ENV=<the .env> exported (path in no file): LA_ENV=... bash run/queue.sh run/list-claude.txt
+cl-sc-S-1 solidcraft S claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.15 FC_FLAGS=--only-text-feedback
+cl-fc-S-1 freecad S claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.15 FC_FLAGS=--only-text-feedback
+cl-sc-T-1 solidcraft T claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.20 FC_FLAGS=--only-text-feedback
+cl-fc-T-1 freecad T claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.20 FC_FLAGS=--only-text-feedback

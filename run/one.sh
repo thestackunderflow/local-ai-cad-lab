@@ -14,6 +14,19 @@ O=out/runs/$RUN
 mkdir -p "$O"
 # HANDOVER-la-lab2 1b: OLLAMA_RESTART=1 -> fresh la-ollama (prompt cache off) + warm-up load before the run
 bash lab/la_restart.sh "$MODEL" "$O" > "$O/restart.txt" 2>&1 || { cat "$O/restart.txt"; echo "STOP: la-ollama restart failed"; exit 5; }
+# Claude runs (LOCAL=0, PREREG): MAX_BUDGET per run (0.15 S / 0.20 T) -> --max-budget-usd; the stage ledger (lesson 14's
+# TSV, rows below the la GO line) stops the stage before a run that could pass $0.50. API key: ONLY ANTHROPIC_API_KEY,
+# read here from LA_ENV (the owner's .env, path given at run time, in no file), handed to the container by name, never
+# printed, logged or written; unset after the run.
+KEYE=(); LEDGER=/ed/sc13-BUDGET.tsv; LMARK="# --- GO 23 Nov 2026 la"
+PYC=(docker run --rm -v "$LA:/la" -v "$ED:/ed" -e PYTHONDONTWRITEBYTECODE=1 --entrypoint python3 gemma4-lab-runner:1 /la/lab/la_cost.py)
+if [ "${LOCAL:-1}" = 0 ]; then
+  : "${MAX_BUDGET:?LOCAL=0 needs MAX_BUDGET}"
+  MSYS_NO_PATHCONV=1 "${PYC[@]}" check "$LEDGER" "$LMARK" "$MAX_BUDGET" "${LA_TOTAL_CAP:-0.50}" || { echo "STOP: budget"; exit 5; }
+  ANTHROPIC_API_KEY="$(grep -m1 '^ANTHROPIC_API_KEY=' "${LA_ENV:?LOCAL=0 needs LA_ENV}" | cut -d= -f2- | tr -d "\r\"' ")"
+  [ -n "$ANTHROPIC_API_KEY" ] || { echo "STOP: no key in LA_ENV"; exit 5; }
+  export ANTHROPIC_API_KEY MAX_BUDGET; KEYE=(-e ANTHROPIC_API_KEY -e MAX_BUDGET)
+fi
 free_gb() { awk '/MemFree/ {printf "%.2f", $2/1048576}' /proc/meminfo; }
 # the WSL VM's page cache (model blobs read at load) is dropped so Windows gets it back (gemma4-12b-8gb-lab pattern)
 MSYS_NO_PATHCONV=1 docker run --rm --privileged --entrypoint sh ollama/ollama:0.40.17 -c 'sync; echo 1 > /proc/sys/vm/drop_caches'
@@ -49,8 +62,10 @@ SAMP=$!
 MSYS_NO_PATHCONV=1 docker run --rm --name "$name" "${USR[@]}" --network "$NET" --memory "$MEMC" --shm-size 1g "${MNT[@]}" \
   -e RUN="$RUN" -e TASK="$TASK" -e MODEL="$MODEL" -e LOCAL="${LOCAL:-1}" -e CTX="${CTX:-}" -e EXTRA_ENV="${EXTRA_ENV:-}" \
   -e FC_FLAGS="${FC_FLAGS:-}" -e PROMPT="${PROMPT:-}" -e WALL_S="${WALL_S:-1500}" -e MAX_TURNS="${MAX_TURNS:-30}" \
-  "$IMG" "${CMD[@]}" > "$O/container.log" 2>&1
+  "${KEYE[@]}" "$IMG" "${CMD[@]}" > "$O/container.log" 2>&1
 echo "container exit $?" >> "$O/container.log"
+unset ANTHROPIC_API_KEY
+[ "${LOCAL:-1}" = 0 ] && MSYS_NO_PATHCONV=1 "${PYC[@]}" record "$LEDGER" "$LMARK" "$RUN" "/la/$O/stream.jsonl" "$MAX_BUDGET" | tee "$O/cost.txt"
 kill $SAMP 2>/dev/null; wait $SAMP 2>/dev/null; docker rm -f la-dropper > /dev/null 2>&1
 if docker inspect la-ollama > /dev/null 2>&1; then
   docker logs --since "$T0" la-ollama 2>&1 | grep -a -i -E 'truncat|POST|prompt|offload|level=(WARN|ERROR)|n_ctx|eval|tokens' > "$O/ollama.log"
@@ -63,7 +78,10 @@ PYR=(docker run --rm -v "$LA:/la" -e PYTHONDONTWRITEBYTECODE=1 --entrypoint pyth
 SC=$(MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_score.py "/la/$O" "$APP" "$TASK")
 echo "$SC" | grep -v '^LA '
 # host-fault void rule (PLAN la 0): any request < 3 tok/s before the cap -> the LA line says VOID host fault
-MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py "/la/$O" > "$O/throughput.json"
-V=$(MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py --void-line "/la/$O/throughput.json")
+V=""
+if [ "${LOCAL:-1}" != 0 ]; then
+  MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py "/la/$O" > "$O/throughput.json"
+  V=$(MSYS_NO_PATHCONV=1 "${PYR[@]}" /la/lab/la_throughput.py --void-line "/la/$O/throughput.json")
+fi
 echo "$(echo "$SC" | grep '^LA ' | tail -1)${V:+ | $V}"
 cat "$O/host.json"

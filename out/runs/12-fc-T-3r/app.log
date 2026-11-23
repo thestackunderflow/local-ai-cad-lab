@@ -1,0 +1,129 @@
+MCP RPC: GUI task raised ModuleNotFoundError: No module named 'oop'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 3, in <module>
+ModuleNotFoundError: No module named 'oop'
+Error executing Python code: ModuleNotFoundError: No module named 'oop'
+--- code ---
+import FreeCAD as fc
+import Part
+import oop
+
+doc = fc.ActiveDocument
+if not doc:
+    print("No active document")
+else:
+    print(f"Document: {doc.Name}")
+    for obj in doc.Objects:
+        print(f"Object: {obj.Name}, Label: {obj.Label}, Type: {obj.TypeId}")
+        if hasattr(obj, 'Thickness'):
+            print(f"  Thickness value: {obj.Thickness}")
+        if hasattr(obj, 'Length'):
+            print(f"  Pad Length: {obj.Length}")
+        if hasattr(obj, 'Length2'):
+            print(f"  Pad Length2: {obj.Length2}")
+
+    # Let's check the Body contents specifically
+    for obj in doc.Objects:
+        if obj.TypeId == "PartDesign::Body":
+            print(f"\nBody: {obj.Name}")
+            # In PartDesign, features are often children of the Body
+            # or listed in the Group prope
+...(truncated)
+--- end ---
+MCP RPC: GUI task raised ModuleNotFoundError: No module named 'oop'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 3, in <module>
+ModuleNotFoundError: No module named 'oop'
+Error executing Python code: ModuleNotFoundError: No module named 'oop'
+--- code ---
+import FreeCAD as fc
+import Part
+import oop
+
+doc = fc.ActiveDocument
+if doc and "Body" in doc.Objects:
+    body = doc.Objects["Body"]
+    print(f"Body features: {body.Group}")
+    
+    # Let's look for the Thickness object specifically
+    thickness = doc.Objects.get("Thickness")
+    if thickness:
+        print(f"Thickness Base: {thickness.Base}")
+    
+    # We need to see the faces of Pad
+    pad = doc.Objects.get("Pad")
+    if pad:
+        print(f"Pad faces: {pad.Faces}")
+else:
+    print("Body not found")
+
+--- end ---
+MCP RPC: GUI task raised AttributeError: module 'FreeCAD' has no attribute 'App'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 4, in <module>
+AttributeError: module 'FreeCAD' has no attribute 'App'
+Error executing Python code: AttributeError: module 'FreeCAD' has no attribute 'App'
+--- code ---
+import FreeCAD as fc
+import Part
+
+doc = fc.App.ActiveDocument
+if doc is None:
+    print("No active document found.")
+else:
+    pad = doc.Object("Pad")
+    thickness = doc.Object("Thickness")
+    
+    print(f"Pad object: {pad}")
+    print(f"Thickness object: {thickness}")
+    
+    if pad and thickness:
+        # Get the face used as base for thickness
+        base_faces = thickness.Base
+        print(f"Thickness Base: {base_faces}")
+        
+        # Let's check the shape of the Pad and the Thickness result
+        pad_shape = pad.Shape
+        thickness_shape = thickness.Shape
+        
+        print(f"Pad Shape Volume: {pad_shape.Volume}")
+        print(f"Thickness Shape Volume: {thickness_shape.Volume}")
+        
+        # Check if Pad001 (Peg) is part of the Thickness Shape or Pad Shape
+...(truncated)
+--- end ---
+MCP RPC: GUI task raised AttributeError: 'App.Document' object has no attribute 'Object'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 4, in <module>
+AttributeError: 'App.Document' object has no attribute 'Object'
+Error executing Python code: AttributeError: 'App.Document' object has no attribute 'Object'
+--- code ---
+import FreeCAD as fc
+import Part
+
+pad = fc.ActiveDocument.Object("Pad")
+faces = pad.OutShape.Faces
+for i, face in enumerate(faces):
+    print(f"Face {i}: {face.Label}")
+
+--- end ---

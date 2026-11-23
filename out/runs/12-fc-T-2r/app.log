@@ -1,0 +1,155 @@
+Property 'AllowCompound' assignment error: 'PartDesign.Feature' object has no attribute 'AllowCompound'
+MCP RPC: GUI task raised AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 6, in <module>
+AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+Error executing Python code: AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+--- code ---
+import FreeCAD as App
+import Part
+import PartDesign
+
+doc = App.activeDocument
+pad001 = doc.Objects.Pad001
+
+# PartDesign::Pad does not have an 'AllowCompound' property.
+# The 'Shape' being a Compound suggests it might have been joined or 
+# created in a way that resulted in a compound.
+# Since we can't easily 'un-compound' it via properties, 
+# we can try to re-generate it if possible, or simply check 
+# if it's actually causing the issue.
+
+# Let's see what the BaseFeature is.
+print(f"BaseFeature: {pad001.BaseFeature}")
+
+--- end ---
+MCP RPC: GUI task raised AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 4, in <module>
+AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Error executing Python code: AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+--- code ---
+import FreeCAD as App
+import Part
+
+pad001 = App.activeDocument.Pad001
+shape = pad001.Shape
+
+print(f"Shape Type: {type(shape)}")
+if isinstance(shape, Part.Compound):
+    print(f"Number of shapes in compound: {len(shape.Shapes)}")
+    for i, s in enumerate(shape.Shapes):
+        print(f"Shape {i}: {s.ShapeType} - Volume: {s.Volume}, Area: {s.Area}")
+else:
+    print(f"Shape is not a compound: {shape.ShapeType} - Volume: {shape.Volume}, Area: {shape.Area}")
+
+--- end ---
+MCP RPC: GUI task raised AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 7, in <module>
+AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Error executing Python code: AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+--- code ---
+import FreeCAD as App
+import Part
+
+doc = App.activeDocument
+if doc:
+    # Find the Pad001 object
+    obj = doc.Pad001
+    if obj:
+        print(f"Found Pad001. Type: {type(obj)}")
+        shape = obj.Shape
+        print(f"Shape Type: {type(shape)}")
+        if isinstance(shape, Part.Compound):
+            print(f"Number of shapes in compound: {len(shape.Shapes)}")
+            for i, s in enumerate(shape.Shapes):
+                print(f"Shape {i}: {s.ShapeType} - Volume: {s.Volume}, Area: {s.Area}")
+        else:
+            print(f"Shape is not a compound: {shape.ShapeType} - Volume: {shape.Volume}, Area: {shape.Area}")
+    else:
+        print("Pad001 not found in active document.")
+else:
+    print("No active document.")
+
+--- end ---
+MCP RPC: GUI task raised AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 5, in <module>
+AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+Error executing Python code: AttributeError: 'builtin_function_or_method' object has no attribute 'Pad001'
+--- code ---
+import FreeCAD as App
+import Part
+
+doc = App.activeDocument
+pad001 = doc.Pad001
+if pad001:
+    print(f"Pad001 Shape Type: {type(pad001.Shape)}")
+    # Check if it is a compound and if it contains multiple solids
+    if isinstance(pad001.Shape, Part.Compound):
+        print(f"Number of shapes in compound: {len(pad001.Shape.Shapes)}")
+        for i, s in enumerate(pad001.Shape.Shapes):
+            print(f"Shape {i}: {s.ShapeType} - Volume: {s.Volume}")
+    else:
+        print(f"Shape is {pad001.Shape.ShapeType} - Volume: {pad001.Shape.Volume}")
+else:
+    print("Pad001 not found.")
+
+--- end ---
+MCP RPC: GUI task raised AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 7, in <module>
+AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+Error executing Python code: AttributeError: 'builtin_function_or_method' object has no attribute 'Objects'
+--- code ---
+import FreeCAD as App
+import Part
+
+doc = App.activeDocument
+# Iterate through all objects in the document to find the Pad001
+pad001 = None
+for obj in doc.Objects:
+    if obj.Name == "Pad001":
+        pad001 = obj
+        break
+
+if pad001:
+    print(f"Found Pad001. Type: {type(pad001)}")
+    shape = pad001.Shape
+    print(f"Shape Type: {type(shape)}")
+    if isinstance(shape, Part.Compound):
+        print(f"Number of shapes in compound: {len(shape.Shapes)}")
+        for i, s in enumerate(shape.Shapes):
+            print(f"Shape {i}: {s.ShapeType} - Volume: {s.Volume}")
+    else:
+        print(f"Shape is not a compound: {shape.ShapeType} - Volume: {shape.Volume}")
+else:
+    print("Pad001 not found in active document.")
+
+--- end ---

@@ -1,0 +1,931 @@
+time=2026-11-23T06:47:15.189Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:47:15.287Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=84904
+slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 17, t_last = 239843323148
+slot   operator(): id  0 | task 3 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20181
+slot   operator(): id  0 | task 3 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot   operator(): id  0 | task 3 | erased invalidated context checkpoint (pos_min = 0, pos_max = 12, n_tokens = 13, n_swa = 1024, pos_next = 0, size = 2.159 MiB)
+slot   operator(): id  0 | task 3 | cached n_tokens = 0, memory_seq_rm [0, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =    512, progress = 0.03, t =   8.75 s / 58.52 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 512, memory_seq_rm [512, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   1024, progress = 0.05, t =   9.32 s / 109.91 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 1024, memory_seq_rm [1024, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   1536, progress = 0.08, t =   9.89 s / 155.38 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 1536, memory_seq_rm [1536, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   2048, progress = 0.10, t =  10.48 s / 195.46 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 2048, memory_seq_rm [2048, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   2560, progress = 0.13, t =  11.03 s / 232.01 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 2560, memory_seq_rm [2560, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   3072, progress = 0.15, t =  11.61 s / 264.61 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 3072, memory_seq_rm [3072, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   3584, progress = 0.18, t =  12.22 s / 293.29 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 3584, memory_seq_rm [3584, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   4096, progress = 0.20, t =  12.80 s / 319.94 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 4096, memory_seq_rm [4096, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   4608, progress = 0.23, t =  13.38 s / 344.39 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 4608, memory_seq_rm [4608, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   5120, progress = 0.25, t =  13.96 s / 366.67 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 5120, memory_seq_rm [5120, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   5632, progress = 0.28, t =  14.58 s / 386.28 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 5632, memory_seq_rm [5632, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   6144, progress = 0.30, t =  15.17 s / 405.01 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 6144, memory_seq_rm [6144, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   6656, progress = 0.33, t =  15.80 s / 421.15 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 6656, memory_seq_rm [6656, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   7168, progress = 0.36, t =  16.50 s / 434.43 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 7168, memory_seq_rm [7168, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   7680, progress = 0.38, t =  17.22 s / 446.11 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 7680, memory_seq_rm [7680, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   8192, progress = 0.41, t =  17.92 s / 457.14 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 8192, memory_seq_rm [8192, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   8704, progress = 0.43, t =  18.54 s / 469.39 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 8704, memory_seq_rm [8704, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   9216, progress = 0.46, t =  19.19 s / 480.30 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 9216, memory_seq_rm [9216, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =   9728, progress = 0.48, t =  19.83 s / 490.58 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 9728, memory_seq_rm [9728, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  10240, progress = 0.51, t =  20.48 s / 500.00 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 10240, memory_seq_rm [10240, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  10752, progress = 0.53, t =  21.11 s / 509.30 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 10752, memory_seq_rm [10752, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  11264, progress = 0.56, t =  21.77 s / 517.50 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 11264, memory_seq_rm [11264, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  11776, progress = 0.58, t =  22.40 s / 525.74 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 11776, memory_seq_rm [11776, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  12288, progress = 0.61, t =  23.07 s / 532.66 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 12288, memory_seq_rm [12288, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  12800, progress = 0.63, t =  23.68 s / 540.58 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 12800, memory_seq_rm [12800, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  13312, progress = 0.66, t =  24.30 s / 547.79 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 13312, memory_seq_rm [13312, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  13824, progress = 0.69, t =  24.92 s / 554.82 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 13824, memory_seq_rm [13824, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  14336, progress = 0.71, t =  25.53 s / 561.48 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 14336, memory_seq_rm [14336, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  14848, progress = 0.74, t =  26.17 s / 567.47 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 14848, memory_seq_rm [14848, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  15360, progress = 0.76, t =  26.81 s / 573.02 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 15360, memory_seq_rm [15360, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  15872, progress = 0.79, t =  27.45 s / 578.16 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 15872, memory_seq_rm [15872, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  16384, progress = 0.81, t =  28.10 s / 583.16 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 16384, memory_seq_rm [16384, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  16896, progress = 0.84, t =  28.74 s / 587.99 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 16896, memory_seq_rm [16896, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  17408, progress = 0.86, t =  29.39 s / 592.39 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 17408, memory_seq_rm [17408, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  17920, progress = 0.89, t =  30.04 s / 596.49 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 17920, memory_seq_rm [17920, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  18432, progress = 0.91, t =  30.71 s / 600.28 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 18432, memory_seq_rm [18432, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  18944, progress = 0.94, t =  31.36 s / 603.99 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 18944, memory_seq_rm [18944, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  19456, progress = 0.96, t =  32.03 s / 607.52 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 19456, memory_seq_rm [19456, end)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  19669, progress = 0.97, t =  32.60 s / 603.34 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 19669, memory_seq_rm [19669, end)
+slot create_check: id  0 | task 3 | created context checkpoint 1 of 4 (pos_min = 18133, pos_max = 19668, n_tokens = 19669, size = 170.013 MiB)
+slot print_timing: id  0 | task 3 | prompt processing, n_tokens =  20177, progress = 1.00, t =  33.18 s / 608.08 tokens per second
+slot   operator(): id  0 | task 3 | cached n_tokens = 20177, memory_seq_rm [20177, end)
+slot init_sampler: id  0 | task 3 | init sampler, took 1.66 ms, tokens: text = 20181, total = 20181
+slot create_check: id  0 | task 3 | created context checkpoint 2 of 4 (pos_min = 18641, pos_max = 20176, n_tokens = 20177, size = 170.013 MiB)
+slot print_timing: id  0 | task 3 | prompt eval time =   33668.51 ms / 20181 tokens (    1.67 ms per token,   599.40 tokens per second)
+slot print_timing: id  0 | task 3 |        eval time =   18468.84 ms /   137 tokens (  135.80 ms per token,     7.36 tokens per second)
+slot print_timing: id  0 | task 3 |       total time =   52137.34 ms / 20318 tokens
+slot      release: id  0 | task 3 | stop processing: n_tokens = 20317, truncated = 0
+[GIN] 2026/11/23 - 06:48:07 | 200 |   52.42s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:48:07.632Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:48:07.687Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=85546
+slot   operator(): id  0 | task 181 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 20348
+slot   operator(): id  0 | task 181 | cached n_tokens = 20302, memory_seq_rm [20302, end)
+slot create_check: id  0 | task 181 | created context checkpoint 3 of 4 (pos_min = 18781, pos_max = 20301, n_tokens = 20302, size = 170.013 MiB)
+slot   operator(): id  0 | task 181 | cached n_tokens = 20344, memory_seq_rm [20344, end)
+slot init_sampler: id  0 | task 181 | init sampler, took 1.44 ms, tokens: text = 20348, total = 20348
+slot create_check: id  0 | task 181 | erasing context checkpoint too close to an earlier one (pos_min = 18641, pos_max = 20176, n_tokens = 20177, size = 170.013 MiB)
+slot create_check: id  0 | task 181 | created context checkpoint 3 of 4 (pos_min = 18808, pos_max = 20343, n_tokens = 20344, size = 170.013 MiB)
+slot print_timing: id  0 | task 181 | prompt eval time =     550.80 ms /    46 tokens (   11.97 ms per token,    83.51 tokens per second)
+slot print_timing: id  0 | task 181 |        eval time =    4021.12 ms /    53 tokens (   77.33 ms per token,    12.93 tokens per second)
+slot print_timing: id  0 | task 181 |       total time =    4571.93 ms /    99 tokens
+slot      release: id  0 | task 181 | stop processing: n_tokens = 20400, truncated = 0
+[GIN] 2026/11/23 - 06:48:12 | 200 |    4.73s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:48:12.388Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:48:12.451Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=110448
+slot   operator(): id  0 | task 236 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 30228
+slot   operator(): id  0 | task 236 | cached n_tokens = 20371, memory_seq_rm [20371, end)
+slot   operator(): id  0 | task 236 | cached n_tokens = 20883, memory_seq_rm [20883, end)
+slot   operator(): id  0 | task 236 | cached n_tokens = 21395, memory_seq_rm [21395, end)
+slot   operator(): id  0 | task 236 | cached n_tokens = 21907, memory_seq_rm [21907, end)
+slot   operator(): id  0 | task 236 | cached n_tokens = 22419, memory_seq_rm [22419, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   2560, progress = 0.76, t =   3.10 s / 825.75 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 22931, memory_seq_rm [22931, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   3072, progress = 0.78, t =   3.79 s / 810.58 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 23443, memory_seq_rm [23443, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   3584, progress = 0.79, t =   4.49 s / 798.38 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 23955, memory_seq_rm [23955, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   4096, progress = 0.81, t =   5.19 s / 788.85 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 24467, memory_seq_rm [24467, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   4608, progress = 0.83, t =   5.89 s / 781.83 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 24979, memory_seq_rm [24979, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   5120, progress = 0.84, t =   6.60 s / 776.22 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 25491, memory_seq_rm [25491, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   5632, progress = 0.86, t =   7.29 s / 772.12 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 26003, memory_seq_rm [26003, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   6144, progress = 0.88, t =   8.00 s / 768.07 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 26515, memory_seq_rm [26515, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   6656, progress = 0.89, t =   8.71 s / 764.52 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 27027, memory_seq_rm [27027, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   7168, progress = 0.91, t =   9.41 s / 761.90 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 27539, memory_seq_rm [27539, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   7680, progress = 0.93, t =  10.13 s / 758.19 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 28051, memory_seq_rm [28051, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   8192, progress = 0.94, t =  10.84 s / 755.50 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 28563, memory_seq_rm [28563, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   8704, progress = 0.96, t =  11.58 s / 751.76 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 29075, memory_seq_rm [29075, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   9216, progress = 0.98, t =  12.31 s / 748.41 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 29587, memory_seq_rm [29587, end)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   9345, progress = 0.98, t =  12.91 s / 724.04 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 29716, memory_seq_rm [29716, end)
+slot create_check: id  0 | task 236 | erasing context checkpoint too close to an earlier one (pos_min = 18781, pos_max = 20301, n_tokens = 20302, size = 170.013 MiB)
+slot create_check: id  0 | task 236 | created context checkpoint 3 of 4 (pos_min = 28180, pos_max = 29715, n_tokens = 29716, size = 170.013 MiB)
+slot print_timing: id  0 | task 236 | prompt processing, n_tokens =   9853, progress = 1.00, t =  13.50 s / 730.10 tokens per second
+slot   operator(): id  0 | task 236 | cached n_tokens = 30224, memory_seq_rm [30224, end)
+slot init_sampler: id  0 | task 236 | init sampler, took 2.35 ms, tokens: text = 30228, total = 30228
+slot create_check: id  0 | task 236 | erasing context checkpoint too close to an earlier one (pos_min = 18808, pos_max = 20343, n_tokens = 20344, size = 170.013 MiB)
+slot create_check: id  0 | task 236 | created context checkpoint 3 of 4 (pos_min = 28688, pos_max = 30223, n_tokens = 30224, size = 170.013 MiB)
+slot print_timing: id  0 | task 236 | prompt eval time =   14026.93 ms /  9857 tokens (    1.42 ms per token,   702.72 tokens per second)
+slot print_timing: id  0 | task 236 |        eval time =  174450.03 ms /  2113 tokens (   82.60 ms per token,    12.11 tokens per second)
+slot print_timing: id  0 | task 236 |       total time =  188476.96 ms / 11970 tokens
+slot      release: id  0 | task 236 | stop processing: n_tokens = 32340, truncated = 0
+[GIN] 2026/11/23 - 06:51:21 | 200 |     3m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:51:21.119Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:51:21.185Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=116231
+slot   operator(): id  0 | task 2370 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31451
+slot   operator(): id  0 | task 2370 | restored context checkpoint (pos_min = 18133, pos_max = 19668, n_tokens = 19669, n_past = 19668, size = 170.013 MiB)
+slot   operator(): id  0 | task 2370 | erased invalidated context checkpoint (pos_min = 28180, pos_max = 29715, n_tokens = 29716, n_swa = 1024, pos_next = 19668, size = 170.013 MiB)
+slot   operator(): id  0 | task 2370 | erased invalidated context checkpoint (pos_min = 28688, pos_max = 30223, n_tokens = 30224, n_swa = 1024, pos_next = 19668, size = 170.013 MiB)
+slot   operator(): id  0 | task 2370 | cached n_tokens = 19668, memory_seq_rm [19668, end)
+slot   operator(): id  0 | task 2370 | cached n_tokens = 20180, memory_seq_rm [20180, end)
+slot   operator(): id  0 | task 2370 | cached n_tokens = 20692, memory_seq_rm [20692, end)
+slot   operator(): id  0 | task 2370 | cached n_tokens = 21204, memory_seq_rm [21204, end)
+slot   operator(): id  0 | task 2370 | cached n_tokens = 21716, memory_seq_rm [21716, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   2560, progress = 0.71, t =   3.05 s / 838.16 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 22228, memory_seq_rm [22228, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   3072, progress = 0.72, t =   3.73 s / 823.32 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 22740, memory_seq_rm [22740, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   3584, progress = 0.74, t =   4.42 s / 809.97 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 23252, memory_seq_rm [23252, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   4096, progress = 0.76, t =   5.12 s / 800.42 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 23764, memory_seq_rm [23764, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   4608, progress = 0.77, t =   5.82 s / 791.68 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 24276, memory_seq_rm [24276, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   5120, progress = 0.79, t =   6.51 s / 786.33 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 24788, memory_seq_rm [24788, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   5632, progress = 0.80, t =   7.21 s / 781.66 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 25300, memory_seq_rm [25300, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   6144, progress = 0.82, t =   7.90 s / 777.86 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 25812, memory_seq_rm [25812, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   6656, progress = 0.84, t =   8.60 s / 773.74 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 26324, memory_seq_rm [26324, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   7168, progress = 0.85, t =   9.30 s / 770.60 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 26836, memory_seq_rm [26836, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   7680, progress = 0.87, t =  10.00 s / 767.83 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 27348, memory_seq_rm [27348, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   8192, progress = 0.89, t =  10.75 s / 762.16 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 27860, memory_seq_rm [27860, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   8704, progress = 0.90, t =  11.45 s / 760.37 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 28372, memory_seq_rm [28372, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   9216, progress = 0.92, t =  12.18 s / 756.79 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 28884, memory_seq_rm [28884, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =   9728, progress = 0.93, t =  12.89 s / 754.54 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 29396, memory_seq_rm [29396, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =  10240, progress = 0.95, t =  13.64 s / 750.86 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 29908, memory_seq_rm [29908, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =  10752, progress = 0.97, t =  14.37 s / 748.35 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 30420, memory_seq_rm [30420, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =  11264, progress = 0.98, t =  15.11 s / 745.41 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 30932, memory_seq_rm [30932, end)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =  11271, progress = 0.98, t =  18.76 s / 600.81 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 30939, memory_seq_rm [30939, end)
+slot create_check: id  0 | task 2370 | created context checkpoint 2 of 4 (pos_min = 29403, pos_max = 30938, n_tokens = 30939, size = 170.013 MiB)
+slot print_timing: id  0 | task 2370 | prompt processing, n_tokens =  11779, progress = 1.00, t =  19.54 s / 602.97 tokens per second
+slot   operator(): id  0 | task 2370 | cached n_tokens = 31447, memory_seq_rm [31447, end)
+slot init_sampler: id  0 | task 2370 | init sampler, took 2.29 ms, tokens: text = 31451, total = 31451
+slot create_check: id  0 | task 2370 | created context checkpoint 3 of 4 (pos_min = 29911, pos_max = 31446, n_tokens = 31447, size = 170.013 MiB)
+slot print_timing: id  0 | task 2370 | prompt eval time =   20046.62 ms / 11783 tokens (    1.70 ms per token,   587.78 tokens per second)
+slot print_timing: id  0 | task 2370 |        eval time =  101906.42 ms /  1232 tokens (   82.78 ms per token,    12.08 tokens per second)
+slot print_timing: id  0 | task 2370 |       total time =  121953.04 ms / 13015 tokens
+slot      release: id  0 | task 2370 | stop processing: n_tokens = 32682, truncated = 0
+[GIN] 2026/11/23 - 06:53:23 | 200 |     2m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:53:23.348Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:53:23.407Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=89137
+slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 32682, t_last = 240268411688
+slot   operator(): id  0 | task 3627 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21284
+slot   operator(): id  0 | task 3627 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot   operator(): id  0 | task 3627 | erased invalidated context checkpoint (pos_min = 18133, pos_max = 19668, n_tokens = 19669, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 3627 | erased invalidated context checkpoint (pos_min = 29403, pos_max = 30938, n_tokens = 30939, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 3627 | erased invalidated context checkpoint (pos_min = 29911, pos_max = 31446, n_tokens = 31447, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 0, memory_seq_rm [0, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 512, memory_seq_rm [512, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 1024, memory_seq_rm [1024, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 1536, memory_seq_rm [1536, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 2048, memory_seq_rm [2048, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 2560, memory_seq_rm [2560, end)
+slot   operator(): id  0 | task 3627 | cached n_tokens = 3072, memory_seq_rm [3072, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   3584, progress = 0.17, t =   3.54 s / 1012.67 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 3584, memory_seq_rm [3584, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   4096, progress = 0.19, t =   4.09 s / 1001.32 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 4096, memory_seq_rm [4096, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   4608, progress = 0.22, t =   4.63 s / 996.05 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 4608, memory_seq_rm [4608, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   5120, progress = 0.24, t =   5.18 s / 989.14 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 5120, memory_seq_rm [5120, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   5632, progress = 0.26, t =   5.72 s / 984.19 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 5632, memory_seq_rm [5632, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   6144, progress = 0.29, t =   6.28 s / 977.81 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 6144, memory_seq_rm [6144, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   6656, progress = 0.31, t =   6.84 s / 973.12 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 6656, memory_seq_rm [6656, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   7168, progress = 0.34, t =   7.40 s / 968.93 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 7168, memory_seq_rm [7168, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   7680, progress = 0.36, t =   7.95 s / 965.95 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 7680, memory_seq_rm [7680, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   8192, progress = 0.38, t =   8.55 s / 958.65 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 8192, memory_seq_rm [8192, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   8704, progress = 0.41, t =   9.13 s / 953.44 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 8704, memory_seq_rm [8704, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   9216, progress = 0.43, t =   9.70 s / 949.99 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 9216, memory_seq_rm [9216, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =   9728, progress = 0.46, t =  10.28 s / 946.67 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 9728, memory_seq_rm [9728, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  10240, progress = 0.48, t =  10.86 s / 943.30 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 10240, memory_seq_rm [10240, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  10752, progress = 0.51, t =  11.45 s / 938.91 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 10752, memory_seq_rm [10752, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  11264, progress = 0.53, t =  12.05 s / 935.15 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 11264, memory_seq_rm [11264, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  11776, progress = 0.55, t =  12.64 s / 931.39 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 11776, memory_seq_rm [11776, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  12288, progress = 0.58, t =  13.25 s / 927.46 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 12288, memory_seq_rm [12288, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  12800, progress = 0.60, t =  13.86 s / 923.72 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 12800, memory_seq_rm [12800, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  13312, progress = 0.63, t =  14.47 s / 919.96 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 13312, memory_seq_rm [13312, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  13824, progress = 0.65, t =  15.09 s / 916.29 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 13824, memory_seq_rm [13824, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  14336, progress = 0.67, t =  15.73 s / 911.32 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 14336, memory_seq_rm [14336, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  14848, progress = 0.70, t =  16.35 s / 908.05 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 14848, memory_seq_rm [14848, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  15360, progress = 0.72, t =  16.98 s / 904.42 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 15360, memory_seq_rm [15360, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  15872, progress = 0.75, t =  17.61 s / 901.29 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 15872, memory_seq_rm [15872, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  16384, progress = 0.77, t =  18.24 s / 898.23 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 16384, memory_seq_rm [16384, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  16896, progress = 0.79, t =  18.87 s / 895.21 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 16896, memory_seq_rm [16896, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  17408, progress = 0.82, t =  19.51 s / 892.23 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 17408, memory_seq_rm [17408, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  17920, progress = 0.84, t =  20.15 s / 889.13 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 17920, memory_seq_rm [17920, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  18432, progress = 0.87, t =  20.80 s / 886.03 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 18432, memory_seq_rm [18432, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  18944, progress = 0.89, t =  21.46 s / 882.87 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 18944, memory_seq_rm [18944, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  19456, progress = 0.91, t =  22.10 s / 880.30 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 19456, memory_seq_rm [19456, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  19968, progress = 0.94, t =  22.76 s / 877.21 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 19968, memory_seq_rm [19968, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  20480, progress = 0.96, t =  23.44 s / 873.88 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 20480, memory_seq_rm [20480, end)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  20772, progress = 0.98, t =  24.01 s / 864.98 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 20772, memory_seq_rm [20772, end)
+slot create_check: id  0 | task 3627 | created context checkpoint 1 of 4 (pos_min = 19236, pos_max = 20771, n_tokens = 20772, size = 170.013 MiB)
+slot print_timing: id  0 | task 3627 | prompt processing, n_tokens =  21280, progress = 1.00, t =  24.67 s / 862.65 tokens per second
+slot   operator(): id  0 | task 3627 | cached n_tokens = 21280, memory_seq_rm [21280, end)
+slot init_sampler: id  0 | task 3627 | init sampler, took 2.11 ms, tokens: text = 21284, total = 21284
+slot create_check: id  0 | task 3627 | created context checkpoint 2 of 4 (pos_min = 19744, pos_max = 21279, n_tokens = 21280, size = 170.013 MiB)
+slot print_timing: id  0 | task 3627 | prompt eval time =   25159.20 ms / 21284 tokens (    1.18 ms per token,   845.97 tokens per second)
+slot print_timing: id  0 | task 3627 |        eval time =    2501.10 ms /    33 tokens (   78.16 ms per token,    12.79 tokens per second)
+slot print_timing: id  0 | task 3627 |       total time =   27660.30 ms / 21317 tokens
+slot      release: id  0 | task 3627 | stop processing: n_tokens = 21316, truncated = 0
+[GIN] 2026/11/23 - 06:53:51 | 200 |   27.83s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:53:51.210Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:53:51.276Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=113916
+slot   operator(): id  0 | task 3703 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31157
+slot   operator(): id  0 | task 3703 | cached n_tokens = 21284, memory_seq_rm [21284, end)
+slot   operator(): id  0 | task 3703 | cached n_tokens = 21796, memory_seq_rm [21796, end)
+slot   operator(): id  0 | task 3703 | cached n_tokens = 22308, memory_seq_rm [22308, end)
+slot   operator(): id  0 | task 3703 | cached n_tokens = 22820, memory_seq_rm [22820, end)
+slot   operator(): id  0 | task 3703 | cached n_tokens = 23332, memory_seq_rm [23332, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   2560, progress = 0.77, t =   3.13 s / 816.68 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 23844, memory_seq_rm [23844, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   3072, progress = 0.78, t =   3.82 s / 804.41 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 24356, memory_seq_rm [24356, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   3584, progress = 0.80, t =   4.50 s / 796.58 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 24868, memory_seq_rm [24868, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   4096, progress = 0.81, t =   5.21 s / 786.91 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 25380, memory_seq_rm [25380, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   4608, progress = 0.83, t =   5.90 s / 780.55 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 25892, memory_seq_rm [25892, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   5120, progress = 0.85, t =   6.60 s / 775.28 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 26404, memory_seq_rm [26404, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   5632, progress = 0.86, t =   7.31 s / 770.96 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 26916, memory_seq_rm [26916, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   6144, progress = 0.88, t =   8.01 s / 767.06 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 27428, memory_seq_rm [27428, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   6656, progress = 0.90, t =   8.72 s / 763.10 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 27940, memory_seq_rm [27940, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   7168, progress = 0.91, t =   9.46 s / 758.06 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 28452, memory_seq_rm [28452, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   7680, progress = 0.93, t =  10.17 s / 755.01 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 28964, memory_seq_rm [28964, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   8192, progress = 0.95, t =  10.90 s / 751.78 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 29476, memory_seq_rm [29476, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   8704, progress = 0.96, t =  11.62 s / 749.08 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 29988, memory_seq_rm [29988, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   9216, progress = 0.98, t =  12.35 s / 746.21 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 30500, memory_seq_rm [30500, end)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   9361, progress = 0.98, t =  12.95 s / 723.11 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 30645, memory_seq_rm [30645, end)
+slot create_check: id  0 | task 3703 | created context checkpoint 3 of 4 (pos_min = 29109, pos_max = 30644, n_tokens = 30645, size = 170.013 MiB)
+slot print_timing: id  0 | task 3703 | prompt processing, n_tokens =   9869, progress = 1.00, t =  13.53 s / 729.39 tokens per second
+slot   operator(): id  0 | task 3703 | cached n_tokens = 31153, memory_seq_rm [31153, end)
+slot init_sampler: id  0 | task 3703 | init sampler, took 2.56 ms, tokens: text = 31157, total = 31157
+slot create_check: id  0 | task 3703 | erasing context checkpoint too close to an earlier one (pos_min = 19744, pos_max = 21279, n_tokens = 21280, size = 170.013 MiB)
+slot create_check: id  0 | task 3703 | created context checkpoint 3 of 4 (pos_min = 29617, pos_max = 31152, n_tokens = 31153, size = 170.013 MiB)
+slot print_timing: id  0 | task 3703 | prompt eval time =   14059.12 ms /  9873 tokens (    1.42 ms per token,   702.25 tokens per second)
+slot print_timing: id  0 | task 3703 |        eval time =   14491.79 ms /   177 tokens (   82.34 ms per token,    12.14 tokens per second)
+slot print_timing: id  0 | task 3703 |       total time =   28550.90 ms / 10050 tokens
+slot      release: id  0 | task 3703 | stop processing: n_tokens = 31333, truncated = 0
+[GIN] 2026/11/23 - 06:54:19 | 200 |   28.74s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:54:19.973Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:54:20.039Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=114652
+slot   operator(): id  0 | task 3901 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31365
+slot   operator(): id  0 | task 3901 | cached n_tokens = 31154, memory_seq_rm [31154, end)
+slot create_check: id  0 | task 3901 | erasing context checkpoint too close to an earlier one (pos_min = 29617, pos_max = 31152, n_tokens = 31153, size = 170.013 MiB)
+slot create_check: id  0 | task 3901 | created context checkpoint 3 of 4 (pos_min = 29797, pos_max = 31153, n_tokens = 31154, size = 170.013 MiB)
+slot   operator(): id  0 | task 3901 | cached n_tokens = 31361, memory_seq_rm [31361, end)
+slot init_sampler: id  0 | task 3901 | init sampler, took 2.26 ms, tokens: text = 31365, total = 31365
+slot create_check: id  0 | task 3901 | created context checkpoint 4 of 4 (pos_min = 29825, pos_max = 31360, n_tokens = 31361, size = 170.013 MiB)
+slot print_timing: id  0 | task 3901 | prompt eval time =     723.50 ms /   211 tokens (    3.43 ms per token,   291.64 tokens per second)
+slot print_timing: id  0 | task 3901 |        eval time =   20789.69 ms /   251 tokens (   83.16 ms per token,    12.03 tokens per second)
+slot print_timing: id  0 | task 3901 |       total time =   21513.19 ms /   462 tokens
+slot      release: id  0 | task 3901 | stop processing: n_tokens = 31615, truncated = 0
+[GIN] 2026/11/23 - 06:54:41 | 200 |   21.72s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:54:41.724Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:54:41.810Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=115698
+slot   operator(): id  0 | task 4154 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31649
+slot   operator(): id  0 | task 4154 | cached n_tokens = 31362, memory_seq_rm [31362, end)
+slot create_check: id  0 | task 4154 | erasing context checkpoint too close to an earlier one (pos_min = 29797, pos_max = 31153, n_tokens = 31154, size = 170.013 MiB)
+slot create_check: id  0 | task 4154 | erasing context checkpoint too close to an earlier one (pos_min = 29825, pos_max = 31360, n_tokens = 31361, size = 170.013 MiB)
+slot create_check: id  0 | task 4154 | created context checkpoint 3 of 4 (pos_min = 30079, pos_max = 31361, n_tokens = 31362, size = 170.013 MiB)
+slot   operator(): id  0 | task 4154 | cached n_tokens = 31645, memory_seq_rm [31645, end)
+slot init_sampler: id  0 | task 4154 | init sampler, took 2.87 ms, tokens: text = 31649, total = 31649
+slot create_check: id  0 | task 4154 | created context checkpoint 4 of 4 (pos_min = 30109, pos_max = 31644, n_tokens = 31645, size = 170.013 MiB)
+slot print_timing: id  0 | task 4154 | prompt eval time =     783.52 ms /   287 tokens (    2.73 ms per token,   366.30 tokens per second)
+slot print_timing: id  0 | task 4154 |        eval time =    2398.47 ms /    30 tokens (   82.71 ms per token,    12.09 tokens per second)
+slot print_timing: id  0 | task 4154 |       total time =    3181.98 ms /   317 tokens
+slot      release: id  0 | task 4154 | stop processing: n_tokens = 31678, truncated = 0
+[GIN] 2026/11/23 - 06:54:45 | 200 |    3.41s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:54:45.157Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:54:45.226Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=122090
+slot   operator(): id  0 | task 4186 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 33023
+slot   operator(): id  0 | task 4186 | cached n_tokens = 31646, memory_seq_rm [31646, end)
+slot   operator(): id  0 | task 4186 | cached n_tokens = 32158, memory_seq_rm [32158, end)
+slot   operator(): id  0 | task 4186 | cached n_tokens = 32511, memory_seq_rm [32511, end)
+slot create_check: id  0 | task 4186 | erasing context checkpoint too close to an earlier one (pos_min = 30079, pos_max = 31361, n_tokens = 31362, size = 170.013 MiB)
+slot create_check: id  0 | task 4186 | erasing context checkpoint too close to an earlier one (pos_min = 30109, pos_max = 31644, n_tokens = 31645, size = 170.013 MiB)
+slot create_check: id  0 | task 4186 | created context checkpoint 3 of 4 (pos_min = 30975, pos_max = 32510, n_tokens = 32511, size = 170.013 MiB)
+slot   operator(): id  0 | task 4186 | cached n_tokens = 33019, memory_seq_rm [33019, end)
+slot init_sampler: id  0 | task 4186 | init sampler, took 3.07 ms, tokens: text = 33023, total = 33023
+slot create_check: id  0 | task 4186 | created context checkpoint 4 of 4 (pos_min = 31483, pos_max = 33018, n_tokens = 33019, size = 170.013 MiB)
+slot print_timing: id  0 | task 4186 | prompt eval time =    2382.05 ms /  1377 tokens (    1.73 ms per token,   578.07 tokens per second)
+slot print_timing: id  0 | task 4186 |        eval time =  122923.26 ms /  1476 tokens (   83.34 ms per token,    12.00 tokens per second)
+slot print_timing: id  0 | task 4186 |       total time =  125305.31 ms /  2853 tokens
+slot      release: id  0 | task 4186 | stop processing: n_tokens = 34498, truncated = 0
+[GIN] 2026/11/23 - 06:56:50 | 200 |     2m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:56:50.710Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:56:50.771Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=113658
+slot   operator(): id  0 | task 5666 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31079
+slot   operator(): id  0 | task 5666 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot   operator(): id  0 | task 5666 | erased invalidated context checkpoint (pos_min = 19236, pos_max = 20771, n_tokens = 20772, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 5666 | erased invalidated context checkpoint (pos_min = 29109, pos_max = 30644, n_tokens = 30645, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 5666 | erased invalidated context checkpoint (pos_min = 30975, pos_max = 32510, n_tokens = 32511, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 5666 | erased invalidated context checkpoint (pos_min = 31483, pos_max = 33018, n_tokens = 33019, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 0, memory_seq_rm [0, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 512, memory_seq_rm [512, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 1024, memory_seq_rm [1024, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 1536, memory_seq_rm [1536, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 2048, memory_seq_rm [2048, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 2560, memory_seq_rm [2560, end)
+slot   operator(): id  0 | task 5666 | cached n_tokens = 3072, memory_seq_rm [3072, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   3584, progress = 0.12, t =   3.51 s / 1019.84 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 3584, memory_seq_rm [3584, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   4096, progress = 0.13, t =   4.05 s / 1011.95 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 4096, memory_seq_rm [4096, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   4608, progress = 0.15, t =   4.60 s / 1001.53 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 4608, memory_seq_rm [4608, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   5120, progress = 0.16, t =   5.16 s / 991.49 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 5120, memory_seq_rm [5120, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   5632, progress = 0.18, t =   5.72 s / 984.61 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 5632, memory_seq_rm [5632, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   6144, progress = 0.20, t =   6.28 s / 979.07 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 6144, memory_seq_rm [6144, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   6656, progress = 0.21, t =   6.83 s / 974.57 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 6656, memory_seq_rm [6656, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   7168, progress = 0.23, t =   7.39 s / 970.26 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 7168, memory_seq_rm [7168, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   7680, progress = 0.25, t =   7.95 s / 966.28 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 7680, memory_seq_rm [7680, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   8192, progress = 0.26, t =   8.52 s / 961.87 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 8192, memory_seq_rm [8192, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   8704, progress = 0.28, t =   9.08 s / 958.63 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 8704, memory_seq_rm [8704, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   9216, progress = 0.30, t =   9.65 s / 955.22 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 9216, memory_seq_rm [9216, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =   9728, progress = 0.31, t =  10.23 s / 950.63 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 9728, memory_seq_rm [9728, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  10240, progress = 0.33, t =  10.83 s / 945.80 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 10240, memory_seq_rm [10240, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  10752, progress = 0.35, t =  11.43 s / 940.99 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 10752, memory_seq_rm [10752, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  11264, progress = 0.36, t =  12.02 s / 937.30 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 11264, memory_seq_rm [11264, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  11776, progress = 0.38, t =  12.63 s / 932.73 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 11776, memory_seq_rm [11776, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  12288, progress = 0.40, t =  13.23 s / 928.51 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 12288, memory_seq_rm [12288, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  12800, progress = 0.41, t =  13.83 s / 925.69 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 12800, memory_seq_rm [12800, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  13312, progress = 0.43, t =  14.44 s / 921.85 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 13312, memory_seq_rm [13312, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  13824, progress = 0.44, t =  15.05 s / 918.66 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 13824, memory_seq_rm [13824, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  14336, progress = 0.46, t =  15.69 s / 913.96 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 14336, memory_seq_rm [14336, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  14848, progress = 0.48, t =  16.32 s / 910.07 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 14848, memory_seq_rm [14848, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  15360, progress = 0.49, t =  16.93 s / 907.39 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 15360, memory_seq_rm [15360, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  15872, progress = 0.51, t =  17.55 s / 904.22 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 15872, memory_seq_rm [15872, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  16384, progress = 0.53, t =  18.19 s / 900.53 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 16384, memory_seq_rm [16384, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  16896, progress = 0.54, t =  18.83 s / 897.28 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 16896, memory_seq_rm [16896, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  17408, progress = 0.56, t =  19.47 s / 894.22 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 17408, memory_seq_rm [17408, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  17920, progress = 0.58, t =  20.12 s / 890.84 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 17920, memory_seq_rm [17920, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  18432, progress = 0.59, t =  20.78 s / 886.88 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 18432, memory_seq_rm [18432, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  18944, progress = 0.61, t =  21.43 s / 884.14 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 18944, memory_seq_rm [18944, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  19456, progress = 0.63, t =  22.07 s / 881.48 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 19456, memory_seq_rm [19456, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  19968, progress = 0.64, t =  22.74 s / 878.17 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 19968, memory_seq_rm [19968, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  20480, progress = 0.66, t =  23.40 s / 875.35 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 20480, memory_seq_rm [20480, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  20992, progress = 0.68, t =  24.05 s / 872.75 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 20992, memory_seq_rm [20992, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  21504, progress = 0.69, t =  24.73 s / 869.54 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 21504, memory_seq_rm [21504, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  22016, progress = 0.71, t =  25.42 s / 866.18 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 22016, memory_seq_rm [22016, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  22528, progress = 0.72, t =  26.11 s / 862.89 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 22528, memory_seq_rm [22528, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  23040, progress = 0.74, t =  26.78 s / 860.45 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 23040, memory_seq_rm [23040, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  23552, progress = 0.76, t =  27.46 s / 857.71 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 23552, memory_seq_rm [23552, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  24064, progress = 0.77, t =  28.16 s / 854.68 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 24064, memory_seq_rm [24064, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  24576, progress = 0.79, t =  28.85 s / 851.82 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 24576, memory_seq_rm [24576, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  25088, progress = 0.81, t =  29.54 s / 849.26 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 25088, memory_seq_rm [25088, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  25600, progress = 0.82, t =  30.25 s / 846.15 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 25600, memory_seq_rm [25600, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  26112, progress = 0.84, t =  30.97 s / 843.21 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 26112, memory_seq_rm [26112, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  26624, progress = 0.86, t =  31.67 s / 840.80 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 26624, memory_seq_rm [26624, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  27136, progress = 0.87, t =  32.38 s / 837.98 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 27136, memory_seq_rm [27136, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  27648, progress = 0.89, t =  33.09 s / 835.59 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 27648, memory_seq_rm [27648, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  28160, progress = 0.91, t =  33.79 s / 833.27 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 28160, memory_seq_rm [28160, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  28672, progress = 0.92, t =  34.51 s / 830.88 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 28672, memory_seq_rm [28672, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  29184, progress = 0.94, t =  35.24 s / 828.25 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 29184, memory_seq_rm [29184, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  29696, progress = 0.96, t =  35.98 s / 825.44 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 29696, memory_seq_rm [29696, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  30208, progress = 0.97, t =  36.71 s / 822.94 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 30208, memory_seq_rm [30208, end)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  30567, progress = 0.98, t =  37.34 s / 818.55 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 30567, memory_seq_rm [30567, end)
+slot create_check: id  0 | task 5666 | created context checkpoint 1 of 4 (pos_min = 29031, pos_max = 30566, n_tokens = 30567, size = 170.013 MiB)
+slot print_timing: id  0 | task 5666 | prompt processing, n_tokens =  31075, progress = 1.00, t =  38.09 s / 815.92 tokens per second
+slot   operator(): id  0 | task 5666 | cached n_tokens = 31075, memory_seq_rm [31075, end)
+slot init_sampler: id  0 | task 5666 | init sampler, took 2.21 ms, tokens: text = 31079, total = 31079
+slot create_check: id  0 | task 5666 | created context checkpoint 2 of 4 (pos_min = 29539, pos_max = 31074, n_tokens = 31075, size = 170.013 MiB)
+slot print_timing: id  0 | task 5666 | prompt eval time =   38595.70 ms / 31079 tokens (    1.24 ms per token,   805.25 tokens per second)
+slot print_timing: id  0 | task 5666 |        eval time =   86562.82 ms /  1046 tokens (   82.84 ms per token,    12.07 tokens per second)
+slot print_timing: id  0 | task 5666 |       total time =  125158.52 ms / 32125 tokens
+slot      release: id  0 | task 5666 | stop processing: n_tokens = 32124, truncated = 0
+[GIN] 2026/11/23 - 06:58:56 | 200 |     2m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T06:58:56.130Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T06:58:56.199Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=121777
+slot   operator(): id  0 | task 6774 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 32922
+slot   operator(): id  0 | task 6774 | restored context checkpoint (pos_min = 29539, pos_max = 31074, n_tokens = 31075, n_past = 31074, size = 170.013 MiB)
+slot   operator(): id  0 | task 6774 | cached n_tokens = 31074, memory_seq_rm [31074, end)
+slot   operator(): id  0 | task 6774 | cached n_tokens = 31586, memory_seq_rm [31586, end)
+slot   operator(): id  0 | task 6774 | cached n_tokens = 32098, memory_seq_rm [32098, end)
+slot   operator(): id  0 | task 6774 | cached n_tokens = 32410, memory_seq_rm [32410, end)
+slot create_check: id  0 | task 6774 | created context checkpoint 3 of 4 (pos_min = 30874, pos_max = 32409, n_tokens = 32410, size = 170.013 MiB)
+slot   operator(): id  0 | task 6774 | cached n_tokens = 32918, memory_seq_rm [32918, end)
+slot init_sampler: id  0 | task 6774 | init sampler, took 2.42 ms, tokens: text = 32922, total = 32922
+slot create_check: id  0 | task 6774 | erasing context checkpoint too close to an earlier one (pos_min = 29539, pos_max = 31074, n_tokens = 31075, size = 170.013 MiB)
+slot create_check: id  0 | task 6774 | created context checkpoint 3 of 4 (pos_min = 31382, pos_max = 32917, n_tokens = 32918, size = 170.013 MiB)
+slot print_timing: id  0 | task 6774 | prompt eval time =    3081.87 ms /  1848 tokens (    1.67 ms per token,   599.64 tokens per second)
+slot print_timing: id  0 | task 6774 |        eval time =  116708.74 ms /  1401 tokens (   83.36 ms per token,    12.00 tokens per second)
+slot print_timing: id  0 | task 6774 |       total time =  119790.61 ms /  3249 tokens
+slot      release: id  0 | task 6774 | stop processing: n_tokens = 34322, truncated = 0
+[GIN] 2026/11/23 - 07:00:56 | 200 |     2m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:00:56.187Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:00:56.239Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=88917
+slot   operator(): id  0 | task 8180 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21220
+slot   operator(): id  0 | task 8180 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot   operator(): id  0 | task 8180 | erased invalidated context checkpoint (pos_min = 29031, pos_max = 30566, n_tokens = 30567, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 8180 | erased invalidated context checkpoint (pos_min = 30874, pos_max = 32409, n_tokens = 32410, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 8180 | erased invalidated context checkpoint (pos_min = 31382, pos_max = 32917, n_tokens = 32918, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 0, memory_seq_rm [0, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 512, memory_seq_rm [512, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 1024, memory_seq_rm [1024, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 1536, memory_seq_rm [1536, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 2048, memory_seq_rm [2048, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 2560, memory_seq_rm [2560, end)
+slot   operator(): id  0 | task 8180 | cached n_tokens = 3072, memory_seq_rm [3072, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   3584, progress = 0.17, t =   3.54 s / 1012.37 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 3584, memory_seq_rm [3584, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   4096, progress = 0.19, t =   4.10 s / 1000.19 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 4096, memory_seq_rm [4096, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   4608, progress = 0.22, t =   4.65 s / 989.96 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 4608, memory_seq_rm [4608, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   5120, progress = 0.24, t =   5.22 s / 981.21 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 5120, memory_seq_rm [5120, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   5632, progress = 0.27, t =   5.79 s / 972.15 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 5632, memory_seq_rm [5632, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   6144, progress = 0.29, t =   6.35 s / 967.71 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 6144, memory_seq_rm [6144, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   6656, progress = 0.31, t =   6.90 s / 964.40 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 6656, memory_seq_rm [6656, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   7168, progress = 0.34, t =   7.47 s / 960.00 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 7168, memory_seq_rm [7168, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   7680, progress = 0.36, t =   8.04 s / 955.51 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 7680, memory_seq_rm [7680, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   8192, progress = 0.39, t =   8.60 s / 952.39 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 8192, memory_seq_rm [8192, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   8704, progress = 0.41, t =   9.18 s / 948.59 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 8704, memory_seq_rm [8704, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   9216, progress = 0.43, t =   9.75 s / 945.56 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 9216, memory_seq_rm [9216, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =   9728, progress = 0.46, t =  10.32 s / 942.37 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 9728, memory_seq_rm [9728, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  10240, progress = 0.48, t =  10.92 s / 937.37 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 10240, memory_seq_rm [10240, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  10752, progress = 0.51, t =  11.52 s / 933.54 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 10752, memory_seq_rm [10752, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  11264, progress = 0.53, t =  12.10 s / 930.61 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 11264, memory_seq_rm [11264, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  11776, progress = 0.55, t =  12.73 s / 925.21 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 11776, memory_seq_rm [11776, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  12288, progress = 0.58, t =  13.33 s / 921.51 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 12288, memory_seq_rm [12288, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  12800, progress = 0.60, t =  13.94 s / 918.20 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 12800, memory_seq_rm [12800, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  13312, progress = 0.63, t =  14.54 s / 915.29 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 13312, memory_seq_rm [13312, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  13824, progress = 0.65, t =  15.16 s / 911.99 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 13824, memory_seq_rm [13824, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  14336, progress = 0.68, t =  15.78 s / 908.73 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 14336, memory_seq_rm [14336, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  14848, progress = 0.70, t =  16.40 s / 905.25 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 14848, memory_seq_rm [14848, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  15360, progress = 0.72, t =  17.03 s / 902.04 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 15360, memory_seq_rm [15360, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  15872, progress = 0.75, t =  17.66 s / 899.00 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 15872, memory_seq_rm [15872, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  16384, progress = 0.77, t =  18.29 s / 895.93 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 16384, memory_seq_rm [16384, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  16896, progress = 0.80, t =  18.92 s / 893.18 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 16896, memory_seq_rm [16896, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  17408, progress = 0.82, t =  19.54 s / 890.83 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 17408, memory_seq_rm [17408, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  17920, progress = 0.84, t =  20.19 s / 887.55 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 17920, memory_seq_rm [17920, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  18432, progress = 0.87, t =  20.84 s / 884.66 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 18432, memory_seq_rm [18432, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  18944, progress = 0.89, t =  21.48 s / 881.76 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 18944, memory_seq_rm [18944, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  19456, progress = 0.92, t =  22.13 s / 879.08 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 19456, memory_seq_rm [19456, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  19968, progress = 0.94, t =  22.79 s / 876.36 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 19968, memory_seq_rm [19968, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  20480, progress = 0.97, t =  23.45 s / 873.22 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 20480, memory_seq_rm [20480, end)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  20708, progress = 0.98, t =  24.02 s / 862.14 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 20708, memory_seq_rm [20708, end)
+slot create_check: id  0 | task 8180 | created context checkpoint 1 of 4 (pos_min = 19172, pos_max = 20707, n_tokens = 20708, size = 170.013 MiB)
+slot print_timing: id  0 | task 8180 | prompt processing, n_tokens =  21216, progress = 1.00, t =  24.61 s / 862.10 tokens per second
+slot   operator(): id  0 | task 8180 | cached n_tokens = 21216, memory_seq_rm [21216, end)
+slot init_sampler: id  0 | task 8180 | init sampler, took 2.46 ms, tokens: text = 21220, total = 21220
+slot create_check: id  0 | task 8180 | created context checkpoint 2 of 4 (pos_min = 19680, pos_max = 21215, n_tokens = 21216, size = 170.013 MiB)
+slot print_timing: id  0 | task 8180 | prompt eval time =   25073.12 ms / 21220 tokens (    1.18 ms per token,   846.32 tokens per second)
+slot print_timing: id  0 | task 8180 |        eval time =   22255.70 ms /   281 tokens (   79.48 ms per token,    12.58 tokens per second)
+slot print_timing: id  0 | task 8180 |       total time =   47328.82 ms / 21501 tokens
+slot      release: id  0 | task 8180 | stop processing: n_tokens = 21500, truncated = 0
+[GIN] 2026/11/23 - 07:01:43 | 200 |   47.49s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:01:43.703Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:01:43.764Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=90001
+slot   operator(): id  0 | task 8504 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21531
+slot   operator(): id  0 | task 8504 | cached n_tokens = 21485, memory_seq_rm [21485, end)
+slot create_check: id  0 | task 8504 | created context checkpoint 3 of 4 (pos_min = 19964, pos_max = 21484, n_tokens = 21485, size = 170.013 MiB)
+slot   operator(): id  0 | task 8504 | cached n_tokens = 21527, memory_seq_rm [21527, end)
+slot init_sampler: id  0 | task 8504 | init sampler, took 1.56 ms, tokens: text = 21531, total = 21531
+slot create_check: id  0 | task 8504 | erasing context checkpoint too close to an earlier one (pos_min = 19680, pos_max = 21215, n_tokens = 21216, size = 170.013 MiB)
+slot create_check: id  0 | task 8504 | created context checkpoint 3 of 4 (pos_min = 19991, pos_max = 21526, n_tokens = 21527, size = 170.013 MiB)
+slot print_timing: id  0 | task 8504 | prompt eval time =     539.74 ms /    46 tokens (   11.73 ms per token,    85.23 tokens per second)
+slot print_timing: id  0 | task 8504 |        eval time =    3969.80 ms /    51 tokens (   79.40 ms per token,    12.60 tokens per second)
+slot print_timing: id  0 | task 8504 |       total time =    4509.53 ms /    97 tokens
+slot      release: id  0 | task 8504 | stop processing: n_tokens = 21581, truncated = 0
+[GIN] 2026/11/23 - 07:01:48 | 200 |    4.69s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:01:48.427Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:01:48.494Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=114878
+slot   operator(): id  0 | task 8557 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31421
+slot   operator(): id  0 | task 8557 | cached n_tokens = 21558, memory_seq_rm [21558, end)
+slot   operator(): id  0 | task 8557 | cached n_tokens = 22070, memory_seq_rm [22070, end)
+slot   operator(): id  0 | task 8557 | cached n_tokens = 22582, memory_seq_rm [22582, end)
+slot   operator(): id  0 | task 8557 | cached n_tokens = 23094, memory_seq_rm [23094, end)
+slot   operator(): id  0 | task 8557 | cached n_tokens = 23606, memory_seq_rm [23606, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   2560, progress = 0.77, t =   3.15 s / 813.47 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 24118, memory_seq_rm [24118, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   3072, progress = 0.78, t =   3.85 s / 797.26 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 24630, memory_seq_rm [24630, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   3584, progress = 0.80, t =   4.55 s / 788.29 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 25142, memory_seq_rm [25142, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   4096, progress = 0.82, t =   5.25 s / 780.57 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 25654, memory_seq_rm [25654, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   4608, progress = 0.83, t =   5.94 s / 776.06 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 26166, memory_seq_rm [26166, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   5120, progress = 0.85, t =   6.63 s / 771.79 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 26678, memory_seq_rm [26678, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   5632, progress = 0.87, t =   7.35 s / 766.53 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 27190, memory_seq_rm [27190, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   6144, progress = 0.88, t =   8.08 s / 760.86 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 27702, memory_seq_rm [27702, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   6656, progress = 0.90, t =   8.80 s / 756.36 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 28214, memory_seq_rm [28214, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   7168, progress = 0.91, t =   9.52 s / 753.21 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 28726, memory_seq_rm [28726, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   7680, progress = 0.93, t =  10.24 s / 750.30 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 29238, memory_seq_rm [29238, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   8192, progress = 0.95, t =  10.95 s / 748.04 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 29750, memory_seq_rm [29750, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   8704, progress = 0.96, t =  11.70 s / 744.18 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 30262, memory_seq_rm [30262, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   9216, progress = 0.98, t =  12.44 s / 740.63 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 30774, memory_seq_rm [30774, end)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   9351, progress = 0.98, t =  13.03 s / 717.43 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 30909, memory_seq_rm [30909, end)
+slot create_check: id  0 | task 8557 | erasing context checkpoint too close to an earlier one (pos_min = 19964, pos_max = 21484, n_tokens = 21485, size = 170.013 MiB)
+slot create_check: id  0 | task 8557 | created context checkpoint 3 of 4 (pos_min = 29373, pos_max = 30908, n_tokens = 30909, size = 170.013 MiB)
+slot print_timing: id  0 | task 8557 | prompt processing, n_tokens =   9859, progress = 1.00, t =  13.62 s / 724.06 tokens per second
+slot   operator(): id  0 | task 8557 | cached n_tokens = 31417, memory_seq_rm [31417, end)
+slot init_sampler: id  0 | task 8557 | init sampler, took 2.23 ms, tokens: text = 31421, total = 31421
+slot create_check: id  0 | task 8557 | erasing context checkpoint too close to an earlier one (pos_min = 19991, pos_max = 21526, n_tokens = 21527, size = 170.013 MiB)
+slot create_check: id  0 | task 8557 | created context checkpoint 3 of 4 (pos_min = 29881, pos_max = 31416, n_tokens = 31417, size = 170.013 MiB)
+slot print_timing: id  0 | task 8557 | prompt eval time =   14137.48 ms /  9863 tokens (    1.43 ms per token,   697.65 tokens per second)
+slot print_timing: id  0 | task 8557 |        eval time =  118797.49 ms /  1427 tokens (   83.31 ms per token,    12.00 tokens per second)
+slot print_timing: id  0 | task 8557 |       total time =  132934.97 ms / 11290 tokens
+slot      release: id  0 | task 8557 | stop processing: n_tokens = 32847, truncated = 0
+[GIN] 2026/11/23 - 07:04:01 | 200 |    2m10s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:04:01.607Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:04:01.678Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=120220
+slot   operator(): id  0 | task 10005 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 32496
+slot   operator(): id  0 | task 10005 | restored context checkpoint (pos_min = 19172, pos_max = 20707, n_tokens = 20708, n_past = 20707, size = 170.013 MiB)
+slot   operator(): id  0 | task 10005 | erased invalidated context checkpoint (pos_min = 29373, pos_max = 30908, n_tokens = 30909, n_swa = 1024, pos_next = 20707, size = 170.013 MiB)
+slot   operator(): id  0 | task 10005 | erased invalidated context checkpoint (pos_min = 29881, pos_max = 31416, n_tokens = 31417, n_swa = 1024, pos_next = 20707, size = 170.013 MiB)
+slot   operator(): id  0 | task 10005 | cached n_tokens = 20707, memory_seq_rm [20707, end)
+slot   operator(): id  0 | task 10005 | cached n_tokens = 21219, memory_seq_rm [21219, end)
+slot   operator(): id  0 | task 10005 | cached n_tokens = 21731, memory_seq_rm [21731, end)
+slot   operator(): id  0 | task 10005 | cached n_tokens = 22243, memory_seq_rm [22243, end)
+slot   operator(): id  0 | task 10005 | cached n_tokens = 22755, memory_seq_rm [22755, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   2560, progress = 0.72, t =   3.13 s / 818.63 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 23267, memory_seq_rm [23267, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   3072, progress = 0.73, t =   3.82 s / 803.46 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 23779, memory_seq_rm [23779, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   3584, progress = 0.75, t =   4.50 s / 796.50 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 24291, memory_seq_rm [24291, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   4096, progress = 0.76, t =   5.21 s / 785.74 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 24803, memory_seq_rm [24803, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   4608, progress = 0.78, t =   5.93 s / 776.87 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 25315, memory_seq_rm [25315, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   5120, progress = 0.79, t =   6.64 s / 771.09 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 25827, memory_seq_rm [25827, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   5632, progress = 0.81, t =   7.35 s / 766.62 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 26339, memory_seq_rm [26339, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   6144, progress = 0.83, t =   8.07 s / 761.70 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 26851, memory_seq_rm [26851, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   6656, progress = 0.84, t =   8.78 s / 757.89 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 27363, memory_seq_rm [27363, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   7168, progress = 0.86, t =   9.49 s / 755.47 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 27875, memory_seq_rm [27875, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   7680, progress = 0.87, t =  10.20 s / 752.88 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 28387, memory_seq_rm [28387, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   8192, progress = 0.89, t =  10.92 s / 750.38 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 28899, memory_seq_rm [28899, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   8704, progress = 0.91, t =  11.64 s / 747.76 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 29411, memory_seq_rm [29411, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   9216, progress = 0.92, t =  12.38 s / 744.31 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 29923, memory_seq_rm [29923, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =   9728, progress = 0.94, t =  13.11 s / 742.13 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 30435, memory_seq_rm [30435, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =  10240, progress = 0.95, t =  13.84 s / 739.77 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 30947, memory_seq_rm [30947, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =  10752, progress = 0.97, t =  14.58 s / 737.52 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 31459, memory_seq_rm [31459, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =  11264, progress = 0.98, t =  15.34 s / 734.12 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 31971, memory_seq_rm [31971, end)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =  11277, progress = 0.98, t =  15.97 s / 706.19 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 31984, memory_seq_rm [31984, end)
+slot create_check: id  0 | task 10005 | created context checkpoint 2 of 4 (pos_min = 30448, pos_max = 31983, n_tokens = 31984, size = 170.013 MiB)
+slot print_timing: id  0 | task 10005 | prompt processing, n_tokens =  11785, progress = 1.00, t =  16.50 s / 714.38 tokens per second
+slot   operator(): id  0 | task 10005 | cached n_tokens = 32492, memory_seq_rm [32492, end)
+slot init_sampler: id  0 | task 10005 | init sampler, took 2.37 ms, tokens: text = 32496, total = 32496
+slot create_check: id  0 | task 10005 | created context checkpoint 3 of 4 (pos_min = 30961, pos_max = 32491, n_tokens = 32492, size = 170.013 MiB)
+slot print_timing: id  0 | task 10005 | prompt eval time =   17002.26 ms / 11789 tokens (    1.44 ms per token,   693.38 tokens per second)
+slot print_timing: id  0 | task 10005 |        eval time =  228722.66 ms /  2730 tokens (   83.81 ms per token,    11.93 tokens per second)
+slot print_timing: id  0 | task 10005 |       total time =  245724.92 ms / 14519 tokens
+slot      release: id  0 | task 10005 | stop processing: n_tokens = 35225, truncated = 0
+[GIN] 2026/11/23 - 07:08:07 | 200 |     4m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:08:07.638Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:08:07.701Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=89766
+slot   operator(): id  0 | task 12760 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 21442
+slot   operator(): id  0 | task 12760 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+slot   operator(): id  0 | task 12760 | erased invalidated context checkpoint (pos_min = 19172, pos_max = 20707, n_tokens = 20708, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 12760 | erased invalidated context checkpoint (pos_min = 30448, pos_max = 31983, n_tokens = 31984, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 12760 | erased invalidated context checkpoint (pos_min = 30961, pos_max = 32491, n_tokens = 32492, n_swa = 1024, pos_next = 0, size = 170.013 MiB)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 0, memory_seq_rm [0, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 512, memory_seq_rm [512, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 1024, memory_seq_rm [1024, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 1536, memory_seq_rm [1536, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 2048, memory_seq_rm [2048, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 2560, memory_seq_rm [2560, end)
+slot   operator(): id  0 | task 12760 | cached n_tokens = 3072, memory_seq_rm [3072, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   3584, progress = 0.17, t =   3.52 s / 1019.10 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 3584, memory_seq_rm [3584, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   4096, progress = 0.19, t =   4.06 s / 1008.37 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 4096, memory_seq_rm [4096, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   4608, progress = 0.21, t =   4.62 s / 996.89 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 4608, memory_seq_rm [4608, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   5120, progress = 0.24, t =   5.17 s / 990.90 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 5120, memory_seq_rm [5120, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   5632, progress = 0.26, t =   5.72 s / 985.17 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 5632, memory_seq_rm [5632, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   6144, progress = 0.29, t =   6.28 s / 979.03 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 6144, memory_seq_rm [6144, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   6656, progress = 0.31, t =   6.83 s / 975.14 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 6656, memory_seq_rm [6656, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   7168, progress = 0.33, t =   7.37 s / 972.25 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 7168, memory_seq_rm [7168, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   7680, progress = 0.36, t =   7.94 s / 967.75 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 7680, memory_seq_rm [7680, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   8192, progress = 0.38, t =   8.49 s / 964.85 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 8192, memory_seq_rm [8192, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   8704, progress = 0.41, t =   9.08 s / 958.69 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 8704, memory_seq_rm [8704, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   9216, progress = 0.43, t =   9.66 s / 954.16 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 9216, memory_seq_rm [9216, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =   9728, progress = 0.45, t =  10.25 s / 949.51 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 9728, memory_seq_rm [9728, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  10240, progress = 0.48, t =  10.82 s / 945.97 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 10240, memory_seq_rm [10240, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  10752, progress = 0.50, t =  11.41 s / 942.70 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 10752, memory_seq_rm [10752, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  11264, progress = 0.53, t =  11.99 s / 939.78 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 11264, memory_seq_rm [11264, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  11776, progress = 0.55, t =  12.58 s / 936.45 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 11776, memory_seq_rm [11776, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  12288, progress = 0.57, t =  13.19 s / 931.93 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 12288, memory_seq_rm [12288, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  12800, progress = 0.60, t =  13.79 s / 928.33 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 12800, memory_seq_rm [12800, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  13312, progress = 0.62, t =  14.40 s / 924.37 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 13312, memory_seq_rm [13312, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  13824, progress = 0.64, t =  15.03 s / 919.86 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 13824, memory_seq_rm [13824, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  14336, progress = 0.67, t =  15.64 s / 916.64 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 14336, memory_seq_rm [14336, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  14848, progress = 0.69, t =  16.26 s / 913.41 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 14848, memory_seq_rm [14848, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  15360, progress = 0.72, t =  16.88 s / 910.21 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 15360, memory_seq_rm [15360, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  15872, progress = 0.74, t =  17.50 s / 907.05 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 15872, memory_seq_rm [15872, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  16384, progress = 0.76, t =  18.13 s / 903.74 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 16384, memory_seq_rm [16384, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  16896, progress = 0.79, t =  18.76 s / 900.48 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 16896, memory_seq_rm [16896, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  17408, progress = 0.81, t =  19.40 s / 897.28 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 17408, memory_seq_rm [17408, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  17920, progress = 0.84, t =  20.07 s / 892.92 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 17920, memory_seq_rm [17920, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  18432, progress = 0.86, t =  20.71 s / 889.90 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 18432, memory_seq_rm [18432, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  18944, progress = 0.88, t =  21.36 s / 886.72 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 18944, memory_seq_rm [18944, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  19456, progress = 0.91, t =  22.02 s / 883.56 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 19456, memory_seq_rm [19456, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  19968, progress = 0.93, t =  22.68 s / 880.61 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 19968, memory_seq_rm [19968, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  20480, progress = 0.96, t =  23.33 s / 877.72 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 20480, memory_seq_rm [20480, end)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  20930, progress = 0.98, t =  24.00 s / 872.20 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 20930, memory_seq_rm [20930, end)
+slot create_check: id  0 | task 12760 | created context checkpoint 1 of 4 (pos_min = 19394, pos_max = 20929, n_tokens = 20930, size = 170.013 MiB)
+slot print_timing: id  0 | task 12760 | prompt processing, n_tokens =  21438, progress = 1.00, t =  24.80 s / 864.54 tokens per second
+slot   operator(): id  0 | task 12760 | cached n_tokens = 21438, memory_seq_rm [21438, end)
+slot init_sampler: id  0 | task 12760 | init sampler, took 1.67 ms, tokens: text = 21442, total = 21442
+slot create_check: id  0 | task 12760 | created context checkpoint 2 of 4 (pos_min = 19902, pos_max = 21437, n_tokens = 21438, size = 170.013 MiB)
+slot print_timing: id  0 | task 12760 | prompt eval time =   25290.33 ms / 21442 tokens (    1.18 ms per token,   847.83 tokens per second)
+slot print_timing: id  0 | task 12760 |        eval time =   41908.41 ms /   531 tokens (   79.07 ms per token,    12.65 tokens per second)
+slot print_timing: id  0 | task 12760 |       total time =   67198.74 ms / 21973 tokens
+slot      release: id  0 | task 12760 | stop processing: n_tokens = 21972, truncated = 0
+[GIN] 2026/11/23 - 07:09:15 | 200 |     1m0s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:09:15.058Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:09:15.115Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=91985
+slot   operator(): id  0 | task 13334 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 22003
+slot   operator(): id  0 | task 13334 | cached n_tokens = 21957, memory_seq_rm [21957, end)
+slot create_check: id  0 | task 13334 | created context checkpoint 3 of 4 (pos_min = 20436, pos_max = 21956, n_tokens = 21957, size = 170.013 MiB)
+slot   operator(): id  0 | task 13334 | cached n_tokens = 21999, memory_seq_rm [21999, end)
+slot init_sampler: id  0 | task 13334 | init sampler, took 1.62 ms, tokens: text = 22003, total = 22003
+slot create_check: id  0 | task 13334 | erasing context checkpoint too close to an earlier one (pos_min = 19902, pos_max = 21437, n_tokens = 21438, size = 170.013 MiB)
+slot create_check: id  0 | task 13334 | created context checkpoint 3 of 4 (pos_min = 20463, pos_max = 21998, n_tokens = 21999, size = 170.013 MiB)
+slot print_timing: id  0 | task 13334 | prompt eval time =     545.65 ms /    46 tokens (   11.86 ms per token,    84.30 tokens per second)
+slot print_timing: id  0 | task 13334 |        eval time =    3138.65 ms /    40 tokens (   80.48 ms per token,    12.43 tokens per second)
+slot print_timing: id  0 | task 13334 |       total time =    3684.31 ms /    86 tokens
+slot      release: id  0 | task 13334 | stop processing: n_tokens = 22042, truncated = 0
+[GIN] 2026/11/23 - 07:09:18 | 200 |    3.85s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+time=2026-11-23T07:09:18.934Z level=DEBUG source=sched.go:1426 msg="evaluating already loaded" model=/root/.ollama/models/blobs/sha256-faff1a63667fac17ac5e777f47114688fcefea96e220e211aaa8d62c2c4561f1
+time=2026-11-23T07:09:19.006Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=116797
+slot   operator(): id  0 | task 13376 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 31879
+slot   operator(): id  0 | task 13376 | cached n_tokens = 22019, memory_seq_rm [22019, end)
+slot   operator(): id  0 | task 13376 | cached n_tokens = 22531, memory_seq_rm [22531, end)
+slot   operator(): id  0 | task 13376 | cached n_tokens = 23043, memory_seq_rm [23043, end)
+slot   operator(): id  0 | task 13376 | cached n_tokens = 23555, memory_seq_rm [23555, end)
+slot   operator(): id  0 | task 13376 | cached n_tokens = 24067, memory_seq_rm [24067, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   2560, progress = 0.77, t =   3.17 s / 808.01 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 24579, memory_seq_rm [24579, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   3072, progress = 0.79, t =   3.87 s / 793.62 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 25091, memory_seq_rm [25091, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   3584, progress = 0.80, t =   4.58 s / 783.14 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 25603, memory_seq_rm [25603, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   4096, progress = 0.82, t =   5.27 s / 776.88 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 26115, memory_seq_rm [26115, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   4608, progress = 0.84, t =   5.98 s / 770.31 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 26627, memory_seq_rm [26627, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   5120, progress = 0.85, t =   6.69 s / 765.20 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 27139, memory_seq_rm [27139, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   5632, progress = 0.87, t =   7.41 s / 759.80 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 27651, memory_seq_rm [27651, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   6144, progress = 0.88, t =   8.15 s / 754.20 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 28163, memory_seq_rm [28163, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   6656, progress = 0.90, t =   8.88 s / 749.77 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 28675, memory_seq_rm [28675, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   7168, progress = 0.92, t =   9.60 s / 746.60 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 29187, memory_seq_rm [29187, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   7680, progress = 0.93, t =  10.33 s / 743.59 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 29699, memory_seq_rm [29699, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   8192, progress = 0.95, t =  11.06 s / 740.38 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 30211, memory_seq_rm [30211, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   8704, progress = 0.96, t =  11.79 s / 738.18 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 30723, memory_seq_rm [30723, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   9216, progress = 0.98, t =  12.53 s / 735.80 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 31235, memory_seq_rm [31235, end)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   9348, progress = 0.98, t =  13.14 s / 711.25 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 31367, memory_seq_rm [31367, end)
+slot create_check: id  0 | task 13376 | erasing context checkpoint too close to an earlier one (pos_min = 20436, pos_max = 21956, n_tokens = 21957, size = 170.013 MiB)
+slot create_check: id  0 | task 13376 | created context checkpoint 3 of 4 (pos_min = 29831, pos_max = 31366, n_tokens = 31367, size = 170.013 MiB)
+slot print_timing: id  0 | task 13376 | prompt processing, n_tokens =   9856, progress = 1.00, t =  13.77 s / 715.72 tokens per second
+slot   operator(): id  0 | task 13376 | cached n_tokens = 31875, memory_seq_rm [31875, end)
+slot init_sampler: id  0 | task 13376 | init sampler, took 2.58 ms, tokens: text = 31879, total = 31879
+slot create_check: id  0 | task 13376 | erasing context checkpoint too close to an earlier one (pos_min = 20463, pos_max = 21998, n_tokens = 21999, size = 170.013 MiB)
+slot create_check: id  0 | task 13376 | created context checkpoint 3 of 4 (pos_min = 30339, pos_max = 31874, n_tokens = 31875, size = 170.013 MiB)
+[GIN] 2026/11/23 - 07:12:13 | 200 |    2m50s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+slot      release: id  0 | task 13376 | stop processing: n_tokens = 33794, truncated = 0

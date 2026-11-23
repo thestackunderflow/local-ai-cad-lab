@@ -1,0 +1,2225 @@
+{
+ "now": {
+  "tag": "after",
+  "bodies": 1,
+  "volume_mm3": 27872.0,
+  "per_body": [
+   {
+    "name": "Body1",
+    "volume_mm3": 27872.0,
+    "bbox": {
+     "max": [
+      32.0,
+      22.0,
+      50.00000000000001
+     ],
+     "min": [
+      -32.0,
+      -37.0,
+      -2.0
+     ]
+    },
+    "closed": true,
+    "shells": 1
+   }
+  ],
+  "params": {
+   "cup_width": {
+    "expression": "60",
+    "value": 60.0
+   },
+   "cup_length": {
+    "expression": "40",
+    "value": 40.0
+   },
+   "cup_height": {
+    "expression": "50",
+    "value": 50.0
+   },
+   "wall": {
+    "expression": "2",
+    "value": 2.0
+   },
+   "peg_size": {
+    "expression": "10",
+    "value": 10.0
+   },
+   "peg_length": {
+    "expression": "15",
+    "value": 15.0
+   }
+  },
+  "wall_param": 2.0,
+  "geo": {
+   "material": {
+    "peg_middle": false,
+    "front_wall": false,
+    "bottom": true,
+    "lid": false,
+    "side_px": true,
+    "side_nx": true,
+    "side_py": true,
+    "side_ny": true,
+    "cup_middle": false
+   },
+   "points": {
+    "peg_middle": [
+     0,
+     -28,
+     40
+    ],
+    "front_wall": [
+     0,
+     -21.0,
+     40
+    ],
+    "bottom": [
+     0,
+     0,
+     -1.0
+    ],
+    "lid": [
+     0,
+     0,
+     51.0
+    ],
+    "side_px": [
+     31.0,
+     0,
+     25
+    ],
+    "side_nx": [
+     -31.0,
+     0,
+     25
+    ],
+    "side_py": [
+     0,
+     21.0,
+     25
+    ],
+    "side_ny": [
+     0,
+     -21.0,
+     25
+    ],
+    "cup_middle": [
+     0,
+     0,
+     25
+    ]
+   },
+   "bbox": [
+    [
+     -32.0,
+     -37.0,
+     -2.0
+    ],
+    [
+     32.0,
+     22.0,
+     50.0
+    ]
+   ],
+   "peg_at_y-30": {
+    "x": [
+     -7.0,
+     7.0
+    ],
+    "z": [
+     33.0,
+     47.0
+    ],
+    "width_x": 14.0,
+    "height_z": 14.0
+   },
+   "peg_tip_y": -37.0,
+   "inside_span": {
+    "x": [
+     -30.0,
+     30.0
+    ],
+    "y": [
+     -20.0,
+     20.0
+    ],
+    "z": [
+     0.0,
+     null
+    ]
+   },
+   "inside_w_l_depth": [
+    60.0,
+    40.0,
+    50.0
+   ],
+   "outside_x_at_z25_y0": 64.0,
+   "outside_y_at_z25_x0": 44.0,
+   "peg_pocket_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "opening_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "bodies": 1,
+   "wall_param": 2.0
+  },
+  "score": {
+   "a": false,
+   "b": false,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": false
+  },
+  "history": {
+   "features": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "name": "XY",
+       "type": "origin"
+      }
+     },
+     "inputs": [],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 2,
+     "name": "Cup",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "body_names": [
+       "Body1"
+      ],
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "cup_height"
+      },
+      "operation": "new_body",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 1
+     },
+     "inputs": [
+      {
+       "expression": "cup_height",
+       "label": "Distance",
+       "param": "d3",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "base": {
+        "base": {
+         "name": "XZ",
+         "type": "origin"
+        },
+        "distance": "-cup_length / 2",
+        "type": "offset"
+       },
+       "type": "flipped"
+      }
+     },
+     "inputs": [
+      {
+       "expression": "-cup_length / 2",
+       "label": "Offset",
+       "param": "d4",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 4,
+     "name": "Peg",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "peg_length"
+      },
+      "operation": "join",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 3
+     },
+     "inputs": [
+      {
+       "expression": "peg_length",
+       "label": "Distance",
+       "param": "d7",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 5,
+     "name": "Shell",
+     "type": "ShellFeature",
+     "definition": {
+      "direction": "outside",
+      "faces": [
+       [
+        0.0,
+        0.0,
+        50.0
+       ]
+      ],
+      "thickness": "wall"
+     },
+     "inputs": [
+      {
+       "expression": "wall",
+       "label": "Thickness",
+       "param": "d8",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    }
+   ],
+   "timeline": [
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 1,
+     "ms": 0.051879999999999996,
+     "name": "Sketch1",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 2,
+     "ms": 2.407832,
+     "name": "Cup",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 3,
+     "ms": 0.060169,
+     "name": "Sketch2",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 4,
+     "ms": 33.425172,
+     "name": "Peg",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 5,
+     "ms": 52.719930999999995,
+     "name": "Shell",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ShellFeature",
+     "warning": null
+    }
+   ],
+   "marker": 5,
+   "sketches": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "plane": {
+      "origin": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       0.0,
+       1.0,
+       0.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "plane": {
+      "origin": [
+       0.0,
+       -20.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    }
+   ]
+  }
+ },
+ "design": {
+  "params": [
+   {
+    "comment": "",
+    "error": null,
+    "expression": "60",
+    "model": false,
+    "name": "cup_width",
+    "unit": "mm",
+    "value": 60.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "40",
+    "model": false,
+    "name": "cup_length",
+    "unit": "mm",
+    "value": 40.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "50",
+    "model": false,
+    "name": "cup_height",
+    "unit": "mm",
+    "value": 50.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "2",
+    "model": false,
+    "name": "wall",
+    "unit": "mm",
+    "value": 2.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "10",
+    "model": false,
+    "name": "peg_size",
+    "unit": "mm",
+    "value": 10.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "15",
+    "model": false,
+    "name": "peg_length",
+    "unit": "mm",
+    "value": 15.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "cup_width",
+    "model": true,
+    "name": "d1",
+    "unit": "mm",
+    "value": 60.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "cup_length",
+    "model": true,
+    "name": "d2",
+    "unit": "mm",
+    "value": 40.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "peg_size",
+    "model": true,
+    "name": "d5",
+    "unit": "mm",
+    "value": 10.0
+   },
+   {
+    "comment": "",
+    "error": null,
+    "expression": "peg_size",
+    "model": true,
+    "name": "d6",
+    "unit": "mm",
+    "value": 10.0
+   }
+  ],
+  "timeline": [
+   {
+    "boolean_diagnostics": {
+     "events": [],
+     "truncated": false
+    },
+    "error": null,
+    "id": 1,
+    "ms": 0.051879999999999996,
+    "name": "Sketch1",
+    "rolled_back": false,
+    "suppressed": false,
+    "type": "Sketch",
+    "warning": null
+   },
+   {
+    "boolean_diagnostics": {
+     "events": [],
+     "truncated": false
+    },
+    "error": null,
+    "id": 2,
+    "ms": 2.407832,
+    "name": "Cup",
+    "rolled_back": false,
+    "suppressed": false,
+    "type": "ExtrudeFeature",
+    "warning": null
+   },
+   {
+    "boolean_diagnostics": {
+     "events": [],
+     "truncated": false
+    },
+    "error": null,
+    "id": 3,
+    "ms": 0.060169,
+    "name": "Sketch2",
+    "rolled_back": false,
+    "suppressed": false,
+    "type": "Sketch",
+    "warning": null
+   },
+   {
+    "boolean_diagnostics": {
+     "events": [],
+     "truncated": false
+    },
+    "error": null,
+    "id": 4,
+    "ms": 33.425172,
+    "name": "Peg",
+    "rolled_back": false,
+    "suppressed": false,
+    "type": "ExtrudeFeature",
+    "warning": null
+   },
+   {
+    "boolean_diagnostics": {
+     "events": [],
+     "truncated": false
+    },
+    "error": null,
+    "id": 5,
+    "ms": 52.719930999999995,
+    "name": "Shell",
+    "rolled_back": false,
+    "suppressed": false,
+    "type": "ShellFeature",
+    "warning": null
+   }
+  ],
+  "sketches": [
+   {
+    "constraints": [
+     {
+      "id": "k1",
+      "l": 0,
+      "name": "Horizontal",
+      "type": "horizontal"
+     },
+     {
+      "id": "k2",
+      "l": 2,
+      "name": "Horizontal",
+      "type": "horizontal"
+     },
+     {
+      "id": "k3",
+      "l": 1,
+      "name": "Vertical",
+      "type": "vertical"
+     },
+     {
+      "id": "k4",
+      "l": 3,
+      "name": "Vertical",
+      "type": "vertical"
+     },
+     {
+      "id": "k5",
+      "l": 4,
+      "name": "MidPoint",
+      "p": 5,
+      "type": "midpoint"
+     },
+     {
+      "id": "k6",
+      "name": "Coincident",
+      "p": 0,
+      "q": 5,
+      "type": "coincident"
+     },
+     {
+      "expression": "cup_width",
+      "id": "k7",
+      "l": 0,
+      "name": "LinearDimension",
+      "param": "d1",
+      "type": "length",
+      "value": 60.0
+     },
+     {
+      "expression": "cup_length",
+      "id": "k8",
+      "l": 1,
+      "name": "LinearDimension",
+      "param": "d2",
+      "type": "length",
+      "value": 40.0
+     }
+    ],
+    "curves": [
+     {
+      "construction": false,
+      "end": "p2",
+      "end_at": [
+       30.0,
+       -20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l1",
+      "start": "p1",
+      "start_at": [
+       -30.0,
+       -20.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p3",
+      "end_at": [
+       30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l2",
+      "start": "p2",
+      "start_at": [
+       30.0,
+       -20.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p4",
+      "end_at": [
+       -30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l3",
+      "start": "p3",
+      "start_at": [
+       30.0,
+       20.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p1",
+      "end_at": [
+       -30.0,
+       -20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l4",
+      "start": "p4",
+      "start_at": [
+       -30.0,
+       20.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": true,
+      "end": "p3",
+      "end_at": [
+       30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l5",
+      "start": "p1",
+      "start_at": [
+       -30.0,
+       -20.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": true,
+      "end": "p4",
+      "end_at": [
+       -30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l6",
+      "start": "p2",
+      "start_at": [
+       30.0,
+       -20.0
+      ],
+      "type": "line"
+     }
+    ],
+    "dof": 0,
+    "failing": [],
+    "fully_constrained": true,
+    "id": 1,
+    "links": [],
+    "name": "Sketch1",
+    "plane": {
+     "origin": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "x_dir": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "y_dir": [
+      0.0,
+      1.0,
+      0.0
+     ]
+    },
+    "points": [
+     {
+      "at": [
+       0.0,
+       0.0
+      ],
+      "fixed": true,
+      "fully_constrained": true,
+      "id": "origin",
+      "link": null,
+      "world": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       -30.0,
+       -20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p1",
+      "link": null,
+      "world": [
+       -30.0,
+       -20.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       30.0,
+       -20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p2",
+      "link": null,
+      "world": [
+       30.0,
+       -20.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p3",
+      "link": null,
+      "world": [
+       30.0,
+       20.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       -30.0,
+       20.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p4",
+      "link": null,
+      "world": [
+       -30.0,
+       20.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       0.0,
+       0.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p5",
+      "link": null,
+      "world": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     }
+    ],
+    "profiles": [
+     {
+      "area_mm2": 2400.0,
+      "centroid_sketch": [
+       0.0,
+       0.0
+      ],
+      "curves": [
+       "l1",
+       "l2",
+       "l3",
+       "l4"
+      ],
+      "holes": [],
+      "index": 0
+     }
+    ],
+    "status": "solved",
+    "visible": false,
+    "wires": []
+   },
+   {
+    "constraints": [
+     {
+      "id": "k1",
+      "l": 0,
+      "name": "Horizontal",
+      "type": "horizontal"
+     },
+     {
+      "id": "k2",
+      "l": 2,
+      "name": "Horizontal",
+      "type": "horizontal"
+     },
+     {
+      "id": "k3",
+      "l": 1,
+      "name": "Vertical",
+      "type": "vertical"
+     },
+     {
+      "id": "k4",
+      "l": 3,
+      "name": "Vertical",
+      "type": "vertical"
+     },
+     {
+      "id": "k5",
+      "l": 4,
+      "name": "MidPoint",
+      "p": 5,
+      "type": "midpoint"
+     },
+     {
+      "expression": "peg_size",
+      "id": "k6",
+      "l": 0,
+      "name": "LinearDimension",
+      "param": "d5",
+      "type": "length",
+      "value": 10.0
+     },
+     {
+      "expression": "peg_size",
+      "id": "k7",
+      "l": 1,
+      "name": "LinearDimension",
+      "param": "d6",
+      "type": "length",
+      "value": 10.0
+     },
+     {
+      "id": "k8",
+      "name": "Fix",
+      "p": 5,
+      "type": "fix"
+     }
+    ],
+    "curves": [
+     {
+      "construction": false,
+      "end": "p2",
+      "end_at": [
+       5.0,
+       35.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l1",
+      "start": "p1",
+      "start_at": [
+       -5.0,
+       35.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p3",
+      "end_at": [
+       5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l2",
+      "start": "p2",
+      "start_at": [
+       5.0,
+       35.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p4",
+      "end_at": [
+       -5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l3",
+      "start": "p3",
+      "start_at": [
+       5.0,
+       45.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": false,
+      "end": "p1",
+      "end_at": [
+       -5.0,
+       35.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l4",
+      "start": "p4",
+      "start_at": [
+       -5.0,
+       45.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": true,
+      "end": "p3",
+      "end_at": [
+       5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l5",
+      "start": "p1",
+      "start_at": [
+       -5.0,
+       35.0
+      ],
+      "type": "line"
+     },
+     {
+      "construction": true,
+      "end": "p4",
+      "end_at": [
+       -5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "l6",
+      "start": "p2",
+      "start_at": [
+       5.0,
+       35.0
+      ],
+      "type": "line"
+     }
+    ],
+    "dof": 0,
+    "failing": [],
+    "fully_constrained": true,
+    "id": 3,
+    "links": [],
+    "name": "Sketch2",
+    "plane": {
+     "origin": [
+      0.0,
+      -20.0,
+      0.0
+     ],
+     "x_dir": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "y_dir": [
+      -0.0,
+      -0.0,
+      1.0
+     ]
+    },
+    "points": [
+     {
+      "at": [
+       0.0,
+       0.0
+      ],
+      "fixed": true,
+      "fully_constrained": true,
+      "id": "origin",
+      "link": null,
+      "world": [
+       0.0,
+       -20.0,
+       0.0
+      ]
+     },
+     {
+      "at": [
+       -5.0,
+       35.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p1",
+      "link": null,
+      "world": [
+       -5.0,
+       -20.0,
+       35.0
+      ]
+     },
+     {
+      "at": [
+       5.0,
+       35.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p2",
+      "link": null,
+      "world": [
+       5.0,
+       -20.0,
+       35.0
+      ]
+     },
+     {
+      "at": [
+       5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p3",
+      "link": null,
+      "world": [
+       5.0,
+       -20.0,
+       45.0
+      ]
+     },
+     {
+      "at": [
+       -5.0,
+       45.0
+      ],
+      "fixed": false,
+      "fully_constrained": true,
+      "id": "p4",
+      "link": null,
+      "world": [
+       -5.0,
+       -20.0,
+       45.0
+      ]
+     },
+     {
+      "at": [
+       0.0,
+       40.0
+      ],
+      "fixed": true,
+      "fully_constrained": true,
+      "id": "p5",
+      "link": null,
+      "world": [
+       0.0,
+       -20.0,
+       40.0
+      ]
+     }
+    ],
+    "profiles": [
+     {
+      "area_mm2": 100.0,
+      "centroid_sketch": [
+       0.0,
+       40.0
+      ],
+      "curves": [
+       "l1",
+       "l2",
+       "l3",
+       "l4"
+      ],
+      "holes": [],
+      "index": 0
+     }
+    ],
+    "status": "solved",
+    "visible": false,
+    "wires": []
+   }
+  ],
+  "bodies": [
+   {
+    "area_mm2": 28304.0,
+    "bbox": {
+     "max": [
+      32.0,
+      22.0,
+      50.00000000000001
+     ],
+     "min": [
+      -32.0,
+      -37.0,
+      -2.0
+     ]
+    },
+    "center_of_mass": [
+     1.114896753393192e-16,
+     -1.6317451205510936,
+     20.521239954075774
+    ],
+    "closed": true,
+    "edges": 48,
+    "face_types": {
+     "plane": 21
+    },
+    "faces": 21,
+    "kernel": {
+     "edges": 48,
+     "faces": 21,
+     "shells": 1,
+     "vertices": 32
+    },
+    "name": "Body1",
+    "vertices": 32,
+    "visible": true,
+    "volume_mm3": 27872.0
+   }
+  ],
+  "marker": 5
+ },
+ "set_wall2": {
+  "isError": false,
+  "reply": {
+   "display_value": 2.0,
+   "errors": [],
+   "expression": "2",
+   "name": "wall",
+   "recomputed": 0,
+   "restored": 0,
+   "value": 2.0
+  }
+ },
+ "wall2": {
+  "tag": "after-wall2",
+  "bodies": 1,
+  "volume_mm3": 27872.0,
+  "per_body": [
+   {
+    "name": "Body1",
+    "volume_mm3": 27872.0,
+    "bbox": {
+     "max": [
+      32.0,
+      22.0,
+      50.00000000000001
+     ],
+     "min": [
+      -32.0,
+      -37.0,
+      -2.0
+     ]
+    },
+    "closed": true,
+    "shells": 1
+   }
+  ],
+  "params": {
+   "cup_width": {
+    "expression": "60",
+    "value": 60.0
+   },
+   "cup_length": {
+    "expression": "40",
+    "value": 40.0
+   },
+   "cup_height": {
+    "expression": "50",
+    "value": 50.0
+   },
+   "wall": {
+    "expression": "2",
+    "value": 2.0
+   },
+   "peg_size": {
+    "expression": "10",
+    "value": 10.0
+   },
+   "peg_length": {
+    "expression": "15",
+    "value": 15.0
+   }
+  },
+  "wall_param": 2.0,
+  "geo": {
+   "material": {
+    "peg_middle": false,
+    "front_wall": false,
+    "bottom": true,
+    "lid": false,
+    "side_px": true,
+    "side_nx": true,
+    "side_py": true,
+    "side_ny": true,
+    "cup_middle": false
+   },
+   "points": {
+    "peg_middle": [
+     0,
+     -28,
+     40
+    ],
+    "front_wall": [
+     0,
+     -21.0,
+     40
+    ],
+    "bottom": [
+     0,
+     0,
+     -1.0
+    ],
+    "lid": [
+     0,
+     0,
+     51.0
+    ],
+    "side_px": [
+     31.0,
+     0,
+     25
+    ],
+    "side_nx": [
+     -31.0,
+     0,
+     25
+    ],
+    "side_py": [
+     0,
+     21.0,
+     25
+    ],
+    "side_ny": [
+     0,
+     -21.0,
+     25
+    ],
+    "cup_middle": [
+     0,
+     0,
+     25
+    ]
+   },
+   "bbox": [
+    [
+     -32.0,
+     -37.0,
+     -2.0
+    ],
+    [
+     32.0,
+     22.0,
+     50.0
+    ]
+   ],
+   "peg_at_y-30": {
+    "x": [
+     -7.0,
+     7.0
+    ],
+    "z": [
+     33.0,
+     47.0
+    ],
+    "width_x": 14.0,
+    "height_z": 14.0
+   },
+   "peg_tip_y": -37.0,
+   "inside_span": {
+    "x": [
+     -30.0,
+     30.0
+    ],
+    "y": [
+     -20.0,
+     20.0
+    ],
+    "z": [
+     0.0,
+     null
+    ]
+   },
+   "inside_w_l_depth": [
+    60.0,
+    40.0,
+    50.0
+   ],
+   "outside_x_at_z25_y0": 64.0,
+   "outside_y_at_z25_x0": 44.0,
+   "peg_pocket_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "opening_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "bodies": 1,
+   "wall_param": 2.0
+  },
+  "score": {
+   "a": false,
+   "b": false,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": false
+  },
+  "history": {
+   "features": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "name": "XY",
+       "type": "origin"
+      }
+     },
+     "inputs": [],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 2,
+     "name": "Cup",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "body_names": [
+       "Body1"
+      ],
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "cup_height"
+      },
+      "operation": "new_body",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 1
+     },
+     "inputs": [
+      {
+       "expression": "cup_height",
+       "label": "Distance",
+       "param": "d3",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "base": {
+        "base": {
+         "name": "XZ",
+         "type": "origin"
+        },
+        "distance": "-cup_length / 2",
+        "type": "offset"
+       },
+       "type": "flipped"
+      }
+     },
+     "inputs": [
+      {
+       "expression": "-cup_length / 2",
+       "label": "Offset",
+       "param": "d4",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 4,
+     "name": "Peg",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "peg_length"
+      },
+      "operation": "join",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 3
+     },
+     "inputs": [
+      {
+       "expression": "peg_length",
+       "label": "Distance",
+       "param": "d7",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 5,
+     "name": "Shell",
+     "type": "ShellFeature",
+     "definition": {
+      "direction": "outside",
+      "faces": [
+       [
+        0.0,
+        0.0,
+        50.0
+       ]
+      ],
+      "thickness": "wall"
+     },
+     "inputs": [
+      {
+       "expression": "wall",
+       "label": "Thickness",
+       "param": "d8",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    }
+   ],
+   "timeline": [
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 1,
+     "ms": 0.051879999999999996,
+     "name": "Sketch1",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 2,
+     "ms": 2.407832,
+     "name": "Cup",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 3,
+     "ms": 0.060169,
+     "name": "Sketch2",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 4,
+     "ms": 33.425172,
+     "name": "Peg",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 5,
+     "ms": 52.719930999999995,
+     "name": "Shell",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ShellFeature",
+     "warning": null
+    }
+   ],
+   "marker": 5,
+   "sketches": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "plane": {
+      "origin": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       0.0,
+       1.0,
+       0.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "plane": {
+      "origin": [
+       0.0,
+       -20.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    }
+   ]
+  }
+ },
+ "set_wall3": {
+  "isError": false,
+  "reply": {
+   "display_value": 3.0,
+   "errors": [],
+   "expression": "3",
+   "name": "wall",
+   "recomputed": 1,
+   "restored": 0,
+   "value": 3.0
+  }
+ },
+ "wall3": {
+  "tag": "after-wall3",
+  "bodies": 1,
+  "volume_mm3": 43248.0,
+  "per_body": [
+   {
+    "name": "Body1",
+    "volume_mm3": 43248.0,
+    "bbox": {
+     "max": [
+      33.0,
+      23.0,
+      50.00000000000001
+     ],
+     "min": [
+      -33.0,
+      -38.0,
+      -3.0
+     ]
+    },
+    "closed": true,
+    "shells": 1
+   }
+  ],
+  "params": {
+   "cup_width": {
+    "expression": "60",
+    "value": 60.0
+   },
+   "cup_length": {
+    "expression": "40",
+    "value": 40.0
+   },
+   "cup_height": {
+    "expression": "50",
+    "value": 50.0
+   },
+   "wall": {
+    "expression": "3",
+    "value": 3.0
+   },
+   "peg_size": {
+    "expression": "10",
+    "value": 10.0
+   },
+   "peg_length": {
+    "expression": "15",
+    "value": 15.0
+   }
+  },
+  "wall_param": 3.0,
+  "geo": {
+   "material": {
+    "peg_middle": false,
+    "front_wall": false,
+    "bottom": true,
+    "lid": false,
+    "side_px": true,
+    "side_nx": true,
+    "side_py": true,
+    "side_ny": true,
+    "cup_middle": false
+   },
+   "points": {
+    "peg_middle": [
+     0,
+     -28,
+     40
+    ],
+    "front_wall": [
+     0,
+     -21.5,
+     40
+    ],
+    "bottom": [
+     0,
+     0,
+     -1.5
+    ],
+    "lid": [
+     0,
+     0,
+     51.5
+    ],
+    "side_px": [
+     31.5,
+     0,
+     25
+    ],
+    "side_nx": [
+     -31.5,
+     0,
+     25
+    ],
+    "side_py": [
+     0,
+     21.5,
+     25
+    ],
+    "side_ny": [
+     0,
+     -21.5,
+     25
+    ],
+    "cup_middle": [
+     0,
+     0,
+     25
+    ]
+   },
+   "bbox": [
+    [
+     -33.0,
+     -38.0,
+     -3.0
+    ],
+    [
+     33.0,
+     23.0,
+     50.0
+    ]
+   ],
+   "peg_at_y-30": {
+    "x": [
+     -8.0,
+     8.0
+    ],
+    "z": [
+     32.0,
+     48.0
+    ],
+    "width_x": 16.0,
+    "height_z": 16.0
+   },
+   "peg_tip_y": -38.0,
+   "inside_span": {
+    "x": [
+     -30.0,
+     30.0
+    ],
+    "y": [
+     -20.0,
+     20.0
+    ],
+    "z": [
+     0.0,
+     null
+    ]
+   },
+   "inside_w_l_depth": [
+    60.0,
+    40.0,
+    50.0
+   ],
+   "outside_x_at_z25_y0": 66.0,
+   "outside_y_at_z25_x0": 46.0,
+   "peg_pocket_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "opening_span": {
+    "x": [
+     -5.0,
+     5.0
+    ],
+    "y": [
+     -35.0,
+     20.0
+    ],
+    "z": [
+     35.0,
+     45.0
+    ]
+   },
+   "bodies": 1,
+   "wall_param": 3.0
+  },
+  "score": {
+   "a": false,
+   "b": false,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": false
+  },
+  "history": {
+   "features": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "name": "XY",
+       "type": "origin"
+      }
+     },
+     "inputs": [],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 2,
+     "name": "Cup",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "body_names": [
+       "Body1"
+      ],
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "cup_height"
+      },
+      "operation": "new_body",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 1
+     },
+     "inputs": [
+      {
+       "expression": "cup_height",
+       "label": "Distance",
+       "param": "d3",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "type": "Sketch",
+     "definition": {
+      "plane": {
+       "base": {
+        "base": {
+         "name": "XZ",
+         "type": "origin"
+        },
+        "distance": "-cup_length / 2",
+        "type": "offset"
+       },
+       "type": "flipped"
+      }
+     },
+     "inputs": [
+      {
+       "expression": "-cup_length / 2",
+       "label": "Offset",
+       "param": "d4",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 4,
+     "name": "Peg",
+     "type": "ExtrudeFeature",
+     "definition": {
+      "extent": {
+       "convention": "total_distance",
+       "direction": "positive",
+       "distance": "peg_length"
+      },
+      "operation": "join",
+      "profiles": {
+       "type": "all"
+      },
+      "sketch": 3
+     },
+     "inputs": [
+      {
+       "expression": "peg_length",
+       "label": "Distance",
+       "param": "d7",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    },
+    {
+     "id": 5,
+     "name": "Shell",
+     "type": "ShellFeature",
+     "definition": {
+      "direction": "outside",
+      "faces": [
+       [
+        0.0,
+        0.0,
+        50.0
+       ]
+      ],
+      "thickness": "wall"
+     },
+     "inputs": [
+      {
+       "expression": "wall",
+       "label": "Thickness",
+       "param": "d8",
+       "unit": "mm"
+      }
+     ],
+     "error": null,
+     "warning": null,
+     "suppressed": false,
+     "index": null,
+     "position": null
+    }
+   ],
+   "timeline": [
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 1,
+     "ms": 0.051879999999999996,
+     "name": "Sketch1",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 2,
+     "ms": 2.407832,
+     "name": "Cup",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 3,
+     "ms": 0.060169,
+     "name": "Sketch2",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "Sketch",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 4,
+     "ms": 33.425172,
+     "name": "Peg",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ExtrudeFeature",
+     "warning": null
+    },
+    {
+     "boolean_diagnostics": {
+      "events": [],
+      "truncated": false
+     },
+     "error": null,
+     "id": 5,
+     "ms": 64.857788,
+     "name": "Shell",
+     "rolled_back": false,
+     "suppressed": false,
+     "type": "ShellFeature",
+     "warning": null
+    }
+   ],
+   "marker": 5,
+   "sketches": [
+    {
+     "id": 1,
+     "name": "Sketch1",
+     "plane": {
+      "origin": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       0.0,
+       1.0,
+       0.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    },
+    {
+     "id": 3,
+     "name": "Sketch2",
+     "plane": {
+      "origin": [
+       0.0,
+       -20.0,
+       0.0
+      ],
+      "x_dir": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "y_dir": [
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     "attachment": null,
+     "origin": null,
+     "normal": null,
+     "offset": null
+    }
+   ]
+  }
+ }
+}

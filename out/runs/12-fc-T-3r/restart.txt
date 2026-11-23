@@ -1,0 +1,3 @@
+{"version":"0.40.17"} ctx=65536 kv=q8_0 mem=6g
+warm-up gemma4:12b-it-qat 91 s
+cache fix: {"cache_limit_mib": null, "checkpoints_max": 4, "status": "forwarded"}

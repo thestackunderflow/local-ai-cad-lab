@@ -1,0 +1,18 @@
+MCP RPC: GUI task raised AttributeError: module 'FreeCAD' has no attribute 'ActiveDoc'
+Traceback (most recent call last):
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/gui_dispatch.py", line 299, in _wrapped
+    res = task()
+          ^^^^^^
+  File "/home/maker/.local/share/FreeCAD/v1-1/Mod/FreeCADMCP/./rpc_server/rpc_server.py", line 387, in task
+    exec(code, _EXEC_NAMESPACE)
+  File "<string>", line 4, in <module>
+AttributeError: module 'FreeCAD' has no attribute 'ActiveDoc'
+Error executing Python code: AttributeError: module 'FreeCAD' has no attribute 'ActiveDoc'
+--- code ---
+import FreeCAD as App
+import PartDesign
+
+pad = App.ActiveDoc.Objects.Pad001
+print(f"Pad001 Sketch: {pad.Profile[0].Name}")
+
+--- end ---

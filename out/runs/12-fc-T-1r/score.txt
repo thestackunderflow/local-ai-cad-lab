@@ -1,0 +1,1 @@
+LA 12-fc-T-1r freecad T: pass False class (14) calls 15 errors 1 turns None wall 1500.4 s trunc 0

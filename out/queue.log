@@ -42,3 +42,15 @@
 2026-11-23T02:46:43Z start 12-fc-T-3
 2026-11-23T03:12:23Z end 12-fc-T-3 rc 0: LA 12-fc-T-3 freecad T: pass False class (14) calls 2 errors 0 turns None wall 1500.9 s trunc 0
 2026-11-23T03:12:23Z queue end
+2026-11-23T04:57:55Z queue start run/list-12b-rerun.txt
+2026-11-23T04:57:55Z start 12-sc-T-1r
+2026-11-23T05:24:30Z end 12-sc-T-1r rc 0: LA 12-sc-T-1r solidcraft T: pass False class (14) calls 17 errors 4 turns None wall 1500.3 s trunc 0
+2026-11-23T05:24:30Z start 12-sc-T-2r
+2026-11-23T05:51:09Z end 12-sc-T-2r rc 0: LA 12-sc-T-2r solidcraft T: pass False class (14) calls 8 errors 1 turns None wall 1500.3 s trunc 0
+2026-11-23T05:51:09Z start 12-fc-T-1r
+2026-11-23T06:17:48Z end 12-fc-T-1r rc 0: LA 12-fc-T-1r freecad T: pass False class (14) calls 15 errors 1 turns None wall 1500.4 s trunc 0 | VOID host fault (first < 3 tok/s at 25.0 min, 1 of 20 requests)
+2026-11-23T06:17:48Z start 12-fc-T-2r
+2026-11-23T06:44:38Z end 12-fc-T-2r rc 0: LA 12-fc-T-2r freecad T: pass False class (14) calls 19 errors 6 turns None wall 1500.5 s trunc 0
+2026-11-23T06:44:38Z start 12-fc-T-3r
+2026-11-23T07:12:20Z end 12-fc-T-3r rc 0: LA 12-fc-T-3r freecad T: pass False class (14) calls 13 errors 4 turns None wall 1500.4 s trunc 0
+2026-11-23T07:12:20Z queue end

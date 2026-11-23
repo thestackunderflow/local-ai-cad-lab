@@ -2,28 +2,193 @@
  "scored": "2026-11-23, by reading score.json, stream.jsonl (thinking, calls, results), transcript.jsonl, ollama.log; no model run",
  "void_rule": "PLAN la section 0 override (23 Nov): host fault = any request before the cap written < 3 tok/s (lab/la_throughput.py, out/throughput-12b.json). Cause: llama-server host-RAM prompt cache (--cache-ram default 8192 MiB, log 'cache state') grew past ~5.4 GB inside the 6 GB la-ollama container that also holds the mmapped CPU-layer weights; both prefill and writing fell 15-50x (12 -> 0.2-0.5 tok/s). Void = re-run once with the fix.",
  "runs": {
-  "12-sc-T-1": {"valid": false, "void": "host fault from 2.0 min (cache 5.47 GB at start; last request 667 tokens in 23 min = 0.48 tok/s)",
-    "class": "(14) [void]", "attempt": "none (read only): Bash ls -R (auto-approved read-only built-in), open peg-trap.sc failed on a relative path, read the error, re-opened with /root/peg-trap.sc, inspect_design; killed while thinking (~795 thinking tokens) on the next step",
-    "calls": 4, "errors": 1, "errors_read": "yes (1/1)", "edits": 0, "said_fixed_not_fixed": "no (no final text)", "compactions": 0},
-  "12-sc-T-2": {"valid": false, "void": "host fault from 8.0 min (cache 6.75 GB; 0.41 / 0.24 / 0.31 tok/s, then the 2nd compaction at 0.22 tok/s)",
-    "class": "(14) [void]", "attempt": "planned shell only the cup body (body?) -> batch solid.shell twice with invalid params (distance, no faces): both refused 'faces must be a list'; re-read describe_command after the 1st but repeated the same wrong params; killed in the 2nd auto-compaction",
-    "calls": 7, "errors": 2, "errors_read": "partly (read, not applied)", "edits": 0, "said_fixed_not_fixed": "no (no final text)", "compactions": "1 done (270 s) + 1 cut"},
-  "12-sc-T-3": {"valid": true, "void": null,
-    "class": "(14); edit at the cap = (3) a fill after the shell, fails (a)", "attempt": "measure body 'all' (error, read), undo x2 'nothing to undo' (read; wanted (1) reorder, undo cannot reach the file's features), batch with solid.shell faces [0] refused (read), then a batch of 6 extrudes of the peg sketch, cut/join alternating 15 mm: ok. By code after: peg middle material, front wall material, but peg 14 x 14 at wall 2 and 16 x 16 at wall 3 (a fails), 1 body, volume 29,372 mm3 (fix = 27,732). Killed in its 4th auto-compaction",
-    "calls": 12, "errors": 4, "errors_read": "yes (4/4)", "edits": "6 extrude features after the shell", "said_fixed_not_fixed": "no (no final text)", "compactions": "3 done (269 + 260 + 144 s) + 1 cut at 191 s",
-    "time_split_min": {"compacting": 14.4, "full_prompt_reprocess_after_compaction": 1.8, "model_turns_and_tools": 8.8}},
-  "12-fc-T-1": {"valid": false, "void": "host fault from 19.9 min (cache 6.95 GB; last request 103 tokens in 5 min = 0.34 tok/s). Informative: 19.9 min at normal speed without a finished edit",
-    "class": "(14) [void]", "attempt": "planned (6) peg as a separate body: get_object Pad001 twice (once with a screenshot), execute_code failed AttributeError (FreeCAD.WorkPlanes); one 4,689-token thinking turn (7 min); killed after the 2nd compaction before reading the error",
-    "calls": 6, "errors": 1, "errors_read": "unknown (cut before the next reply)", "edits": 0, "said_fixed_not_fixed": "no (no final text)", "compactions": "2 done (166 + 256 s)"},
-  "12-fc-T-2": {"valid": false, "void": "host fault from 0.6 min (cache 6.51 GB; 0.47 tok/s, then 330 tokens in 22.7 min)",
-    "class": "(14) [void]", "attempt": "list_documents, get_objects; killed while thinking on the next step", "calls": 2, "errors": 0, "errors_read": "-", "edits": 0, "said_fixed_not_fixed": "no (no final text)", "compactions": 0},
-  "12-fc-T-3": {"valid": false, "void": "host fault from 0.3 min (cache carried from fc-T-2; 0.47 tok/s, then 365 tokens in 23 min)",
-    "class": "(14) [void]", "attempt": "list_documents, get_objects; killed while thinking on the next step", "calls": 2, "errors": 0, "errors_read": "-", "edits": 0, "said_fixed_not_fixed": "no (no final text)", "compactions": 0}
+  "12-sc-T-1": {
+   "valid": false,
+   "void": "host fault from 2.0 min (cache 5.47 GB at start; last request 667 tokens in 23 min = 0.48 tok/s)",
+   "class": "(14) [void]",
+   "attempt": "none (read only): Bash ls -R (auto-approved read-only built-in), open peg-trap.sc failed on a relative path, read the error, re-opened with /root/peg-trap.sc, inspect_design; killed while thinking (~795 thinking tokens) on the next step",
+   "calls": 4,
+   "errors": 1,
+   "errors_read": "yes (1/1)",
+   "edits": 0,
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": 0
+  },
+  "12-sc-T-2": {
+   "valid": false,
+   "void": "host fault from 8.0 min (cache 6.75 GB; 0.41 / 0.24 / 0.31 tok/s, then the 2nd compaction at 0.22 tok/s)",
+   "class": "(14) [void]",
+   "attempt": "planned shell only the cup body (body?) -> batch solid.shell twice with invalid params (distance, no faces): both refused 'faces must be a list'; re-read describe_command after the 1st but repeated the same wrong params; killed in the 2nd auto-compaction",
+   "calls": 7,
+   "errors": 2,
+   "errors_read": "partly (read, not applied)",
+   "edits": 0,
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": "1 done (270 s) + 1 cut"
+  },
+  "12-sc-T-3": {
+   "valid": true,
+   "void": null,
+   "class": "(14); edit at the cap = (3) a fill after the shell, fails (a)",
+   "attempt": "measure body 'all' (error, read), undo x2 'nothing to undo' (read; wanted (1) reorder, undo cannot reach the file's features), batch with solid.shell faces [0] refused (read), then a batch of 6 extrudes of the peg sketch, cut/join alternating 15 mm: ok. By code after: peg middle material, front wall material, but peg 14 x 14 at wall 2 and 16 x 16 at wall 3 (a fails), 1 body, volume 29,372 mm3 (fix = 27,732). Killed in its 4th auto-compaction",
+   "calls": 12,
+   "errors": 4,
+   "errors_read": "yes (4/4)",
+   "edits": "6 extrude features after the shell",
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": "3 done (269 + 260 + 144 s) + 1 cut at 191 s",
+   "time_split_min": {
+    "compacting": 14.4,
+    "full_prompt_reprocess_after_compaction": 1.8,
+    "model_turns_and_tools": 8.8
+   }
+  },
+  "12-fc-T-1": {
+   "valid": false,
+   "void": "host fault from 19.9 min (cache 6.95 GB; last request 103 tokens in 5 min = 0.34 tok/s). Informative: 19.9 min at normal speed without a finished edit",
+   "class": "(14) [void]",
+   "attempt": "planned (6) peg as a separate body: get_object Pad001 twice (once with a screenshot), execute_code failed AttributeError (FreeCAD.WorkPlanes); one 4,689-token thinking turn (7 min); killed after the 2nd compaction before reading the error",
+   "calls": 6,
+   "errors": 1,
+   "errors_read": "unknown (cut before the next reply)",
+   "edits": 0,
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": "2 done (166 + 256 s)"
+  },
+  "12-fc-T-2": {
+   "valid": false,
+   "void": "host fault from 0.6 min (cache 6.51 GB; 0.47 tok/s, then 330 tokens in 22.7 min)",
+   "class": "(14) [void]",
+   "attempt": "list_documents, get_objects; killed while thinking on the next step",
+   "calls": 2,
+   "errors": 0,
+   "errors_read": "-",
+   "edits": 0,
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": 0
+  },
+  "12-fc-T-3": {
+   "valid": false,
+   "void": "host fault from 0.3 min (cache carried from fc-T-2; 0.47 tok/s, then 365 tokens in 23 min)",
+   "class": "(14) [void]",
+   "attempt": "list_documents, get_objects; killed while thinking on the next step",
+   "calls": 2,
+   "errors": 0,
+   "errors_read": "-",
+   "edits": 0,
+   "said_fixed_not_fixed": "no (no final text)",
+   "compactions": 0
+  },
+  "12-sc-T-1r": {
+   "valid": true,
+   "void": null,
+   "class": "(14)",
+   "said_fixed_not_fixed": "no (no final text)",
+   "edits": 0,
+   "edit_by_code": "none: file at the cap = start state (scorer a, b fail; c, d, e as start)",
+   "attempt": "inspect_design, screenshot, measure, list_commands x3 (separate/union/join); batch [joint.delete, extrude join, 'shell'] refused whole (unknown command shell; applied 0); undo 'nothing to undo'; batch [solid.shell distance 2 ...] refused (faces missing); describe_command solid.shell; called 'timeline.rollback' as a tool (no such tool); killed in a list_commands/compaction cycle",
+   "calls": 17,
+   "errors": 4,
+   "errors_read": "yes (4/4: each next step answered the error)",
+   "compactions": "4 (pre 32.5-35.5K), 10.4 min summarising",
+   "write_tok_s": [
+    3.67,
+    12.7
+   ],
+   "requests": 22,
+   "rerun_of": "12-sc-T-1",
+   "harness": "Ollama restarted before the run, prompt cache off (llama-server 'prompt cache is disabled'), 4 checkpoints, warm-up load outside the 25 min"
+  },
+  "12-sc-T-2r": {
+   "valid": true,
+   "void": null,
+   "class": "(14)",
+   "said_fixed_not_fixed": "no (no final text)",
+   "edits": 0,
+   "edit_by_code": "none: file at the cap = start state (scorer a, b fail; c, d, e as start)",
+   "attempt": "read only: inspect_design x3, screenshot, measure, describe_command solid.shell + solid.extrude, undo 'nothing to undo' (wanted a reorder); killed while compacting",
+   "calls": 8,
+   "errors": 1,
+   "errors_read": "yes (1/1)",
+   "compactions": "3 done + 1 at the cap (pre 32.7-35.3K), 8.2 min summarising",
+   "write_tok_s": [
+    3.93,
+    12.58
+   ],
+   "requests": 12,
+   "rerun_of": "12-sc-T-2",
+   "harness": "Ollama restarted before the run, prompt cache off (llama-server 'prompt cache is disabled'), 4 checkpoints, warm-up load outside the 25 min"
+  },
+  "12-fc-T-1r": {
+   "valid": true,
+   "void": null,
+   "class": "(14)",
+   "said_fixed_not_fixed": "no (no final text)",
+   "edits": 0,
+   "edit_by_code": "none: file at the cap = start state (scorer a, b fail; c, d, e as start)",
+   "attempt": "read only: list_documents, get_objects x4, get_object x7 (Pad001 / Thickness / Pad, re-read after each compaction), get_view; one execute_code (App.ActiveDoc AttributeError); no edit tried",
+   "calls": 15,
+   "errors": 1,
+   "errors_read": "yes (went back to get_object)",
+   "compactions": "4 (pre 33.4-35.7K), 10.1 min summarising",
+   "write_tok_s": [
+    9.12,
+    12.95
+   ],
+   "requests": 20,
+   "note": "throughput first flagged VOID at 25.0 min = a request cut by the cap 4 s into a 34K prefill (negative 'decoded'); parser fixed (cut_in_prefill, tested): valid",
+   "rerun_of": "12-fc-T-1",
+   "harness": "Ollama restarted before the run, prompt cache off (llama-server 'prompt cache is disabled'), 4 checkpoints, warm-up load outside the 25 min"
+  },
+  "12-fc-T-2r": {
+   "valid": true,
+   "void": null,
+   "class": "(14)",
+   "said_fixed_not_fixed": "no (no final text)",
+   "edits": 0,
+   "edit_by_code": "none: file at the cap = start state (scorer a, b fail; c, d, e as start)",
+   "attempt": "edit_object Pad001 AllowCompound=false refused (no such property); 5 execute_code all failed on App.activeDocument without () (same AttributeError 4 times, not corrected); get_object Sketch001 / Cup; no change made",
+   "calls": 19,
+   "errors": 6,
+   "errors_read": "read but repeated: the same activeDocument mistake 4 times",
+   "compactions": "4 (pre 32.7-34.0K), 10.0 min summarising",
+   "write_tok_s": [
+    9.24,
+    13.31
+   ],
+   "requests": 24,
+   "rerun_of": "12-fc-T-2",
+   "harness": "Ollama restarted before the run, prompt cache off (llama-server 'prompt cache is disabled'), 4 checkpoints, warm-up load outside the 25 min"
+  },
+  "12-fc-T-3r": {
+   "valid": true,
+   "void": null,
+   "class": "(14)",
+   "said_fixed_not_fixed": "no (no final text)",
+   "edits": 0,
+   "edit_by_code": "none: file at the cap = start state (scorer a, b fail; c, d, e as start)",
+   "attempt": "execute_code x5: 'import oop' (no module) twice, fc.App (no attribute), ActiveDocument.Object('Pad') (no attribute); one read-only script ran; no edit",
+   "calls": 13,
+   "errors": 4,
+   "errors_read": "partly: dropped oop after 2, then new API guesses",
+   "compactions": "4 (pre 32.5-37.8K), 10.2 min summarising",
+   "write_tok_s": [
+    7.42,
+    13.19
+   ],
+   "requests": 18,
+   "rerun_of": "12-fc-T-3",
+   "harness": "Ollama restarted before the run, prompt cache off (llama-server 'prompt cache is disabled'), 4 checkpoints, warm-up load outside the 25 min"
+  }
  },
- "cells": {"12B SolidCraft T": "0 of 1 valid within 25 min (2 void)", "12B FreeCAD T": "0 valid (3 void)"},
+ "cells": {
+  "12B SolidCraft T": "0 of 3 valid within 25 min (sc-T-3, sc-T-1r, sc-T-2r; originals 1, 2 void)",
+  "12B FreeCAD T": "0 of 3 valid within 25 min (fc-T-1r, 2r, 3r; originals 1-3 void)"
+ },
  "harness_notes": [
   "Claude Code auto-compacts at 32.3-37.2K tokens on CLAUDE_CODE_MAX_CONTEXT_TOKENS=65536 (6 compactions seen, 144-270 s each at the 12B's 11 tok/s): a real setup cost, not a fault.",
   "Read-only Bash (ls -R) ran once (12-sc-T-1) although only mcp__<plug> is allowed: Claude Code auto-approves read-only commands; PREREG's 'headless -p denies them' is not exact. Kept, noted.",
   "Prompt cache barely helps here: llama.cpp logs 'forcing full prompt re-processing ... SWA' on each divergence, so --cache-ram 0 costs little speed."
- ]
+ ],
+ "rerun_scored": "23 Nov 2026, reading only, $0; out/throughput-12b-rerun.json (no request < 3 tok/s in any re-run; max cache 0)"
 }

@@ -57,8 +57,12 @@ def parse(lines):
             if cur['decoded'] is None and cur['prompt_tokens'] is not None and cur['wall_s']:
                 # request cut by the cap: no timing line; rate = tokens written / time open
                 cur['decoded'] = int(m.group(1)) - cur['prompt_tokens']
-                cur['write_tok_s'] = round(cur['decoded'] / cur['wall_s'], 2)
                 cur['cut_by_cap'] = True
+                if cur['decoded'] < 0:
+                    # cut while still reading the prompt (n_tokens = prompt read so far): no write rate to judge
+                    cur['decoded'], cur['cut_in_prefill'] = 0, True
+                else:
+                    cur['write_tok_s'] = round(cur['decoded'] / cur['wall_s'], 2)
             cur['degraded'] = cur['write_tok_s'] is not None and cur['write_tok_s'] < DEGRADED_TOK_S
             out.append(cur)
             cur = None

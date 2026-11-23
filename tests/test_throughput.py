@@ -40,3 +40,18 @@ def test_void_rule_any_degraded_request_before_the_cap():
     v = T.verdict(reqs, '2026-11-23T00:59:00Z')
     assert v['void'] is True and v['first_degraded_min'] == 2.0
     assert T.verdict(T.parse(FAST.splitlines()), '2026-11-23T00:59:00Z')['void'] is False
+
+
+CUT_IN_PREFILL = """time=2026-11-23T06:17:36.208Z level=DEBUG source=llama_server.go:1717 msg="llama-server completion request" media=0 prompt_len=1000
+slot   operator(): id  0 | task 7 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 34112
+[GIN] 2026/11/23 - 06:17:40 | 200 |   4.09s |     10.231.77.3 | POST     "/v1/messages?beta=true"
+slot      release: id  0 | task 7 | stop processing: n_tokens = 27825, truncated = 0
+"""
+
+
+def test_request_cut_by_the_cap_during_prefill_is_not_degraded():
+    # 12-fc-T-1r: killed at the cap 4 s into a 34K prefill (cache off): n_tokens < prompt, nothing written yet
+    r = T.parse(CUT_IN_PREFILL.splitlines())
+    assert r[0]['decoded'] == 0 and r[0]['write_tok_s'] is None and r[0]['degraded'] is False
+    assert r[0]['cut_in_prefill'] is True
+    assert T.verdict(r, '2026-11-23T05:52:39Z')['void'] is False

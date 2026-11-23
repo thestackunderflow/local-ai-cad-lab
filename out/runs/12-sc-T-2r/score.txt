@@ -1,0 +1,1 @@
+LA 12-sc-T-2r solidcraft T: pass False class (14) calls 8 errors 1 turns None wall 1500.3 s trunc 0

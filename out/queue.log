@@ -65,3 +65,10 @@
 2026-11-23T14:56:29Z end cl-fc-T-1 rc 5: 
 2026-11-23T14:56:29Z STOP rule, queue halted
 2026-11-23T14:56:29Z queue end
+2026-11-23T14:58:26Z queue start run/list-claude.txt
+2026-11-23T14:58:26Z skip cl-sc-S-1 (exists)
+2026-11-23T14:58:26Z skip cl-fc-S-1 (exists)
+2026-11-23T14:58:26Z skip cl-sc-T-1 (exists)
+2026-11-23T14:58:26Z start cl-fc-T-1
+2026-11-23T14:59:40Z end cl-fc-T-1 rc 0: LA cl-fc-T-1 freecad T: pass True class None calls 6 errors 0 turns 7 wall 37.3 s trunc 0
+2026-11-23T14:59:40Z queue end

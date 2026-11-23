@@ -1,0 +1,70 @@
+{
+ "app": "freecad",
+ "task": "T",
+ "score": {
+  "pass": true,
+  "criteria": {
+   "wall2": {
+    "a": true,
+    "b": true,
+    "c": true,
+    "d": true,
+    "e": true
+   },
+   "wall3": {
+    "a": true,
+    "b": true,
+    "c": true,
+    "d": true,
+    "e": true
+   }
+  }
+ },
+ "pass": true,
+ "auto_class": null,
+ "truncations": 0,
+ "meta": {
+  "rc": 0,
+  "timeout": false,
+  "wall_s": 37.3,
+  "model": "claude-sonnet-5-5",
+  "server": "freecad",
+  "claude_version": "2.1.308 (Claude Code)"
+ },
+ "stream": {
+  "tool_calls": {
+   "mcp__freecad__list_documents": 1,
+   "mcp__freecad__get_objects": 1,
+   "mcp__freecad__execute_code": 4
+  },
+  "tool_errors": 0,
+  "subtype": "success",
+  "num_turns": 7,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 19832,
+   "cache_read_input_tokens": 280880,
+   "output_tokens": 3941,
+   "output_tokens_details": {
+    "thinking_tokens": 1706
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 19832
+   },
+   "inference_geo": "global",
+   "iterations": [],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "init_tools": 40,
+  "model_seen": "claude-sonnet-5-5"
+ },
+ "final_text": "The peg is now a solid 10 \u00d7 10 \u00d7 15 mm block, and it stays that size when you change the wall thickness. I checked this by rebuilding the model at wall = 2, 3 and 5 mm and then back at 2. At each setting the peg's bounding box was exactly 10 \u00d7 10 mm and its volume was 1500 mm\u00b3 (10 \u00d7 10 \u00d7 15). Each result was a single valid solid, and your wall value is back at 2.\n\n**What was wrong:** the peg was added before the shell step. The shell therefore treated the peg as part of the cup, offset its faces and hollowed it. That made it bigger and open to the inside.\n\n**What I changed:**\n- **Feature order:** the shell now acts on the plain box, with the top face as the opening. The peg sketch and its pad come after it, so the shell never touches the peg.\n- **Peg pad length:** this is now `peg_length + wall` instead of `peg_length`. The peg starts inside the wall, fuses with it, and still sticks out 15 mm past the outside face.\n\n**Peg and front wall:**\n- **Peg:** it sits centered at x = 0 and z = 40, with 10 mm of material on every side. It is joined to the wall and doesn't open into the cavity.\n- **Front wall:** it is closed behind the peg. A line through the peg centre is solid for peg length + wall (17 mm at wall = 2), then reaches the empty cavity. There is no hole.\n\n**Outer size:** the shell grows outward, so the outside is 64 \u00d7 44 mm and the cup spans z = \u22122 to 50, not the 60 \u00d7 40 in your parameters. The `cup_width` and `cup_length` values are therefore the inside size, and the base is 2 mm thick below z = 0. I left this alone because you didn't ask about it. If you want the outside to be exactly 60 \u00d7 40, flip the shell's `Reversed` setting. The peg pad would then need to start at the front outer face, y = \u221220.\n\n**Peg height:** the peg's z position uses a hard-coded `40` in the sketch (`40 - peg_size/2`). It won't follow `cup_height` if you change that. I didn't change it.",
+ "void": false
+}

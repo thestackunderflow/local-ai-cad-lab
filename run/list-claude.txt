@@ -5,4 +5,5 @@
 cl-sc-S-1 solidcraft S claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.15 FC_FLAGS=--only-text-feedback
 cl-fc-S-1 freecad S claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.15 FC_FLAGS=--only-text-feedback
 cl-sc-T-1 solidcraft T claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.20 FC_FLAGS=--only-text-feedback
-cl-fc-T-1 freecad T claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.20 FC_FLAGS=--only-text-feedback
+# 23 Nov: cl-fc-T-1 capped at 0.19 so the stage stays within 0.50 (0.3091 spent)
+cl-fc-T-1 freecad T claude-sonnet-5-5 la-net LOCAL=0 MAX_BUDGET=0.19 FC_FLAGS=--only-text-feedback

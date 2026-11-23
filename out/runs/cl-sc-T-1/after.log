@@ -1,0 +1,9 @@
+  parameters.list {"filter": "user"}: isError False; 
+  READ after: wall 2.0 peg@y-30 10.0 x 10.0 z [35.0, 45.0] tip_y -35.0 material {"peg_middle": true, "front_wall": true, "bottom": true, "lid": false, "side_px": true, "side_nx": true, "side_py": true, "side_ny": true, "cup_middle": false} inside [60.0, 40.0, 50.0] outside_x 64.0 opening {} bodies 1 vol 27732.0 order ['Sketch1', 'Cup', 'Sketch2', 'Peg', 'Shell'] errs [] score {'a': True, 'b': True, 'c': True, 'd': True, 'e': True, 'pass': True}
+  param wall = 2: isError False; {"display_value": 2.0, "errors": [], "expression": "2", "name": "wall", "recomputed": 0, "restored": 0, "value": 2.0}
+  parameters.list {"filter": "user"}: isError False; 
+  READ after-wall2: wall 2.0 peg@y-30 10.0 x 10.0 z [35.0, 45.0] tip_y -35.0 material {"peg_middle": true, "front_wall": true, "bottom": true, "lid": false, "side_px": true, "side_nx": true, "side_py": true, "side_ny": true, "cup_middle": false} inside [60.0, 40.0, 50.0] outside_x 64.0 opening {} bodies 1 vol 27732.0 order ['Sketch1', 'Cup', 'Sketch2', 'Peg', 'Shell'] errs [] score {'a': True, 'b': True, 'c': True, 'd': True, 'e': True, 'pass': True}
+  param wall = 3: isError False; {"display_value": 3.0, "errors": [], "expression": "3", "name": "wall", "recomputed": 0, "restored": 3, "value": 3.0}
+  parameters.list {"filter": "user"}: isError False; 
+  READ after-wall3: wall 3.0 peg@y-30 10.0 x 10.0 z [35.0, 45.0] tip_y -35.0 material {"peg_middle": true, "front_wall": true, "bottom": true, "lid": false, "side_px": true, "side_nx": true, "side_py": true, "side_ny": true, "cup_middle": false} inside [60.0, 40.0, 50.0] outside_x 66.0 opening {} bodies 1 vol 42108.0 order ['Sketch1', 'Cup', 'Sketch2', 'Peg', 'Shell'] errs [] score {'a': True, 'b': True, 'c': True, 'd': True, 'e': True, 'pass': True}
+  param wall = 2: isError False; {"display_value": 2.0, "errors": [], "expression": "2", "name": "wall", "recomputed": 0, "restored": 3, "value": 2.0}

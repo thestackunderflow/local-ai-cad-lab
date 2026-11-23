@@ -1,0 +1,6 @@
+>> save {"path": "/root/run-cl-sc-T-1.sc"} err=False
+{
+  "bytes": 17384,
+  "name": "run-cl-sc-T-1",
+  "path": "/root/run-cl-sc-T-1.sc"
+}

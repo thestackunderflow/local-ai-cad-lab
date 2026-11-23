@@ -1,0 +1,1 @@
+LA cl-sc-S-1 solidcraft S: pass True class None calls 2 errors 0 turns 3 wall 6.1 s trunc 0 said 6000.0 measured 6000.0

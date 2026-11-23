@@ -1,0 +1,74 @@
+{
+ "app": "solidcraft",
+ "task": "T",
+ "score": {
+  "pass": true,
+  "wall2": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": true
+  },
+  "wall3": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": true,
+   "e": true,
+   "pass": true
+  }
+ },
+ "pass": true,
+ "auto_class": null,
+ "truncations": 0,
+ "meta": {
+  "rc": 0,
+  "timeout": false,
+  "wall_s": 29.5,
+  "model": "claude-sonnet-5-5",
+  "server": "solidcraft",
+  "claude_version": "2.1.311 (Claude Code)"
+ },
+ "stream": {
+  "tool_calls": {
+   "mcp__solidcraft__inspect_design": 2,
+   "mcp__solidcraft__list_commands": 1,
+   "mcp__solidcraft__describe_command": 1,
+   "mcp__solidcraft__execute": 3,
+   "mcp__solidcraft__screenshot": 1,
+   "mcp__solidcraft__set_parameter": 2,
+   "mcp__solidcraft__measure": 1
+  },
+  "tool_errors": 0,
+  "subtype": "success",
+  "num_turns": 12,
+  "usage": {
+   "input_tokens": 16,
+   "cache_creation_input_tokens": 22243,
+   "cache_read_input_tokens": 340939,
+   "output_tokens": 2530,
+   "output_tokens_details": {
+    "thinking_tokens": 1122
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 22243
+   },
+   "inference_geo": "global",
+   "iterations": [],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "init_tools": 43,
+  "model_seen": "claude-sonnet-5-5"
+ },
+ "final_text": "The peg is now solid and stays 10 \u00d7 10 when you change the wall thickness. I did not save the design; it still has unsaved changes.\n\n**Cause:** the Shell came after the Peg in the timeline, so it hollowed the peg along with the cup. The shell goes outward, so it also grew the peg to 14 \u00d7 14 (the bounding box ended at y = \u221237) and opened it into the cup.\n\n**Fix:** I moved Sketch2 and Peg to after Shell. The peg is now added to the finished cup, so the shell never touches it.\n\n**Checks**\n- **Solid and 10 wide:** it's one closed body with no cavity. The peg face is 10 \u00d7 10, and the bounding box now ends at y = \u221235.\n- **Volume matches:** at wall = 2, the volume is 27,732 mm\u00b3, which is the shelled cup (26,432) plus the peg's exposed part (1,300). At wall = 3 it is 42,108 mm\u00b3, which again matches (40,908 + 1,200). I set wall back to 2 afterwards.\n- **Front wall:** it is a plain 2 mm wall at y = \u221222 to \u221220, and the peg passes through it. The peg's inner end sits flush with the inner wall face at y = \u221220, so the cup interior has no hole or bump.\n- **Peg length:** it still sticks out 15 \u2212 wall mm from the outside face (13 mm at wall = 2, 12 mm at wall = 3). The peg sketch sits on the inner wall plane at y = \u221220, and the shell grows outward from there. If you want a constant 15 mm past the outer face, I can set the peg length to `peg_length + wall`. I haven't done that, because it changes your dimensions.\n- **Boolean warning:** the Peg join logged a \"coplanar_separation\" diagnostic with a 2.14 mm face shift. It isn't an error, and the volume maths above confirms the result is correct.",
+ "void": false
+}

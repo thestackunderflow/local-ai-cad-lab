@@ -1,0 +1,5 @@
+la spend $0.1941; this run up to $0.20; cap $0.50: GO
+pre: free RAM 8.96 GB, C: 38 GB
+cost 0.11503340000000001; la total $0.3091
+LA cl-sc-T-1 solidcraft T: pass True class None calls 11 errors 0 turns 12 wall 29.5 s trunc 0
+{"free_gb_min": 9.67, "gpu_mib_peak": 1844, "samples": 11}

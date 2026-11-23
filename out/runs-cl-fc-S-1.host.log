@@ -1,0 +1,5 @@
+la spend $0.0959; this run up to $0.15; cap $0.50: GO
+pre: free RAM 7.82 GB, C: 38 GB
+cost 0.09819789999999999; la total $0.1941
+LA cl-fc-S-1 freecad S: pass True class None calls 3 errors 0 turns 4 wall 7.0 s trunc 0 said 6000.0 measured 6000.0
+{"free_gb_min": 6.98, "gpu_mib_peak": 2338, "samples": 9}

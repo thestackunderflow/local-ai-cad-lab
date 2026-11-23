@@ -1,0 +1,1 @@
+open {"content": [{"text": "{\n  \"errors\": 0,\n  \"features\": 5,\n  \"name\": \"peg-trap\",\n  \"path\": \"/root/peg-trap.sc\"\n}", "type": "text"}]}

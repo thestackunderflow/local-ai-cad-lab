@@ -54,3 +54,14 @@
 2026-11-23T06:44:38Z start 12-fc-T-3r
 2026-11-23T07:12:20Z end 12-fc-T-3r rc 0: LA 12-fc-T-3r freecad T: pass False class (14) calls 13 errors 4 turns None wall 1500.4 s trunc 0
 2026-11-23T07:12:20Z queue end
+2026-11-23T14:53:49Z queue start run/list-claude.txt
+2026-11-23T14:53:49Z start cl-sc-S-1
+2026-11-23T14:54:27Z end cl-sc-S-1 rc 0: LA cl-sc-S-1 solidcraft S: pass True class None calls 2 errors 0 turns 3 wall 6.1 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T14:54:27Z start cl-fc-S-1
+2026-11-23T14:55:23Z end cl-fc-S-1 rc 0: LA cl-fc-S-1 freecad S: pass True class None calls 3 errors 0 turns 4 wall 7.0 s trunc 0 said 6000.0 measured 6000.0
+2026-11-23T14:55:23Z start cl-sc-T-1
+2026-11-23T14:56:28Z end cl-sc-T-1 rc 0: LA cl-sc-T-1 solidcraft T: pass True class None calls 11 errors 0 turns 12 wall 29.5 s trunc 0
+2026-11-23T14:56:28Z start cl-fc-T-1
+2026-11-23T14:56:29Z end cl-fc-T-1 rc 5: 
+2026-11-23T14:56:29Z STOP rule, queue halted
+2026-11-23T14:56:29Z queue end

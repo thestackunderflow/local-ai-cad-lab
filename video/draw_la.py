@@ -169,7 +169,7 @@ def card_F4(step):
 def card_F5():
     im, d = canvas()
     header(d, 'What we used')
-    for i, s in enumerate(['NVIDIA RTX 4060, 8 GB', '32 GB RAM', 'Linux in Docker', 'Mac: not tested']):
+    for i, s in enumerate(['NVIDIA RTX 4060, 8 GB', '32 GB RAM', 'Linux in Docker', 'Windows / Mac app: not filmed here']):
         text(d, (180, 330 + i * 110), '• ' + s, 64, GREY if 'not' in s else INK)
     text(d, (1400, 330), 'Step 1: run Ollama', 64, BLUE)
     box(d, (1400, 460, 2420, 700), ['Windows or Mac', 'the Ollama app (easiest)'], GREEN, px=56)
@@ -225,21 +225,33 @@ def section(d, cx, cy, s, peg_w, hollow_peg, col):
     return y1 + 10 * s
 
 
+def peg_dim(d, cx, y, s, mm, col):
+    """cut 2 (GATES-la-c1 fix 12): a width line under the peg with its size, so 10 vs 14 reads at a glance."""
+    x0, x1 = cx - mm * s / 2, cx + mm * s / 2
+    d.line((x0, y, x1, y), fill=col, width=6)
+    for x in (x0, x1):
+        d.line((x, y - 18, x, y + 18), fill=col, width=6)
+    text(d, (cx, y + 26), f'{mm:g} mm', 44, col, anchor='mt')
+
+
 def card_F18(step):
     im, d = canvas()
     header(d, 'Lesson 14: the shell order trap')
     s = 13
-    bot = section(d, 520, 640, s, 10, False, (120, 130, 150))
-    text(d, (520, bot + 50), 'wall cup, 2 mm walls,', 48, INK, anchor='mt')
-    text(d, (520, bot + 115), 'a 10 mm square peg', 48, INK, anchor='mt')
+    bot = section(d, 520, 560, s, 10, False, (120, 130, 150))
+    peg_dim(d, 520, bot + 30, s, 10, INK)
+    text(d, (520, bot + 130), 'wall cup, 2 mm walls,', 48, INK, anchor='mt')
+    text(d, (520, bot + 195), 'a 10 mm square peg', 48, INK, anchor='mt')
     if step >= 2:
-        bot = section(d, 1280, 640, s, 14, True, RED)
-        text(d, (1280, bot + 50), 'hollowed AFTER the peg:', 48, RED, anchor='mt')
-        text(d, (1280, bot + 115), '10 + 2 + 2 = 14, open into the cup', 44, RED, R, anchor='mt')
+        bot = section(d, 1280, 560, s, 14, True, RED)
+        peg_dim(d, 1280, bot + 30, s, 14, RED)
+        text(d, (1280, bot + 130), 'hollowed AFTER the peg:', 48, RED, anchor='mt')
+        text(d, (1280, bot + 195), '10 + 2 + 2 = 14, open into the cup', 44, RED, R, anchor='mt')
     if step >= 3:
-        bot = section(d, 2040, 640, s, 10, False, GREEN)
-        text(d, (2040, bot + 50), 'the fix:', 48, GREEN, anchor='mt')
-        text(d, (2040, bot + 115), 'hollow first, then the peg', 48, GREEN, anchor='mt')
+        bot = section(d, 2040, 560, s, 10, False, GREEN)
+        peg_dim(d, 2040, bot + 30, s, 10, GREEN)
+        text(d, (2040, bot + 130), 'the fix:', 48, GREEN, anchor='mt')
+        text(d, (2040, bot + 195), 'hollow first, then the peg', 48, GREEN, anchor='mt')
     save(im, f'card-F18-{step}.png')
 
 
@@ -292,7 +304,7 @@ def card_F24():
 
 def chips():
     chip('ov-F0-words.png', ['Local Gemma 4 vs Claude:', 'same setup, same CAD job'], px=72, edge=BLUE)
-    chip('ov-course.png', ['SolidCraft + Claude', 'FreeCAD + Claude · bonus lesson'], px=44, edge=BLUE)
+    chip('ov-course.png', ['Claude Code + Gemma 4 12B', 'bonus lesson · CAD courses'], px=44, edge=BLUE)
     f1 = ['simple block: 6 of 6 right', 'checked by code:', 'our script reads the saved file',
           'lesson 14 trap: 0 of 6', 'done in 25 min', 'Claude: block + fix, 4 of 4', 'usable for simple parts;',
           'multi-step fix: not done here']
@@ -319,7 +331,8 @@ def chips():
     chip('ov-F21-same.png', ['same line 4 times:', 'doc = App.activeDocument', '(no brackets)'], px=48, edge=RED)
     chip('ov-F21-speed.png', ['writing ~11 tokens a second'], px=48, edge=GREY)
     chip('ov-F22-proof.png', ['by code: peg 10 x 10', 'at wall 2 and 3'], edge=GREEN)
-    chip('ov-F22-table.png', ['Claude: 2 of 2, 30 and 37 s', '12B: 0 of 6 in 25 min'], px=56, edge=INK)
+    chip('ov-F22-table.png', ['Claude: 2 of 2, 30 and 37 s', '~12 cents a run', '12B: 0 of 6 in 25 min'], px=56,
+         edge=INK)
     chip('ov-F23-copy.png', ['work on a saved copy'], edge=ORANGE)
 
 

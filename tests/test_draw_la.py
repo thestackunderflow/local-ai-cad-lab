@@ -85,3 +85,18 @@ def test_builds_grow(drawn):
             cur = d.LOG[f'{stem}-{i}.png']
             assert cur[:len(prev)] == prev and len(cur) > len(prev), (stem, i)
             prev = cur
+
+
+def test_cut2_card_fixes(drawn):
+    """la cut 2 (GATES-la-c1 fixes 8, 12, 13 + S3): the opening badge names Claude Code + Gemma (never "+ Claude" while
+    Gemma drives); card-F5 agrees with the voice (the Windows / Mac app was not filmed here); card-F18 shows the peg
+    widths (10 mm vs 14 mm); the Claude table says ~12 cents a run (cost_usd 0.115 / 0.1171)."""
+    course = ' '.join(d.LOG['ov-course.png'])
+    assert '+ Claude' not in course and 'Claude Code + Gemma 4 12B' in course
+    f5 = d.LOG['card-F5.png']
+    assert 'Mac: not tested' not in ' '.join(f5) and any('not filmed here' in s for s in f5)
+    assert '10 mm' in d.LOG['card-F18-1.png'] and '14 mm' in d.LOG['card-F18-2.png']
+    runs = d.NUM['runs_claude']
+    cents = {round(100 * r['cost_usd']) for k, r in runs.items() if '-T-' in k}
+    assert cents == {12}, cents
+    assert any('~12 cents a run' in s for s in d.LOG['ov-F22-table.png'])

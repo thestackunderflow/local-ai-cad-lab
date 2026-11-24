@@ -169,7 +169,8 @@ def card_F4(step):
 def card_F5():
     im, d = canvas()
     header(d, 'What we used')
-    for i, s in enumerate(['NVIDIA RTX 4060, 8 GB', '32 GB RAM', 'Linux in Docker', 'Windows / Mac app: not filmed here']):
+    # cut 3 (GATES-la-c2 fix 4a): the last bullet ran into the right column; shorter, same meaning as the voice
+    for i, s in enumerate(['NVIDIA RTX 4060, 8 GB', '32 GB RAM', 'Linux in Docker', 'Win / Mac app: not filmed']):
         text(d, (180, 330 + i * 110), '• ' + s, 64, GREY if 'not' in s else INK)
     text(d, (1400, 330), 'Step 1: run Ollama', 64, BLUE)
     box(d, (1400, 460, 2420, 700), ['Windows or Mac', 'the Ollama app (easiest)'], GREEN, px=56)
@@ -181,12 +182,14 @@ def card_F7(step):
     im, d = canvas()
     header(d, 'The page: everything the model reads at once', 'counted in tokens, small pieces of words')
     k, x0, x1, base = 0.032, 300, 1100, 1330
-    segs = [(T['no_plug'], "Claude Code's instructions", BLUE), (T['solidcraft'], '+ SolidCraft tools', ORANGE),
-            (T['both'], '+ FreeCAD tools', GREEN)]
+    # cut 3 (GATES-la-c2 fix 8): the 2nd and 3rd numbers are running totals, so the labels say so
+    segs = [(T['no_plug'], "Claude Code's instructions:", BLUE),
+            (T['solidcraft'], '+ SolidCraft tools: running total', ORANGE),
+            (T['both'], '+ FreeCAD tools: running total', GREEN)]
     prev = 0
     for i, (tot, label, col) in enumerate(segs[:step]):
         d.rectangle((x0, base - tot * k, x1, base - prev * k), fill=col, outline=WHITE, width=4)
-        text(d, (x1 + 40, base - (tot + prev) / 2 * k), f'{label}: {c(tot)}', 52, col, anchor='lm')
+        text(d, (x1 + 40, base - (tot + prev) / 2 * k), f'{label} {c(tot)}', 52, col, anchor='lm')
         prev = tot
     if step >= 3:
         text(d, (x0, base - T['both'] * k - 20), f'total {c(T["both"])} tokens', 60, INK, anchor='lb')
@@ -210,6 +213,63 @@ def card_F13():
         code = s[:1].isupper() or s.startswith('    "')
         text(d, (180, 300 + i * 96), s, 56, INK if code else AMBER, MB if code else B)
     save(im, 'card-F13.png')
+
+
+def card_F13_page(step):
+    """cut 3 (GATES-la-c2 fix 2): why the sixth line, drawn only from the numbers: the real page 65,536 with its half
+    mark and the measured compacting range (auto_compaction); the assumed 200,000 (g9 without_line) whose half lies
+    past the real page; the sixth line moves the mark back. g9 records no failure without the line: none is claimed."""
+    im, d = canvas()
+    header(d, 'Compacting: a summary at about half full')
+    pg, big = PAGE['claude_code_max_context_tokens'], NUM['g9_context_window']['without_line']
+    ac = NUM['auto_compaction']
+    lo = min(ac['threshold_pre_tokens'] + [ac['reruns']['pre_tokens_range'][0]])
+    hi = max(ac['threshold_pre_tokens'] + [ac['reruns']['pre_tokens_range'][1]])
+    x0, k = 200, 2000 / big
+
+    def X(v):
+        return x0 + v * k
+    text(d, (x0, 320), f'the real page: {c(pg)} tokens', 56, BLUE)
+    d.rectangle((x0, 410, X(pg), 510), fill=(214, 226, 250), outline=BLUE, width=6)
+    d.rectangle((X(lo), 410, X(hi), 510), fill=(255, 205, 150))
+    d.line((X(pg // 2), 380, X(pg // 2), 540), fill=GREEN if step >= 3 else INK, width=14 if step >= 3 else 8)
+    text(d, (x0, 560), f'half full: {c(pg // 2)}', 52, INK)
+    text(d, (x0, 640), f'our runs compacted at {c(lo)}-{c(hi)}', 52, ORANGE)
+    if step >= 2:
+        text(d, (x0, 780), f'without the sixth line it assumes {c(big)}', 52, RED)
+        d.rectangle((x0, 870, X(big), 970), outline=GREY, width=6)
+        d.rectangle((x0, 870, X(pg), 970), fill=(214, 226, 250), outline=BLUE, width=6)
+        d.line((X(big // 2), 840, X(big // 2), 1000), fill=RED, width=8)
+        for y0, y1 in ((380, 540), (840, 1000)):                         # the real page's end, dashed, on the bars
+            for y in range(y0, y1, 40):
+                d.line((X(pg), y, X(pg), y + 20), fill=RED, width=6)
+        text(d, (x0, 1020), f'its half: {c(big // 2)}, past the real page', 52, RED)
+    if step >= 3:
+        text(d, (x0, 1180), 'the sixth line moves the mark back inside', 60, GREEN)
+    save(im, f'card-F13-page-{step}.png')
+
+
+def card_F22_pegs():
+    """cut 3 (GATES-la-c2 fix 3): the measured pegs (by code), drawn as in card-F18, with the table."""
+    im, d = canvas()
+    header(d, 'The peg, measured by code')
+    sc = NUM['runs_12b']['solidcraft_T']['sc_T_3_after']
+    cl = NUM['runs_claude']['cl-fc-T-1']
+    s = 13
+    w2, w3 = cl['measured_wall2']['peg_w'], cl['measured_wall3']['peg_w']
+    cols = [(420, 14, True, RED, ['lesson 14 trap file:', 'peg 14 wide at wall 2']),
+            (1280, sc['peg_w_wall2'], not sc['peg_middle_material'], RED,     # solid in the middle, still 14 wide
+             ['12B run that edited:', f"{sc['peg_w_wall2']:g} at wall 2, {sc['peg_w_wall3']:g} at wall 3", 'not fixed']),
+            (2140, w2, False, GREEN, ['Claude:', f'{w2:g} at wall 2, {w3:g} at wall 3', 'fixed'])]
+    for cx, w, hollow, col, lines in cols:
+        bot = section(d, cx, 470, s, w, hollow, col)
+        peg_dim(d, cx, bot + 30, s, w, col)
+        for i, ln in enumerate(lines):
+            text(d, (cx, bot + 120 + i * 62), ln, 46, col if i == 2 else INK, R if i == 1 else B, anchor='mt')
+    d.rounded_rectangle((180, 1110, 2380, 1370), radius=20, fill=WHITE, outline=INK, width=6)
+    text(d, (230, 1140), 'Claude: 2 of 2, 30 and 37 s, ~12 cents a run', 56, INK)
+    text(d, (230, 1250), '12B: 0 of 6 in 25 min', 56, RED)
+    save(im, 'card-F22-pegs.png')
 
 
 def section(d, cx, cy, s, peg_w, hollow_peg, col):
@@ -278,28 +338,34 @@ def card_F19():
 def card_F23(step):
     im, d = canvas()
     header(d, 'What it means (8 GB card)')
+    # cut 3 (GATES-la-c2 fix 6): 4 builds; the Python row comes in on the sentence that says it; Mac agrees with F5
     rows = [('local did: the setup + simple blocks, 6 of 6', GREEN),
             ('local did not: the multi-step fix,', RED), ('0 of 6 in 25 min', RED),
-            ('not tested: 26B, bigger cards, Mac', GREY)]
-    upto = {1: 1, 2: 3, 3: 4}[step]
+            ('not tested by us: 26B, bigger cards, Mac app', GREY)]
+    upto = {1: 1, 2: 3, 3: 4, 4: 4}[step]
     for i, (s, col) in enumerate(rows[:upto]):
         text(d, (180 + (60 if i == 2 else 0), 330 + i * 130), s, 64, col)
-    if step >= 3:
-        d.rounded_rectangle((180, 1000, 1500, 1200), radius=20, fill=WHITE, outline=ORANGE, width=6)
-        text(d, (220, 1030), 'work on a saved copy;', 56, INK)
-        text(d, (220, 1110), 'check it with Measure yourself', 52, GREY, R)
+    if step >= 4:
+        d.rounded_rectangle((180, 900, 1900, 1290), radius=20, fill=WHITE, outline=ORANGE, width=6)
+        text(d, (220, 930), "FreeCAD's plug runs any Python:", 56, INK)
+        text(d, (220, 1050), 'work on a saved copy;', 56, INK)
+        text(d, (220, 1170), 'check it with Measure yourself', 52, GREY, R)
     save(im, f'card-F23-{step}.png')
 
 
-def card_F24():
+def card_F24(step):
+    """cut 3 (GATES-la-c2 fix 7): 3 builds on the F24 sentences: subscribe, next-up, the AI-voice line."""
     im, d = canvas()
-    text(d, (180, 150), 'Next: SolidCraft + Claude course', 72, INK)
-    box(d, (180, 320, 1500, 640), ['Lesson 1', 'add the plug from zero'], BLUE, px=72)
-    box(d, (180, 700, 1500, 1020), ['FreeCAD + Claude course', 'lesson 1: the same, in FreeCAD'], INK, px=56)
     d.rounded_rectangle((1700, 420, 2300, 560), radius=20, fill=(204, 0, 0))
     text(d, (2000, 490), 'Subscribe', 64, WHITE, anchor='mm')
-    text(d, (180, 1300), 'The voice in this video is an AI voice.', 48, GREY, R)
-    save(im, 'card-F24.png')
+    text(d, (1700, 600), 'every step checked by code', 48, GREY, R)
+    if step >= 2:
+        text(d, (180, 150), 'Next: SolidCraft + Claude course', 72, INK)
+        box(d, (180, 320, 1500, 640), ['Lesson 1', 'add the plug from zero'], BLUE, px=72)
+        box(d, (180, 700, 1500, 1020), ['FreeCAD + Claude course', 'lesson 1: the same, in FreeCAD'], INK, px=56)
+    if step >= 3:
+        text(d, (180, 1300), 'The voice in this video is an AI voice.', 48, GREY, R)
+    save(im, f'card-F24-{step}.png')
 
 
 def chips():
@@ -313,11 +379,12 @@ def chips():
     chip('ov-sped.png', ['sped up'], px=44, edge=AMBER)
     chip('ov-P-disk.png', ['already on this disk:', 'the real download is 7.2 GB'])
     chip('ov-F6-26b.png', ['26B (17 GB download):', 'not tested in our lab'], edge=GREY)
-    chip('ov-strict.png', ['our lab adds --strict-mcp-config', "to keep this PC's other tools",
-                           'out: leave it off, or your', 'plugs will not load'], px=44, edge=RED)
+    # cut 3 (GATES-la-c2 fix 1): name the flag plainly (the recap line carries it)
+    chip('ov-strict.png', ['our lab adds --strict-mcp-config', 'to every claude line:', 'you leave that flag off,',
+                           'or your plugs will not load'], px=44, edge=RED)
     chip('ov-typed-ahead.png', ['step 6 lines, typed ahead', '(see step 6)'], px=48)
     chip('ov-F8-app.png', ['Ollama app: set Context length', 'in Settings (not run in our lab)'], px=48)
-    chip('ov-F8-layers.png', [f'{LAYERS} layers on the card'])
+    chip('ov-F8-layers.png', [f'{LAYERS} layers on the card', 'the rest run on the CPU: slower'])
     chip('ov-F5-private.png', ['127.0.0.1: private to this PC'])
     chip('ov-F10-conn.png', ['Connected ≠ socket on'], edge=RED)
     chip('ov-F11-port.png', ["11434 = Ollama's door number"])
@@ -336,6 +403,40 @@ def chips():
     chip('ov-F23-copy.png', ['work on a saved copy'], edge=ORANGE)
 
 
+def short_trap(step):
+    """la Short cut 2 (GATES-la-short-c1 fix 5): the trap, built step by step on the Short's 1080 x 1080 view. The peg
+    seen from above (40 px per mm): 10 mm -> a 2 mm wall grows on the left -> and on the right = 14 (peg_w_wall2) ->
+    the goal line, before "Fix it". Each step only adds."""
+    CUR.clear()
+    im = Image.new('RGB', (1080, 1080), PAPER)
+    d = ImageDraw.Draw(im)
+    k, cx, top, deep = 40, 540, 240, 360
+    text(d, (cx, 40), 'the peg, seen from above', 56, INK, anchor='mt')
+    d.rectangle((120, 160, 960, top), fill=(120, 130, 150))
+    text(d, (cx, 200), 'front wall of the cup', 40, WHITE, anchor='mm')
+    x0, x1 = cx - 5 * k, cx + 5 * k
+    d.rectangle((x0, top, x1, top + deep), fill=(120, 130, 150))
+    peg_line(d, x0, x1, 680, '10 mm', INK)
+    if step >= 2:
+        d.rectangle((x0 - 2 * k, top, x0, top + deep), fill=RED)
+        text(d, (x0 - k, top + deep + 14), '+ 2 mm', 40, RED, anchor='rt')
+    if step >= 3:
+        d.rectangle((x1, top, x1 + 2 * k, top + deep), fill=RED)
+        text(d, (x1 + k, top + deep + 14), '+ 2 mm', 40, RED, anchor='lt')
+        peg_line(d, x0 - 2 * k, x1 + 2 * k, 790, f'10 + 2 + 2 = {PEG:g} mm', RED)
+    if step >= 4:
+        text(d, (cx, 900), 'goal: peg back to 10,', 52, GREEN, anchor='mt')
+        text(d, (cx, 966), 'walls only round the cup', 52, GREEN, anchor='mt')
+    save(im, f's-trap-{step}.png')
+
+
+def peg_line(d, x0, x1, y, s, col):
+    d.line((x0, y, x1, y), fill=col, width=6)
+    for x in (x0, x1):
+        d.line((x, y - 18, x, y + 18), fill=col, width=6)
+    text(d, ((x0 + x1) // 2, y + 26), s, 48, col, anchor='mt')
+
+
 def short_words():
     chip('s-head.png', ['FREE LOCAL AI vs CLAUDE:', 'SAME CAD TRAP'], px=58, edge=RED)
     chip('s-S1.png', ['simple block: 6 of 6 right'], px=56, edge=GREEN)
@@ -343,6 +444,8 @@ def short_words():
     chip('s-S3.png', ['local: 0 of 6 in 25 min', 'Claude: 2 of 2, under 40 s each'], px=52, edge=INK)
     chip('s-S4.png', ['full setup: Local AI CAD Setup', '(long video)'], px=52, edge=BLUE)
     chip('s-voice.png', ['AI voice'], px=44, edge=GREY)
+    # Short cut 2 (fix 10): the close's claim on screen (PLAN section 2: the 8 GB card)
+    chip('s-S4a.png', ['8 GB card: simple parts yes,', 'multi-step fixes: not yet'], px=52, edge=AMBER)
 
 
 def main():
@@ -355,13 +458,18 @@ def main():
         card_F4(s)
         card_F7(s)
         card_F18(s)
+        card_F24(s)
+        card_F13_page(s)
+    for s in (1, 2, 3, 4):
         card_F23(s)
     card_F5()
     card_F13()
     card_F19()
-    card_F24()
+    card_F22_pegs()
     chips()
     short_words()
+    for st in (1, 2, 3, 4):
+        short_trap(st)
     for name, im in ((n, Image.open(os.path.join(OUT, n))) for n in LOG if n.startswith('s-')):
         if im.size[0] > 1080:
             PROBLEMS.append(f'{name}: {im.size[0]} wide, over the Short frame')

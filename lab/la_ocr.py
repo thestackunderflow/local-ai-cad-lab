@@ -11,7 +11,8 @@ import sys
 import tempfile
 
 PAT = re.compile(r"api usage billing|auto mode|shift\+tab|tokens|resume this session|claude --resume|esc to interrupt|"
-                 r"allowed by|sk-ant|claude_ai_|google drive|claude docs|max plan|pro plan|ultra|"
+                 r"allowed by|update to|sk-ant|claude_ai_|google drive|claude docs|max plan|pro plan|team plan|"
+                 r"enterprise plan|ultra|"
                  r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", re.I)
 
 
@@ -34,8 +35,13 @@ def lines_from_tsv(tsv, scale=1.0):
     return sorted(out, key=lambda r: (r[1], r[0]))
 
 
+# WANTED "tokens": the page card (card-F7) and the speed inset (ov-F21-speed) say it on purpose; any other "tokens"
+# (a status row, a thinking counter) is a leak. A line is cut out of the scan only where these phrases sit.
+KEEP = re.compile(r"counted in tokens|total [\d,.]+ tokens|tokens a second", re.I)
+
+
 def hits(lines):
-    return [l for l in lines if PAT.search(l[4])]
+    return [l for l in lines if PAT.search(KEEP.sub(" ", l[4]))]
 
 
 def main(video, out, t0=None, t1=None, fps=2.0, scale=0.5):

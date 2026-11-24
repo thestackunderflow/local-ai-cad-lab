@@ -24,3 +24,12 @@ def test_patterns():
         assert hit(s), s
     for s in ["Hi there! How can I help you today?", "41% until auto-compact", "Ollama is running"]:
         assert not hit(s), s
+
+
+def test_wanted_tokens_kept_status_tokens_leak():
+    hit = lambda s: bool(la_ocr.hits([(0, 0, 1, 1, s)]))
+    for s in ["counted in tokens, small pieces of words", "total 27,116 tokens", "writing ~11 tokens a second"]:
+        assert not hit(s), s                       # the page card and the speed inset say it on purpose
+    for s in ["* Thinking... (12s · 1.2k tokens)", "total 27,116 tokens · esc to interrupt", "Update to 0.48.0",
+              "Team plan"]:
+        assert hit(s), s

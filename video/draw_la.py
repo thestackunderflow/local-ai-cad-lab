@@ -1,7 +1,7 @@
 """Local AI CAD setup (la): cards, chips, insets and Short words, SCRIPT-la.md rev 2 sections 1 + 3 and
 SCRIPT-la-short.md. Self-contained (PIL + DejaVu in cad3way-draw:1).
 Out: video/frames-la/ (git-ignored, re-drawn by this script):
-  card-*.png  2560 x 1440 RGB, light paper, 44 columns a line (one PowerShell variable row runs to 45);
+  card-*.png  2560 x 1440 RGB, light paper, 44 columns a line, no exceptions;
   ov-*.png    tight RGBA chips / insets / panels for the footage script to place (32 columns a line);
   s-*.png     tight RGBA Short words, 1080 wide max (32 columns a line).
 Every number is NUMBERS-la.json's (or the script's arithmetic: 10 + 2 + 2 = 14); no percent sign, no angle brackets,
@@ -200,13 +200,15 @@ def card_F7(step):
 def card_F13():
     im, d = canvas()
     header(d, 'Windows (PowerShell): the same lines', 'in PowerShell form, not run in our lab')
-    rows = ['$env:ANTHROPIC_BASE_URL=', '    "http://localhost:11434"', '$env:ANTHROPIC_AUTH_TOKEN="ollama"',
-            'leave ANTHROPIC_API_KEY unset', '    (our PowerShell 5.1 check)', '$env:CLAUDE_CODE_MAX_CONTEXT_TOKENS=',
-            f'    "{PAGE["claude_code_max_context_tokens"]}"', '$env:ENABLE_TOOL_SEARCH="false"',
-            '$env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=', '    "1"']
+    # every row 44 columns max: the longest name (40) cannot carry "$env:" and "=", so the card shows the
+    # PowerShell form once and lists name / value rows (full lines in the description)
+    rows = ['type each one as  $env:NAME="value"', 'ANTHROPIC_BASE_URL', '    "http://localhost:11434"',
+            'ANTHROPIC_AUTH_TOKEN  "ollama"', 'leave ANTHROPIC_API_KEY unset', '    (our PowerShell 5.1 check)',
+            'CLAUDE_CODE_MAX_CONTEXT_TOKENS', f'    "{PAGE["claude_code_max_context_tokens"]}"',
+            'ENABLE_TOOL_SEARCH  "false"', 'CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC', '    "1"']
     for i, s in enumerate(rows):
-        code = s.startswith(('$', '    "'))
-        text(d, (180, 320 + i * 104), s, 56, INK if code else AMBER, MB if code else B)
+        code = s[:1].isupper() or s.startswith('    "')
+        text(d, (180, 300 + i * 96), s, 56, INK if code else AMBER, MB if code else B)
     save(im, 'card-F13.png')
 
 

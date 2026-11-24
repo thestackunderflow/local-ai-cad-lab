@@ -49,8 +49,8 @@ def test_no_problems(drawn):
 def test_columns(drawn):
     for name, lines in d.LOG.items():
         cap = 44 if name.startswith('card-') else 32
-        for s in lines:      # one PowerShell variable name is 45 long: code rows may run to 46
-            assert len(s) <= (46 if s.startswith('$env:') else cap), (name, s)
+        for s in lines:      # no waivers: every row fits its cap (the PowerShell card wraps)
+            assert len(s) <= cap, (name, s)
 
 
 def test_forbidden(drawn):

@@ -321,7 +321,7 @@ def chips():
     chip('ov-F5-private.png', ['127.0.0.1: private to this PC'])
     chip('ov-F10-conn.png', ['Connected ≠ socket on'], edge=RED)
     chip('ov-F11-port.png', ["11434 = Ollama's door number"])
-    chip('ov-F11-win.png', ['Windows lines: end of step 6', '+ description'], px=44, edge=GREY)
+    chip('ov-F11-win.png', ['Windows (PowerShell) lines:', 'in the description'], px=44, edge=GREY)
     chip('ov-F12-version.png', ['Claude Code 2.1.311', '(newer versions: 1m)'], px=48, edge=GREY)
     chip('ov-F14-said.png', [f'it said: {c(VOL)} mm³', f'by code: {c(VOL)} mm³'], px=60, edge=GREEN)
     chip('ov-F15-course.png', ['SolidCraft + Claude course:', 'lesson 1'], edge=BLUE)

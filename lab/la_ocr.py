@@ -11,7 +11,7 @@ import sys
 import tempfile
 
 PAT = re.compile(r"api usage billing|auto mode|shift\+tab|tokens|resume this session|claude --resume|esc to interrupt|"
-                 r"allowed by|update to|sk-ant|claude_ai_|google drive|claude docs|max plan|pro plan|team plan|"
+                 r"allowed by|update\s*to|sk-ant|claude_ai_|google drive|claude docs|max plan|pro plan|team plan|"
                  r"enterprise plan|ultra|"
                  r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", re.I)
 

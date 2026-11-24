@@ -8,3 +8,4 @@ out/**/*.sc
 out/takes/
 out/bin/
 out/runs/**/*.mp4
+video/frames-la/

@@ -5,7 +5,7 @@
 # screen is real and drives the PC's Docker. localhost:11434 inside this container is forwarded to the PC's 11434 (as on
 # a viewer's PC). No key anywhere: ANTHROPIC_API_KEY is unset; claude.ai connectors are never listed (fresh HOME, no
 # login, --strict-mcp-config on every Claude Code start that talks to a model).
-# Usage (in the container): bash /la/lab/la_term.sh TAKE...   (TAKE = O | P | C | M | E)
+# Usage (in the container): bash /la/lab/la_term.sh TAKE...   (TAKE = O | P | C | M | E | N)
 set -uo pipefail
 . /kit/lib/screenlab.sh
 export PATH=/la/out/bin:/opt/solidcraft/bin:$PATH HOME=/root LANG=C.UTF-8 LC_ALL=C.UTF-8
@@ -140,6 +140,12 @@ take_E() {   # step 6: five lines, Claude Code on the 12B (the G9 "assumes 200k"
   tmux capture-pane -p -J -t t > "$D/pane-hi.txt"
   say "/exit" '^\$ ?$' 30 1.5
   tt "docker logs ollama 2>&1 | grep 'v1/messages' | tail -n 2" 'v1/messages' 20 6
+  finish
+}
+take_N() {   # is it local: the internal network the G1c run used (no route out), then that logged run's score (by code)
+  begin N
+  tt "docker network inspect la-int --format 'network {{.Name}}: internal={{.Internal}} (no route to the internet)'" 'internal=' 20 4
+  tt "cd /la && cat out/runs/g4-sc-S/score.txt" 'measured' 10 6
   finish
 }
 for T in "$@"; do "take_$T"; done

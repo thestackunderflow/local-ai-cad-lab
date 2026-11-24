@@ -1,0 +1,8 @@
+ev: take S12 start
+ev: claude end
+ev: Browser: Body1 right-click > Properties
+ev: Properties as shown in props.png: hold 4 s
+ev: Close
+LA f12-sc-S solidcraft S: pass True class None calls 4 errors 0 turns 5 wall 89.3 s trunc 0 said 6000.0 measured 6000.0
+run f12-sc-S done
+container exit 0

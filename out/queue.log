@@ -72,3 +72,15 @@
 2026-11-23T14:58:26Z start cl-fc-T-1
 2026-11-23T14:59:40Z end cl-fc-T-1 rc 0: LA cl-fc-T-1 freecad T: pass True class None calls 6 errors 0 turns 7 wall 37.3 s trunc 0
 2026-11-23T14:59:40Z queue end
+2026-11-24T04:36:42Z queue start run/list-s12-film.txt
+2026-11-24T04:36:42Z start f12-sc-S
+2026-11-24T04:38:03Z end f12-sc-S rc 0: LA f12-sc-S solidcraft S: pass False class (12) calls 0 errors 0 turns None wall None s trunc 0 said None measured None
+2026-11-24T04:38:03Z start f12-fc-S
+2026-11-24T04:39:14Z end f12-fc-S rc 0: LA f12-fc-S freecad S: pass False class (12) calls 0 errors 0 turns None wall None s trunc 0 said None measured None
+2026-11-24T04:39:14Z queue end
+2026-11-24T04:39:32Z queue start run/list-s12-film.txt
+2026-11-24T04:39:32Z start f12-sc-S
+2026-11-24T04:43:04Z end f12-sc-S rc 0: LA f12-sc-S solidcraft S: pass True class None calls 4 errors 0 turns 5 wall 89.3 s trunc 0 said 6000.0 measured 6000.0
+2026-11-24T04:43:04Z start f12-fc-S
+2026-11-24T04:46:48Z end f12-fc-S rc 0: LA f12-fc-S freecad S: pass True class None calls 3 errors 0 turns 4 wall 116.7 s trunc 0 said 6000.0 measured 6000.0
+2026-11-24T04:46:48Z queue end

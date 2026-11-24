@@ -7,3 +7,4 @@ out/**/*.FCStd
 out/**/*.sc
 out/takes/
 out/bin/
+out/runs/**/*.mp4

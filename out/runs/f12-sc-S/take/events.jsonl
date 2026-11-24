@@ -1,0 +1,5 @@
+{"t": 0.520, "event": "take S12 start"}
+{"t": 99.105, "event": "claude end"}
+{"t": 99.113, "event": "Browser: Body1 right-click > Properties"}
+{"t": 106.464, "event": "Properties as shown in props.png: hold 4 s"}
+{"t": 111.095, "event": "Close"}

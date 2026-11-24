@@ -61,7 +61,7 @@ name=la-run-$RUN
 SAMP=$!
 MSYS_NO_PATHCONV=1 docker run --rm --name "$name" "${USR[@]}" --network "$NET" --memory "$MEMC" --shm-size 1g "${MNT[@]}" \
   -e RUN="$RUN" -e TASK="$TASK" -e MODEL="$MODEL" -e LOCAL="${LOCAL:-1}" -e CTX="${CTX:-}" -e EXTRA_ENV="${EXTRA_ENV:-}" \
-  -e FC_FLAGS="${FC_FLAGS:-}" -e PROMPT="${PROMPT:-}" -e WALL_S="${WALL_S:-1500}" -e MAX_TURNS="${MAX_TURNS:-30}" \
+  -e FC_FLAGS="${FC_FLAGS:-}" -e REC="${REC:-0}" -e PROMPT="${PROMPT:-}" -e WALL_S="${WALL_S:-1500}" -e MAX_TURNS="${MAX_TURNS:-30}" \
   "${KEYE[@]}" "$IMG" "${CMD[@]}" > "$O/container.log" 2>&1
 echo "container exit $?" >> "$O/container.log"
 unset ANTHROPIC_API_KEY

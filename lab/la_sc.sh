@@ -44,7 +44,13 @@ run = {'command': 'python3', 'args': ['/work/proxy/mcp_log_proxy.py', '--log', o
                                      '--watchdog', '330', '--', e['command']] + args}
 json.dump({'mcpServers': {'solidcraft': run}}, open(os.path.join(o, 'entry.json'), 'w'), indent=1)
 PY
+# REC=1 (filmed take S12-sc, render stage 3): the whole display recorded into $O/take/screen.mp4 from 3 s before the
+# Claude Code start to 6 s after its end (fx13lib rec_start/rec_stop); then Body1 > Properties held (the app's volume).
+recon() { [ "${REC:-0}" = 1 ] || return 0; mkdir -p /tmp/fx13 "$O/take"; local S=$O; O=$O/take; rec_start; ev "take S12 start"; O=$S; sleep 3; }
+recoff() { [ "${REC:-0}" = 1 ] || return 0; sleep 6; local S=$O; O=$O/take; ev "claude end"; props_body props 2>/dev/null; nap 2; rec_stop; O=$S; }
+recon
 la_claude solidcraft /root
+recoff
 FX9_ALLOW=1 python3 /work/lab/fx9.py read "$O" after > "$O/read-after.txt" 2>&1
 shot "$O/after.png"
 python3 /work/lab/sc14api.py "$O" save 300 "[[\"save\", {\"path\": \"/root/run-$RUN.sc\"}]]" > "$O/save.txt" 2>&1

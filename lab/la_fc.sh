@@ -47,7 +47,11 @@ print(json.dumps(r)[:600])
 c.close()
 PY
 grep -q -E '"isError": true|Failed|refused|Errno|Traceback' "$O/g6.txt" && { echo "G6: socket off before the run"; echo void > "$O/VOID"; exit 4; }
+# REC=1 (filmed take S12-fc, render stage 3): the whole display recorded (screen-lab kit) into $O/take/ from 3 s before
+# the Claude Code start to 8 s after its end.
+if [ "${REC:-0}" = 1 ]; then mkdir -p "$O/take"; sl_record "$O/take" nomouse; sl_mark "take S12 start"; sleep 3; fi
 la_claude freecad /home/maker/run-la
+if [ "${REC:-0}" = 1 ]; then sl_mark "claude end"; Q "import FreeCADGui; FreeCADGui.SendMsgToActiveView('ViewFit'); print(1)" > /dev/null 2>&1; sleep 8; sl_stop; fi
 SL_SHOT_WAKE=0 sl_shot "$O/after.png"
 Q "import FreeCAD; print('\n'.join(d.Name for d in FreeCAD.listDocuments().values()))" > "$O/docs.txt" 2>&1
 for d in $(cat "$O/docs.txt"); do lab_save "$d" "$O/after-$d.FCStd" >> "$O/save.log" 2>&1; done

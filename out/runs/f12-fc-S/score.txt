@@ -1,0 +1,1 @@
+LA f12-fc-S freecad S: pass True class None calls 3 errors 0 turns 4 wall 116.7 s trunc 0 said 6000.0 measured 6000.0

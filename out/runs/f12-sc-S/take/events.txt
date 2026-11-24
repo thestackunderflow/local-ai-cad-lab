@@ -1,0 +1,5 @@
+04:41:03.0  take S12 start
+04:42:41.6  claude end
+04:42:41.6  Browser: Body1 right-click > Properties
+04:42:49.0  Properties as shown in props.png: hold 4 s
+04:42:53.6  Close

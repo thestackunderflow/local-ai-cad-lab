@@ -1,0 +1,6 @@
+>> save {"path": "/root/run-f12-sc-S.sc"} err=False
+{
+  "bytes": 9427,
+  "name": "Block_Design",
+  "path": "/root/run-f12-sc-S.sc"
+}

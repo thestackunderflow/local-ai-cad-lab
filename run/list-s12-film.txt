@@ -1,0 +1,4 @@
+# Filmed live takes S12-sc / S12-fc (render stage 3, 24 Nov): the S job on the 12B with the screen recorded (REC=1).
+# Outside the scored 3+3 set: a filmed run is reported on its own (pass or fail) in DECISIONS.md.
+f12-sc-S solidcraft S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1 REC=1
+f12-fc-S freecad S gemma4:12b-it-qat la-net CTX=65536 FC_FLAGS=--only-text-feedback OLLAMA_RESTART=1 REC=1

@@ -1,7 +1,8 @@
 # local-ai-cad-lab (video la: Claude Code on a local Ollama driving SolidCraft + FreeCAD MCP)
 
-Lab for The Stack Underflow video "Local AI CAD setup" (plan: `Refream-Canvas/inputs/video-plans/2026-11-21-local-ai-cad-setup/PLAN.md`
-rev 2, section 3). Local git only, never pushed.
+Lab for The Stack Underflow video "Claude Code + Local AI for CAD: Gemma 4 12B Local Setup, Step by Step". Every number in
+the video comes from the runs in `out/`. Tests: `python -m pytest tests` (`test_draw_la.py` needs the video plan's NUMBERS file, not
+included). Paths like `Refream-Canvas/...` below point at the channel's private video workspace.
 
 ## Intent
 Keep Claude Code as the host and swap only the model: Claude Code talks to Ollama's Anthropic-compatible endpoint

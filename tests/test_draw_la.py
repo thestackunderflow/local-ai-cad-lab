@@ -164,3 +164,14 @@ def test_cut3_card_fixes(drawn):
     f7 = ' '.join(d.LOG['card-F7-3.png'])
     assert 'running total 21,550' in f7 and 'running total 27,116' in f7
     assert any('the rest run on the CPU' in s for s in d.LOG['ov-F8-layers.png'])
+
+
+def test_short_c3_s1_names_both_apps(drawn):
+    """la Short cut 3 (GATES-la-short-c2 C5): FreeCAD is spoken in S1, so the words chip names both apps, each count
+    from NUMBERS-la.json (runs_12b solidcraft_S / freecad_S pass)."""
+    r = d.NUM['runs_12b']
+    sc, fc = r['solidcraft_S']['pass'].split(' of '), r['freecad_S']['pass'].split(' of ')
+    assert sc[0] == sc[1] and fc[0] == fc[1]                     # every run right, so "3 in SolidCraft" is the claim
+    assert int(sc[0]) + int(fc[0]) == 6
+    assert d.LOG['s-S1.png'] == ['simple block: 6 of 6 right', f'{sc[0]} in SolidCraft, {fc[0]} in FreeCAD']
+    assert all(len(s) <= 32 for s in d.LOG['s-S1.png'])

@@ -439,7 +439,10 @@ def peg_line(d, x0, x1, y, s, col):
 
 def short_words():
     chip('s-head.png', ['FREE LOCAL AI vs CLAUDE:', 'SAME CAD TRAP'], px=58, edge=RED)
-    chip('s-S1.png', ['simple block: 6 of 6 right'], px=56, edge=GREEN)
+    # Short cut 3 (C5): FreeCAD is spoken in S1, so both apps are named, each with its own count
+    r = NUM['runs_12b']
+    sc, fc = r['solidcraft_S']['pass'].split(' of ')[0], r['freecad_S']['pass'].split(' of ')[0]
+    chip('s-S1.png', ['simple block: 6 of 6 right', f'{sc} in SolidCraft, {fc} in FreeCAD'], px=52, edge=GREEN)
     chip('s-S2.png', ['walls grew round the peg:', '10 + 2 + 2 = 14'], px=56, edge=RED)
     chip('s-S3.png', ['local: 0 of 6 in 25 min', 'Claude: 2 of 2, under 40 s each'], px=52, edge=INK)
     chip('s-S4.png', ['full setup: Local AI CAD Setup', '(long video)'], px=52, edge=BLUE)
